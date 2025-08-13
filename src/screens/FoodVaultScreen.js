@@ -1,0 +1,672 @@
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, FlatList, TextInput, TouchableOpacity, Alert, Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
+import FoodItem from '../components/FoodItem';
+import { useTheme } from '../context/ThemeContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as XLSX from 'xlsx';
+import { Asset } from 'expo-asset';
+
+const FoodVaultScreen = ({ navigation }) => {
+  const { theme } = useTheme();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [allFoods, setAllFoods] = useState([]);
+  const [filteredFoods, setFilteredFoods] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [categories, setCategories] = useState(['All']);
+
+  // Enhanced CSV parsing function with better error handling
+  const parseCSVContent = (csvContent) => {
+    try {
+      console.log('Starting CSV parsing...');
+      console.log('CSV content length:', csvContent.length);
+      
+      // Log first few lines for debugging
+      const lines = csvContent.split('\n').slice(0, 3);
+      console.log('First few lines of CSV:');
+      lines.forEach((line, index) => {
+        console.log(`Line ${index}: "${line}"`);
+      });
+      
+      // Parse CSV using XLSX
+      const workbook = XLSX.read(csvContent, { 
+        type: 'string',
+        raw: false, // Don't parse as raw values
+        cellDates: false,
+        cellNF: false,
+        cellText: true // Parse as text to avoid conversion issues
+      });
+      
+      const sheetName = workbook.SheetNames[0];
+      console.log('Sheet name:', sheetName);
+      
+      const worksheet = workbook.Sheets[sheetName];
+      
+      // Get the range of the worksheet
+      const range = XLSX.utils.decode_range(worksheet['!ref']);
+      console.log('Worksheet range:', range);
+      
+      // Convert to JSON with header processing
+      const jsonData = XLSX.utils.sheet_to_json(worksheet, {
+        header: 1, // Get as array of arrays first
+        raw: false,
+        defval: '' // Default value for empty cells
+      });
+      
+      console.log('Raw JSON data length:', jsonData.length);
+      
+      if (jsonData.length === 0) {
+        throw new Error('No data found in CSV');
+      }
+      
+      // Get headers from first row
+      const headers = jsonData[0];
+      console.log('Headers found:', headers);
+      
+      // Expected column mappings with variations
+      const columnMappings = {
+        name: ['Dish Name', 'dish name', 'Name', 'name', 'DISH NAME'],
+        category: ['Category', 'category', 'CATEGORY'],
+        serving: ['Serving', 'serving', 'SERVING'],
+        quantity: ['Quantity', 'quantity', 'QUANTITY'],
+        calories: ['Calories (kcal)', 'calories (kcal)', 'Calories', 'calories', 'CALORIES (KCAL)', 'CALORIES'],
+        carbohydrates: ['Carbohydrates (g)', 'carbohydrates (g)', 'Carbohydrates', 'carbohydrates', 'CARBOHYDRATES (G)', 'CARBOHYDRATES'],
+        protein: ['Protein (g)', 'protein (g)', 'Protein', 'protein', 'PROTEIN (G)', 'PROTEIN'],
+        fats: ['Fats (g)', 'fats (g)', 'Fats', 'fats', 'FATS (G)', 'FATS']
+      };
+      
+      // Find column indices
+      const columnIndices = {};
+      Object.keys(columnMappings).forEach(key => {
+        const possibleNames = columnMappings[key];
+        const index = headers.findIndex(header => 
+          possibleNames.some(name => 
+            header && header.toString().trim().toLowerCase() === name.toLowerCase()
+          )
+        );
+        columnIndices[key] = index;
+        console.log(`Column "${key}" found at index: ${index} (header: "${headers[index]}")`);
+      });
+      
+      // Check if we found the essential columns
+      if (columnIndices.name === -1) {
+        console.error('Could not find "Dish Name" column');
+        console.log('Available headers:', headers);
+        throw new Error('Could not find "Dish Name" column in CSV');
+      }
+      
+      // Process data rows (skip header row)
+      const dataRows = jsonData.slice(1);
+      console.log('Processing', dataRows.length, 'data rows');
+      
+      const transformedData = dataRows
+        .filter(row => row && row.length > 0 && row[columnIndices.name]) // Filter out empty rows
+        .map((row, index) => {
+          // Normalize category names to handle variations
+          const normalizeCategory = (category) => {
+            const cat = category.toString().trim();
+            // Handle common variations
+            const categoryMappings = {
+              'beverage': 'Beverages',
+              'beverages': 'Beverages',
+              'drink': 'Beverages',
+              'drinks': 'Beverages',
+              'snack': 'Snacks',
+              'snacks': 'Snacks',
+              'vegetable': 'Vegetables',
+              'vegetables': 'Vegetables',
+              'veggie': 'Vegetables',
+              'veggies': 'Vegetables',
+              'grain': 'Grains',
+              'grains': 'Grains',
+              'cereal': 'Grains',
+              'cereals': 'Grains',
+              'protein': 'Protein',
+              'proteins': 'Protein',
+              'meat': 'Protein',
+              'meats': 'Protein',
+              'dairy': 'Dairy',
+              'milk': 'Dairy',
+              'fruit': 'Fruits',
+              'fruits': 'Fruits',
+              'dessert': 'Desserts',
+              'desserts': 'Desserts',
+              'sweet': 'Desserts',
+              'sweets': 'Desserts'
+            };
+            
+            const lowerCat = cat.toLowerCase();
+            return categoryMappings[lowerCat] || cat || 'Other';
+          };
+
+          const item = {
+            id: index + 1,
+            name: (row[columnIndices.name] || '').toString().trim(),
+            category: normalizeCategory(row[columnIndices.category] || 'Other'),
+            serving: (row[columnIndices.serving] || 'N/A').toString().trim(),
+            quantity: (row[columnIndices.quantity] || 'N/A').toString().trim(),
+            calories: parseFloat(row[columnIndices.calories]) || 0,
+            carbohydrates: parseFloat(row[columnIndices.carbohydrates]) || 0,
+            protein: parseFloat(row[columnIndices.protein]) || 0,
+            fats: parseFloat(row[columnIndices.fats]) || 0,
+            hasOriginalServingSize: true // Mark as having original serving data
+          };
+          
+          // Create description
+          item.description = `${item.name} - ${item.category} (${item.quantity})`;
+          
+          // Log first few items for verification
+          if (index < 3) {
+            console.log(`Sample item ${index + 1}:`, JSON.stringify(item, null, 2));
+          }
+          
+          return item;
+        })
+        .filter(item => item.name && item.name.length > 0); // Final filter for valid items
+      
+      console.log(`Successfully transformed ${transformedData.length} food items`);
+      
+      // Log category distribution
+      const categoryCounts = {};
+      transformedData.forEach(item => {
+        const cat = item.category || 'Other';
+        categoryCounts[cat] = (categoryCounts[cat] || 0) + 1;
+      });
+      
+      console.log('Category distribution:');
+      Object.entries(categoryCounts).forEach(([cat, count]) => {
+        console.log(`  ${cat}: ${count} items`);
+      });
+      
+      return transformedData;
+      
+    } catch (error) {
+      console.error('Error parsing CSV content:', error);
+      console.error('Error details:', error.message);
+      throw error;
+    }
+  };
+
+  // Enhanced CSV loading with better debugging
+  const loadFoodData = async () => {
+    try {
+      console.log('=== Starting CSV Load Process ===');
+      console.log('Platform:', Platform.OS);
+      
+      let csvContent = null;
+      
+      // Try to get cached CSV content first
+      const cachedContent = await getCachedCSV();
+      
+      if (cachedContent) {
+        console.log('Using cached CSV content (length:', cachedContent.length, ')');
+        csvContent = cachedContent;
+      } else {
+        console.log('Loading CSV content for first time');
+        
+        if (Platform.OS === 'web') {
+          try {
+            console.log('Attempting to fetch CSV from web assets');
+            // Try multiple possible paths for web
+            const possiblePaths = [
+              '/assets/FoodSheet.csv',
+              '/assets/foodsheet.csv',
+              './assets/FoodSheet.csv',
+              '../assets/FoodSheet.csv'
+            ];
+            
+            let loaded = false;
+            for (const path of possiblePaths) {
+              try {
+                console.log(`Trying path: ${path}`);
+                const response = await fetch(path);
+                if (response.ok) {
+                  csvContent = await response.text();
+                  console.log(`Successfully loaded CSV from ${path} (length: ${csvContent.length})`);
+                  loaded = true;
+                  break;
+                }
+              } catch (e) {
+                console.log(`Failed to load from ${path}:`, e.message);
+              }
+            }
+            
+            if (!loaded) {
+              throw new Error('Could not load from any web path');
+            }
+            
+          } catch (error) {
+            console.log('Could not load CSV from web assets:', error.message);
+            console.log('Using fallback sample data');
+            csvContent = getSampleCSVContent();
+          }
+        } else {
+          // For native platforms
+          try {
+            console.log('Attempting to load CSV from bundled assets');
+            const asset = Asset.fromModule(require('../../assets/FoodSheet.csv'));
+            await asset.downloadAsync();
+            
+            console.log('Asset info:', {
+              localUri: asset.localUri,
+              uri: asset.uri,
+              downloaded: asset.downloaded
+            });
+            
+            const response = await fetch(asset.localUri || asset.uri);
+            if (response.ok) {
+              csvContent = await response.text();
+              console.log(`Successfully loaded CSV from bundled assets (length: ${csvContent.length})`);
+            } else {
+              throw new Error(`Failed to fetch asset: ${response.status}`);
+            }
+          } catch (error) {
+            console.log('Could not load CSV from bundled assets:', error.message);
+            console.log('Falling back to sample data');
+            csvContent = getSampleCSVContent();
+          }
+        }
+        
+        // Cache the content for future use
+        if (csvContent && csvContent !== getSampleCSVContent()) {
+          await setCachedCSV(csvContent);
+          console.log('CSV content cached successfully');
+        }
+      }
+      
+      // If we still don't have content, use sample data
+      if (!csvContent) {
+        console.log('No CSV content available, using sample data');
+        csvContent = getSampleCSVContent();
+      }
+      
+      // Parse the CSV content
+      console.log('=== Starting CSV Parsing ===');
+      const transformedData = parseCSVContent(csvContent);
+      
+      console.log('=== CSV Load Complete ===');
+      console.log(`Final result: ${transformedData.length} food items loaded`);
+      
+      return transformedData;
+      
+    } catch (error) {
+      console.error('=== CSV Load Failed ===');
+      console.error('Error loading food data:', error);
+      console.error('Error stack:', error.stack);
+      
+      // Return sample data as fallback
+      console.log('Returning sample data as fallback');
+      return getSampleFoodData();
+    }
+  };
+
+  // Helper function to check if the food name contains a serving size in it
+  const hasServingSizeInName = (name) => {
+    return /\b\d+\s*(pc|pcs|piece|pieces|g|ml|liter|litre|l)\b|~\s*\d+\s*(g|ml|liter|litre|l)\b/.test(name.toLowerCase());
+  };
+
+  // Function to filter and sort foods
+  const filterAndSortFoods = (foods, searchText) => {
+    return foods
+      .filter((item) =>
+        item.name.toLowerCase().includes(searchText.toLowerCase())
+      )
+      .sort((a, b) => {
+        const aHasOriginalServing = a.hasOriginalServingSize || hasServingSizeInName(a.name);
+        const bHasOriginalServing = b.hasOriginalServingSize || hasServingSizeInName(b.name);
+
+        if (aHasOriginalServing && !bHasOriginalServing) return -1;
+        if (!aHasOriginalServing && bHasOriginalServing) return 1;
+        return a.name.localeCompare(b.name);
+      });
+  };
+
+  // Sample CSV content for fallback (with exact headers you mentioned)
+  const getSampleCSVContent = () => {
+    return `Dish Name,Category,Serving,Quantity,Calories (kcal),Carbohydrates (g),Protein (g),Fats (g)
+Rice,Grains,Bowl,1 cup,200,45,4,0.5
+Chicken Curry,Protein,Plate,1 serving,300,10,30,15
+Vegetable Salad,Vegetables,Bowl,1 bowl,50,10,3,2
+Chapati,Grains,Piece,1 piece,120,25,3,1
+Dal Tadka,Protein,Bowl,1 bowl,180,20,12,6
+Paneer Butter Masala,Protein,Plate,100g,265,8,18,20
+Biryani,Mixed,Plate,1 plate,400,50,15,18
+Samosa,Snacks,Piece,1 piece,150,18,3,8
+Mango Lassi,Beverages,Glass,1 glass,120,20,8,4
+Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
+  };
+
+  // Sample food data for fallback
+  const getSampleFoodData = () => {
+    const csvContent = getSampleCSVContent();
+    try {
+      return parseCSVContent(csvContent);
+    } catch (error) {
+      console.error('Error parsing sample CSV:', error);
+      return [
+        { 
+          id: 1, 
+          name: 'Rice', 
+          category: 'Grains', 
+          serving: 'Bowl', 
+          quantity: '1 cup', 
+          calories: 200, 
+          carbohydrates: 45, 
+          protein: 4, 
+          fats: 0.5, 
+          description: 'Rice - Grains (1 cup)',
+          hasOriginalServingSize: true
+        }
+      ];
+    }
+  };
+
+  // Platform-agnostic storage functions
+  const getCachedCSV = async () => {
+    try {
+      return await AsyncStorage.getItem('cached_csv_content');
+    } catch (error) {
+      console.log('Could not get cached CSV:', error.message);
+      return null;
+    }
+  };
+
+  const setCachedCSV = async (content) => {
+    try {
+      await AsyncStorage.setItem('cached_csv_content', content);
+      console.log('CSV content cached successfully');
+    } catch (error) {
+      console.log('Could not cache CSV content:', error.message);
+    }
+  };
+
+  const handleSearch = (text) => {
+    setSearchQuery(text);
+    
+    let filtered = allFoods;
+    
+    if (selectedCategory !== 'All') {
+      filtered = filtered.filter(food => food.category === selectedCategory);
+    }
+    
+    if (text) {
+      filtered = filterAndSortFoods(filtered, text);
+    }
+    
+    setFilteredFoods(filtered);
+  };
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    
+    let filtered = allFoods;
+    
+    if (category !== 'All') {
+      console.log(`Filtering for category "${category}": Found ${allFoods.filter(food => food.category === category).length} items`);
+      filtered = filtered.filter(food => food.category === category);
+    }
+    
+    if (searchQuery) {
+      filtered = filterAndSortFoods(filtered, searchQuery);
+    }
+    
+    setFilteredFoods(filtered);
+  };
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: 'Food Vault',
+    });
+    loadAllFoods();
+  }, []);
+
+  const loadAllFoods = async () => {
+    try {
+      console.log('=== Starting loadAllFoods ===');
+      
+      // Get custom foods from AsyncStorage
+      const customFoodsString = await AsyncStorage.getItem('customFoods');
+      let customFoods = [];
+      
+      if (customFoodsString) {
+        customFoods = JSON.parse(customFoodsString);
+        console.log(`Loaded ${customFoods.length} custom foods from AsyncStorage`);
+      }
+      
+      // Load food data from CSV
+      const csvFoods = await loadFoodData();
+      console.log(`Successfully loaded ${csvFoods.length} foods from CSV`);
+      
+      // Combine and sort foods
+      const combinedFoods = [...customFoods, ...csvFoods];
+      const sortedFoods = [...combinedFoods].sort((a, b) => a.name.localeCompare(b.name));
+      
+      console.log(`Total foods: ${sortedFoods.length}`);
+      setAllFoods(sortedFoods);
+      
+      // Generate categories with normalization for custom foods too
+      const csvCategories = new Set();
+      const normalizeCategory = (category) => {
+        const cat = category.toString().trim();
+        const categoryMappings = {
+          'beverage': 'Beverages',
+          'beverages': 'Beverages',
+          'drink': 'Beverages',
+          'drinks': 'Beverages',
+          'snack': 'Snacks',
+          'snacks': 'Snacks',
+          'vegetable': 'Vegetables',
+          'vegetables': 'Vegetables',
+          'veggie': 'Vegetables',
+          'veggies': 'Vegetables',
+          'grain': 'Grains',
+          'grains': 'Grains',
+          'cereal': 'Grains',
+          'cereals': 'Grains',
+          'protein': 'Protein',
+          'proteins': 'Protein',
+          'meat': 'Protein',
+          'meats': 'Protein',
+          'dairy': 'Dairy',
+          'milk': 'Dairy',
+          'fruit': 'Fruits',
+          'fruits': 'Fruits',
+          'dessert': 'Desserts',
+          'desserts': 'Desserts',
+          'sweet': 'Desserts',
+          'sweets': 'Desserts'
+        };
+        
+        const lowerCat = cat.toLowerCase();
+        return categoryMappings[lowerCat] || cat || 'Other';
+      };
+      
+      // Normalize categories for all foods (both CSV and custom)
+      const allFoodsWithNormalizedCategories = sortedFoods.map(food => ({
+        ...food,
+        category: normalizeCategory(food.category || 'Other')
+      }));
+      
+      // Update the sorted foods with normalized categories
+      setAllFoods(allFoodsWithNormalizedCategories);
+      
+      // Generate categories from normalized data
+      allFoodsWithNormalizedCategories.forEach(food => {
+        if (food.category) {
+          csvCategories.add(food.category);
+        }
+      });
+      
+      const categoryArray = Array.from(csvCategories).sort();
+      const otherIndex = categoryArray.indexOf('Other');
+      if (otherIndex > -1) {
+        categoryArray.splice(otherIndex, 1);
+        categoryArray.push('Other');
+      }
+      const dynamicCategories = ['All', ...categoryArray];
+      
+      console.log('Categories:', dynamicCategories);
+      setCategories(dynamicCategories);
+      
+      // Initialize filtered foods with normalized categories
+      let filtered = allFoodsWithNormalizedCategories;
+      if (selectedCategory !== 'All') {
+        filtered = filtered.filter(food => food.category === selectedCategory);
+      }
+      if (searchQuery) {
+        filtered = filterAndSortFoods(filtered, searchQuery);
+      }
+      setFilteredFoods(filtered);
+      
+    } catch (error) {
+      console.error('Error in loadAllFoods:', error);
+      Alert.alert('Error', 'Failed to load food database. Using sample data.');
+      
+      const fallbackFoods = getSampleFoodData();
+      setAllFoods(fallbackFoods);
+      setFilteredFoods(fallbackFoods);
+      setCategories(['All', 'Grains', 'Protein', 'Vegetables', 'Mixed', 'Snacks', 'Beverages']);
+    }
+  };
+  
+  return (
+    <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
+      <View style={[styles.searchContainer, { backgroundColor: theme.card }]}>
+        <Ionicons name="search" size={20} color={theme.textSecondary} style={styles.searchIcon} />
+        <TextInput
+          style={[styles.searchInput, { color: theme.text }]}
+          placeholder="Search Indian foods..."
+          placeholderTextColor={theme.textSecondary}
+          value={searchQuery}
+          onChangeText={handleSearch}
+        />
+      </View>
+      
+      <View style={styles.categoriesContainer}>
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={categories}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => (
+            <TouchableOpacity 
+              style={[
+                styles.categoryItem, 
+                { backgroundColor: theme.card, borderColor: theme.border },
+                selectedCategory === item && [styles.selectedCategory, { backgroundColor: theme.primary, borderColor: theme.primary }]
+              ]}
+              onPress={() => handleCategorySelect(item)}
+            >
+              <Text style={[
+                styles.categoryText, 
+                { color: theme.text },
+                selectedCategory === item && styles.selectedCategoryText
+              ]}>
+                {item}
+              </Text>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
+      
+      <FlatList
+        data={filteredFoods}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <FoodItem 
+            food={item} 
+            onPress={() => navigation.navigate('FoodDetail', { food: item })}
+          />
+        )}
+        ListEmptyComponent={
+          <View style={styles.emptyContainer}>
+            <Text style={[styles.emptyText, { color: theme.textSecondary }]}>No foods found</Text>
+          </View>
+        }
+        onEndReached={() => console.log('Reached end of list')}
+        onEndReachedThreshold={0.1}
+        removeClippedSubviews={false}
+        maxToRenderPerBatch={50}
+        windowSize={10}
+        initialNumToRender={20}
+      />
+      
+      <TouchableOpacity 
+        style={[styles.floatingButton, { backgroundColor: theme.primary }]}
+        onPress={() => navigation.navigate('AddFood')}
+      >
+        <Ionicons name="add" size={24} color="white" />
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 10,
+    margin: 15,
+    paddingHorizontal: 10,
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
+  },
+  searchIcon: {
+    marginRight: 10,
+  },
+  searchInput: {
+    flex: 1,
+    height: 45,
+  },
+  categoriesContainer: {
+    marginBottom: 10,
+  },
+  categoryItem: {
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    marginHorizontal: 5,
+    borderRadius: 20,
+    borderWidth: 1,
+  },
+  selectedCategory: {
+  },
+  categoryText: {
+  },
+  selectedCategoryText: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  emptyText: {
+    fontSize: 16,
+  },
+  floatingButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+});
+
+export default FoodVaultScreen;

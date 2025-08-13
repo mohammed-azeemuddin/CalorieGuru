@@ -1,0 +1,1216 @@
+Dish Name,Category,Serving,Quantity,Calories (kcal),Carbohydrates (g),Protein (g),Fats (g)
+Hot tea (Garam Chai),Beverages,-,100g,16.14,2.58,0.39,0.53
+Instant coffee,Beverages,-,100g,23.16,3.65,0.64,0.75
+Espreso coffee,Beverages,-,100g,51.54,6.62,1.75,2.14
+Iced tea,Beverages,-,100g,10.34,2.7,0.03,0.01
+Raw mango drink (Aam panna),Beverages,-,100g,35.92,9.05,0.16,0.03
+Fruit Punch (with fresh juices),Beverages,-,100g,36.12,9.38,0.14,0.03
+Fruit Punch (with squashes),Beverages,-,100g,23.13,5.99,0.07,0.02
+Lemonade,Beverages,-,100g,20.8,5.48,0.03,0.01
+Lem-o-gin,Beverages,-,100g,21.52,5.55,0.08,0.03
+Cumin infused water (Jeere/Zeere ka pani),Beverages,-,100g,9.09,1.86,0.17,0.11
+Coco pine cooler,Beverages,-,100g,32.75,5.72,0.56,1
+Summer cooler,Beverages,-,100g,22.43,5.43,0.37,0.04
+Hot cocoa,Beverages,-,100g,90.1,9.23,3.36,4.56
+Cold coffee with ice cream,Sweets,-,100g,67.85,11.24,1.57,2.11
+Banana milkshake (Kele milkshake),Beverages,-,100g,65.31,9.15,1.84,2.37
+Mango milkshake (Aam milkshake),Beverages,-,100g,56.9,7.23,1.73,2.35
+Pineapple milkshake (Ananas milkshake),Beverages,-,100g,55.72,7.62,1.66,2.23
+Orange milkshake (Narangi milkshake),Beverages,-,100g,57.42,7.11,1.86,2.52
+Egg nog,Beverages,-,100g,97.14,8.15,4.78,5.11
+Sweet LaBeveragesi (Meethi laBeveragesi),Beverages,-,100g,35.66,6.51,1.29,0.68
+LaBeveragesi (salted),Beverages,-,100g,18.84,1.86,1.35,0.72
+Cheese and chilli sandwich,Snacks,-,100g,218.11,27.4,6.8,9.78
+Egg sandwich (Ande ka sandwich),Snacks,-,100g,285.96,29.16,8.69,15.8
+Cucumber sandwich (Kheere ka sandwich),Snacks,-,100g,188.6,25.77,4.8,8
+Cheese and pineapple sandwich (Cheese aur ananas ka sandwich),Snacks,-,100g,257.71,29.1,8.2,12.8
+Cheese and tomato sandwich (Cheese aur tamatar ke sandwich),Snacks,-,100g,243.32,26.92,7.92,12.27
+Chicken sandwich,Snacks,-,100g,253.27,25.38,13.12,11.75
+Peanut and tomato sandwich (Moongfali aur tamatar ka sandwich),Snacks,-,100g,291.43,28.54,9.53,16.14
+Rainbow sandwich,Snacks,-,100g,272.75,34.26,7.75,12.54
+Club sandwich,Snacks,-,100g,235.32,18.51,7.31,15.12
+Vegetarian club sandwich,Snacks,-,100g,198.33,19.68,5.45,11.33
+Pin wheel sandwich,Snacks,-,100g,311.52,14,8.77,24.93
+Carrot apple sandwich (Gajar aur seb ka sandwich),Snacks,-,100g,214.11,29.04,5.3,9.12
+Salami sandwich,Snacks,-,100g,255.59,21.54,8.7,15.51
+Vegetable and mayonnaise sandwich,Snacks,-,100g,244.26,23.2,4.47,15.4
+Egg and tomato sandwich (Ande aur tamatar ka sandwich),Snacks,-,100g,222.11,25.9,7.66,10.51
+Sweet open sandwich,Snacks,-,100g,244.25,39.24,4.99,8.15
+Mushroom and cheese sandwich (toasted),Snacks,-,100g,227.42,21.01,7.79,13.01
+Cheese and tomato sandwich (toasted) (Cheese aur tamatar ke sandwich (toasted)),Snacks,-,100g,224.58,21.42,6.82,12.95
+Pea potato sandwich (toasted) (Matar aloo ka sandwich),Snacks,-,100g,164.9,25.17,4.6,5.43
+Paneer pea sandwich (toasted) (Paneer matar ka sandwich),Snacks,-,100g,249.56,24.05,12.4,11.98
+Chicken sandwich (toasted),Snacks,-,100g,167.37,18.82,12.08,5.32
+Pea keema sandwich (toasted) (Matar aur keema ka sandwich),Snacks,-,100g,171.78,20.26,11.06,5.61
+ClaBeveragesic club sandwich,Snacks,-,100g,200.83,18.49,6.74,11.56
+Sesame toast,Main course,-,100g,495.19,11.15,1.9,49.38
+Cracked wheat porridge (Meetha daliya),Main course,-,100g,81.57,8.87,2.64,4.08
+Semolina porridge (Suji/Rava daliya),Main course,-,100g,100.89,12.39,3.75,4.08
+Oatmeal Porridge,Main course,-,100g,72.85,8.77,2.6,3.22
+Cornflakes with milk,Other,-,100g,117.33,14.95,3.59,5.12
+Rice flakes (Chiwda/Aval),Other,-,100g,112.44,15.57,3.62,3.99
+Wheat flakes,Other,-,100g,112.44,15.57,3.62,3.99
+Murmura (Puffed rice),Other,-,100g,113.32,15.67,3.62,4.04
+Puffed wheat (Murmure/Moori),Other,-,100g,113.32,15.67,3.62,4.04
+Boiled egg (Ubla anda),Main course,-,100g,45.35,0.12,4.43,3.04
+Fried Egg,Main course,-,100g,223.67,0.31,11.59,19.62
+Poached egg,Main course,-,100g,123.87,0.37,11.98,8.19
+Scrambled egg (Ande ki bhurji),Main course,-,100g,155.97,1.35,10.29,12.21
+Baked egg,Main course,-,100g,218.85,15.42,11.88,12.65
+Plain omelette/omlet,Main course,-,100g,272.41,0.64,9.66,25.74
+Stuffed egg omelette/omlet,Main course,-,100g,203.51,2.3,8.6,17.77
+Pancake,Main course,-,100g,203.36,20.49,5.68,10.82
+Keema pancake,Main course,-,100g,176.27,9.56,9.01,11.25
+Vegetable pancake,Main course,-,100g,125.18,12.24,3.87,6.57
+Jam and fruit pancake,Main course,-,100g,162.02,20.73,3.79,7.01
+Khoa and coconut pancake,Main course,-,100g,271.98,27.32,6.98,15.29
+Brown stock,Main course,-,100g,21.32,0.25,1.95,1.38
+Vegetable stock,Main course,-,100g,17.6,0.96,0.3,1.38
+Chicken stock,Main course,-,100g,29.88,0.37,3.69,1.51
+Clear tomato soup (Tamatar ka soup),Other,-,100g,80.07,3.45,4.79,12.22
+Lentil soup,Other,-,100g,31.17,3.94,9.65,11.68
+Chicken consomme (Clear chicken soup),Other,-,100g,47.94,1.19,11.47,12.02
+Cream of tomato soup,Other,-,100g,97.81,3.93,4.61,13.12
+Cream of green peas soup,Other,-,100g,127.84,6.75,7.13,14.78
+Cream of spinach soup,Other,-,100g,100.54,3.45,5.21,13.31
+Cream of mixed vegetable soup,Other,-,100g,59.65,4.93,6.84,9.05
+Cream of mushroom soup,Other,-,100g,117.28,3.74,6.64,15.5
+Chicken sweet corn soup,Other,-,100g,28.32,1.63,14.48,12.59
+Minestrone soup,Other,-,100g,42.66,3.71,9.3,11.09
+Egg drop soup,Other,-,100g,26.64,1.1,12.93,13.52
+Chinese cabbage and meat ball soup,Other,-,100g,484.31,1.43,5.21,56.57
+French onion soup,Other,-,100g,55.61,4.28,11.41,14.39
+Hot and sour soup,Other,-,100g,31.51,1.78,3.12,1.31
+Talaumein soup,Other,-,100g,35.63,4.17,10.12,12.78
+Cold cucumber soup (Thanda kheere ka soup),Other,-,100g,48.03,4.58,2.99,1.99
+Cold summer garden soup,Other,-,100g,49.19,2.65,8.57,14.08
+Chapati/Roti,Main course,-,100g,202.31,35.65,5.88,3.56
+Plain parantha/paratha,Main course,-,100g,298.3,30.69,5.06,16.86
+Potato parantha/paratha (Aloo ka parantha/paratha),Main course,-,100g,205.04,23.92,3.7,10.22
+Radish parantha/paratha (Mooli ka parantha/paratha),Main course,-,100g,183.52,20.54,3.3,9.53
+Cauliflower parantha/paratha (Phoolgobhi ka parantha/paratha),Main course,-,100g,178.07,18.84,3.73,9.47
+Dal parantha/paratha,Main course,-,100g,268.24,30.03,6.78,13.05
+Sprouted moong parantha/paratha,Main course,-,100g,228.59,24.31,4.29,12.43
+Pea parantha/paratha (Matar ka parantha/paratha),Main course,-,100g,190.73,21.51,5.59,8.8
+Keema parantha/paratha,Main course,-,100g,238.09,18.36,9.41,13.91
+Paneer parantha/paratha,Main course,-,100g,262.97,24.33,7.98,14.62
+Besan and spinach parantha/paratha (Besan aur palak ka parantha/paratha),Main course,-,100g,216.49,21.39,5.54,12.09
+Poori,Main course,-,100g,737.63,8.22,1.35,77.61
+Spinach poori (Palak poori),Main course,-,100g,684.25,7.76,1.42,71.86
+Methi poori,Main course,-,100g,710.02,7.98,1.45,74.6
+Dal stuffed poori,Main course,-,100g,785.16,10.14,2.08,81.69
+Potato stuffed poori (Aloo ki poori),Main course,-,100g,776.74,9.4,1.52,81.35
+Tandoori parantha/paratha,Main course,-,100g,295.37,30.74,5.08,16.51
+Boiled rice (Uble chawal),Main course,-,100g,117.19,25.72,2.6,0.18
+Plain pulao,Main course,-,100g,140.21,21.82,2.34,4.62
+Mixed vegetable pulao,Main course,-,100g,113.05,17.49,2.72,3.33
+Mushroom pulao,Main course,-,100g,124.29,19.02,2.52,4.03
+Sprouted moong pulao,Main course,-,100g,112.97,17.49,2.19,3.61
+Paneer pulao,Main course,-,100g,581.91,8.76,1.98,59.81
+Peanut pulao,Main course,-,100g,193.28,21.18,5.32,9.51
+Navratan pulao,Main course,-,100g,261.71,36.98,6.2,9.45
+Green chickpeas pulao (Choliya pulao/Hare chane ka pulao),Main course,-,100g,173.43,27.57,4.88,4.82
+Mutton biryani/biriyani,Main course,-,100g,190.76,22.5,7.38,7.72
+Vegetable biryani/biriyani,Main course,-,100g,174.61,18.56,3.16,9.51
+"Lemon rice (Pulihora, Elumichai sadam, Chitranna)",Main course,-,100g,176.3,21.62,4.26,7.88
+Sweet rice (Meethe chawal),Main course,-,100g,215.41,42.59,2.1,4.57
+Curd rice (Dahi bhaat/Dahi chawal/ Perugu annam/Daddojanam/Thayir saadam),Main course,-,100g,195.74,32.93,5.75,4.32
+Tamarind rice (Chintapandu pulihora/Puliyodharai/Puli sadam/Huli anna),Main course,-,100g,373.04,65.08,7.45,8.53
+Spanish rice,Main course,-,100g,164.24,31.1,4.19,2.23
+Chinese fried rice,Main course,-,100g,120.58,13.4,4.05,5.43
+Macroni cheese pie,Main course,-,100g,170.63,21.1,5.85,7.48
+Vegetable chowmein,Main course,-,100g,129.71,15.44,3.07,6.36
+Chicken chowmein,Main course,-,100g,151.33,13.3,6.33,8.23
+Cheese noodle ring,Main course,-,100g,133.67,13.96,6.22,6.12
+Spaghetti and cheese balls in tomato sauce,Main course,-,100g,508.32,7.82,2.41,52.08
+Penne platter,Main course,-,100g,177.4,20.87,5.04,8.71
+Pasta hot pot,Main course,-,100g,125.17,11.6,5.84,6.47
+Chicken lasagne,Main course,-,100g,187.49,13.9,10.45,10.36
+Fettuccine with spinach sauce,Main course,-,100g,129.21,12.19,3.1,7.83
+Naan,Main course,-,100g,286.45,51.75,8.05,4.99
+Bhatura,Main course,-,100g,793.2,10.73,1.63,82.56
+Idli,Main course,-,100g,137.54,28.18,4.64,0.33
+Masala dosa,Main course,-,100g,164.58,19.57,3.29,7.84
+Semolina dosa (Suji/Rava dosa),Main course,-,100g,227.05,32.84,7.3,7.12
+Onion tomato uttapam,Main course,-,100g,462.02,11.32,1.91,45.3
+Paneer kaathi roll,Main course,-,100g,285.94,20.1,6.92,19.55
+Makki ki roti,Main course,-,100g,263.97,24.19,3.49,16.85
+Washed moong dal (Dhuli moong ki dal),Main course,-,100g,50,5.91,2.68,1.68
+Washed urad dal (Dhuli urad ki dal),Main course,-,100g,61.32,5.84,2.51,2.98
+Split bengal gram with bottle gourd (Channa dal with ghiya/lauki),Main course,-,100g,73.25,7.1,2.79,3.6
+Dry washed urad,Main course,-,100g,124.71,15.66,6.85,3.5
+Mixed dal,Main course,-,100g,61.93,5.79,2.51,3.1
+Whole moong (Moong ki dal),Main course,-,100g,53.7,5.22,2.25,2.56
+Whole masoor (Masoor ki dal),Main course,-,100g,54.05,5.37,2.28,2.52
+Whole moth (Moth ki dal),Main course,-,100g,55,5.74,2.01,2.62
+Whole urad (Urad ki dal),Main course,-,100g,53.8,5.05,2.21,2.62
+Moti mahal dal (Urad rajmah mix dal),Main course,-,100g,103.13,8.74,3.93,5.66
+Black channa curry/Bengal gram curry (Kale chane ki curry),Main course,-,100g,140.68,14.11,5.67,6.61
+Chickpeas curry (Safed channa curry),Main course,-,100g,163.43,19.98,6.1,6.84
+Lobia curry,Main course,-,100g,148.99,17.88,6.06,5.62
+Soyabean curry,Main course,-,100g,163.28,6.76,10.43,10.19
+Kidney bean curry (Rajmah curry),Main course,-,100g,143.73,16.38,5.95,5.77
+Sambar,Main course,-,100g,96.92,10.57,3.35,4.38
+Besan kadhi with pakodies,Main course,-,100g,403.35,3.56,1.64,42.59
+Khatta channa,Main course,-,100g,202.57,21.14,6.3,10.56
+Sprouted moong dal chat,Main course,-,100g,32.47,6.01,1.35,0.32
+Potato cauliflower (Aloo gobhi),Main course,-,100g,106.18,5.99,1.9,8.13
+Potato capsicum (Shimla mirch aloo),Main course,-,100g,125.53,8.72,1.41,9.33
+Cabbage and peas (Pattagobhi aur matar),Main course,-,100g,63.88,6.24,3.24,2.64
+Carrot and fenugreek leaves (Gajar methi),Main course,-,100g,61.92,4.17,2.1,3.81
+Potato fenugreek (Aloo methi),Main course,-,100g,135.15,8.47,2.25,10.04
+Brinjal bhartha (Baingan ka bhartha),Main course,-,100g,65.12,4.4,1.38,4.48
+Dry potato (Sookhe aloo),Main course,-,100g,103.15,14.38,1.62,4.18
+Beans with coconut (Nariyal aur sem/phali; Beans thoran),Main course,-,100g,131.63,4.39,2.62,11.39
+Cauliflower with coconut (Nariyal ke saath phoolgobhi),Main course,-,100g,132.11,3.99,2.64,11.56
+Carrot and cabbage with coconut (Nariyal ke saath pattagobhi aur gajar),Main course,-,100g,106.61,4.99,1.82,8.62
+Raw turnip with coconut,Main course,-,100g,132.15,5.78,1.8,11.47
+Raw papaya with coconut (Papaya thoran),Main course,-,100g,132.75,5.58,1.54,11.42
+Stuffed okra (Bharwa bhindi),Main course,-,100g,94.34,3.85,2.08,7.66
+Stuffed round gourd (Bharwa tinde),Main course,-,100g,72.8,4.02,1.1,5.75
+Stuffed capsicum (Bharwa shimla mirch),Main course,-,100g,90.94,8.26,1.34,5.7
+Stuffed brinjal (Bharwa baingan),Main course,-,100g,93,3.96,1.53,7.73
+Stuffed tomatoes (Bharwa tamatar),Main course,-,100g,93.35,6.19,3.28,6.06
+Pea potato curry (Aloo matar),Main course,-,100g,100.92,9.74,3.48,5.13
+Pea paneer curry (Matar paneer),Main course,-,100g,134.83,9.29,6.61,7.75
+Pea mushroom curry (Matar mushroom),Main course,-,100g,93.3,7.41,3.87,5.16
+Pea curry (Matar ki sabzi),Main course,-,100g,102.99,9.2,4.51,5.11
+Pea vadi curry,Main course,-,100g,101.95,8.9,4.64,5.08
+Paneer curry,Main course,-,100g,176.52,8.4,7.8,12.38
+Lotus stem curry (Kamal kakdi curry),Main course,-,100g,110.34,9.24,1.53,7.25
+Gravy for kofta,Main course,-,100g,125.59,6.31,1.75,10.35
+Pea kofta curry (Matar kofta curry),Main course,-,100g,595.66,4.17,2.01,63.39
+Spinach kofta curry (Palak kofta curry),Main course,-,100g,571.78,3.56,1.09,61.49
+Paneer kofta curry,Main course,-,100g,670.91,3.27,2.39,72.06
+Lotus stem kofta curry (Kamal kakdi kofta curry),Main course,-,100g,633.56,5.01,0.96,67.76
+Raw banana kofta curry (Kela kofta curry),Main course,-,100g,627.27,3.4,0.62,67.98
+Cauliflower kofta curry (Phoolgobhi kofta curry),Main course,-,100g,641.1,2.62,1.04,69.62
+Cabbage kofta curry (Pattagobhi kofta curry),Main course,-,100g,639.81,2.87,0.98,69.4
+Ghiya/Lauki Kofta Curry,Main course,-,100g,638.71,2.71,0.89,69.4
+Spinach paneer kofta curry (Palak paneer kofta curry),Main course,-,100g,606.03,2.94,1.43,65.41
+Vegetarian egg kofta curry,Main course,-,100g,627.41,4.26,1.33,67.24
+Baked vegetables,Main course,-,100g,88.99,8.44,3.67,4.44
+Cauliflower musallam (Phoolgobhi musallam),Main course,-,100g,58.83,4.48,1.89,3.55
+Baked vegetables with spinach,Main course,-,100g,77.79,6.93,3.22,4.03
+Baked potato with skin,Main course,-,100g,135.77,11.11,3.43,8.5
+Shepherd's pie (vegetarian),Main course,-,100g,135.63,12.03,5.04,7.3
+Baked brinjal in tomato sauce,Main course,-,100g,38.63,4.13,1.58,1.62
+Dum aloo,Main course,-,100g,682.33,3.33,0.7,74.01
+Spinach paneer (Palak paneer),Main course,-,100g,77.68,4.43,4.03,4.76
+Methi chaman,Main course,-,100g,475.62,2.78,1.54,50.91
+Sarson ka saag,Main course,-,100g,87.84,5.33,3,5.86
+Jackfruit sabzi (Kathal ki sabzi),Main course,-,100g,625.4,3.4,0.69,67.6
+Avial,Main course,-,100g,124.56,8.47,2.46,8.94
+Al yakhani,Main course,-,100g,147.54,4.65,2.86,13.14
+Shahi paneer,Main course,-,100g,156.5,6.64,5.06,12.34
+Paneer in butter sauce,Main course,-,100g,145.61,9.7,6.99,8.81
+Methi malai paneer,Main course,-,100g,194.98,8.15,7.34,14.76
+Chilli paneer,Main course,-,100g,777.51,3.31,2.1,84.01
+Paneer makhana korma,Main course,-,100g,775.82,4.63,3.24,82.76
+Kadhai Paneer,Main course,-,100g,107.99,7.34,4.33,6.81
+Roghan josh,Main course,-,100g,139.59,4.93,9.56,9.02
+Spinach mutton (Palak mutton),Main course,-,100g,80.32,3.45,5.74,4.71
+Pea keema curry (Matar keema ki sabzi),Main course,-,100g,133,6.24,8.43,8.14
+Keema kofta curry,Main course,-,100g,154.45,5.64,9.77,10.39
+Kashmiri mutton koftas (Gushtaba),Main course,-,100g,97.42,3.04,6.33,6.77
+Mutton yakhni,Main course,-,100g,104.13,0.84,8.27,7.7
+Chicken yakhni,Main course,-,100g,99,0.78,10.66,6.1
+Mutton do piaza,Main course,-,100g,183.3,4.14,9.39,14.41
+Mutton chops,Main course,-,100g,663.64,1.48,4.03,71.31
+Shammi kebab,Main course,-,100g,685.69,3.54,4.52,72.61
+Scotch egg,Main course,-,100g,676.89,1.91,4.05,72.62
+Shepherd's pie (with minced meat),Main course,-,100g,142.78,8.06,7.45,8.88
+Chicken curry,Main course,-,100g,129.22,3.38,11.79,7.57
+Tandoori chicken,Main course,-,100g,145.2,2.34,16.26,7.93
+Butter chicken,Main course,-,100g,137,3.74,10.92,8.7
+Chicken kebab,Main course,-,100g,729.41,1.11,3.71,78.89
+Chilli chicken,Main course,-,100g,198.83,2.86,9.57,16.56
+Fried chicken with tomato sauce (Fried chicken tamatar ki chutney kay saath),Main course,-,100g,125.03,2.51,11.48,7.61
+Fish curry (Machli curry),Main course,-,100g,111.13,3.77,8.76,6.69
+Fried fish (Indian style) (Tali hui machli),Main course,-,100g,658.54,5.4,4.35,68.88
+Fried fish and Chips (English Style) (Tali hui machli aur chips),Main course,-,100g,651.75,2.77,3.36,69.69
+Tomato fish,Main course,-,100g,489.79,3.18,2.39,51.91
+Baked fish with cheese sauce,Main course,-,100g,113.96,4.06,8.64,7.02
+Fish tikka,Main course,-,100g,117.33,3.91,16,4.15
+Tandoori fish,Main course,-,100g,95.98,2.37,11.19,4.64
+"Paneer, apple and pineapple salad",Main course,-,100g,95.08,8.35,3.88,5.07
+RuBeveragesian salad,Main course,-,100g,114.83,6.5,4.26,7.84
+Pasta salad,Main course,-,100g,190.36,12.7,4.15,13.92
+Deviled egg,Main course,-,100g,98.56,2.23,4.97,7.72
+Hawain salad,Main course,-,100g,175.23,14.35,4.27,11.37
+Mixed pulse and vegetable salad,Main course,-,100g,83.12,13.96,4.74,0.84
+Sprouted moong salad,Main course,-,100g,37.81,5.48,2.29,0.74
+ToBeveragesed salad,Main course,-,100g,62.96,4.95,1.02,4.22
+Mixed vegetable salad with curd sauce,Main course,-,100g,60.28,7.03,4.23,1.5
+Potato salad (Aloo ka salaad),Main course,-,100g,89.91,11.19,1.4,4.4
+Waldroff salad,Main course,-,100g,141.75,11.02,1.47,10.05
+Coleslaw,Main course,-,100g,76.71,5.59,1.24,5.32
+Fruit salad (Phalon ka salaad),Sweets,-,100g,78.14,15.96,0.91,1.22
+Tomato onion raita (Tamatar aur pyaaz ka raita),Other,-,100g,59,7.08,3.74,1.84
+Peanut raita (Mungfali ka raita),Other,-,100g,150.39,9.3,8.59,8.98
+Sprouted moong raita,Other,-,100g,60.89,6.13,4.62,2.19
+Bottle gourd raita (Ghiya/Lauki ka raita),Other,-,100g,56.31,5.76,3.98,2.07
+Cucumber raita (Kheere ka raita),Other,-,100g,59.13,6.35,4.04,2.08
+Carrot and spinach raita (Gajar aur palak ka raita),Other,-,100g,56.83,5.83,4,1.99
+Mint raita (Pudinay ka raita),Other,-,100g,77.59,7.65,5.64,2.96
+Potato raita (Aloo ka raita),Other,-,100g,75.38,10.24,4.22,2.04
+Boondi raita,Other,-,100g,687.72,3.96,2.19,73.83
+Sweet raita (Meetha raita),Other,-,100g,99.24,17.93,3.24,1.78
+Dahi vadas/Dahi bhalla,Other,-,100g,667.73,5.49,2.96,70.4
+Gunjia,Other,-,100g,667.34,5.68,2.98,70.28
+Saunth/Sonth chutney with tamarind/imli,Other,-,100g,141.53,33.55,1.01,0.15
+Rice kheer (Chawal ki kheer),Sweets,-,100g,75.03,10.05,2.3,2.97
+Makhana kheer,Sweets,-,100g,107.85,12.88,3.31,5
+Vermicelli kheer (Semiya/Seviyan ki kheer),Sweets,-,100g,120.07,15.87,3.35,5
+Semolina kheer (Suji/Rava kheer),Sweets,-,100g,113.21,15.88,3.43,4.2
+Paneer kheer,Sweets,-,100g,105.31,10.03,4.53,5.37
+Cabbage kheer (Pattagobhi ki kheer),Sweets,-,100g,83.51,9.73,2.87,3.8
+Carrot kheer (Gajar ki kheer),Sweets,-,100g,85.35,10.09,2.81,3.85
+Cauliflower kheer (Phoolgobhi ki kheer),Sweets,-,100g,81.95,8.78,3.04,3.95
+Moong dal kheer,Sweets,-,100g,77.16,9.89,2.95,2.97
+Phirni,Sweets,-,100g,116.12,16.11,3.49,4.34
+Semolina halwa (Suji ka halwa),Sweets,-,100g,225.65,24.67,2.16,13.38
+Shahi suji halwa,Sweets,-,100g,382.34,44.44,3.48,21.73
+Carrot halwa (Gajar ka halwa),Sweets,-,100g,172.64,18.53,3.11,9.73
+Egg halwa (Ande ka halwa),Sweets,-,100g,299.74,39.59,7.85,13.41
+Potato halwa (Aloo ka halwa),Sweets,-,100g,151.66,29.18,1.53,3.48
+Pumpkin halwa (Kaddu ka halwa),Sweets,-,100g,190.27,27.6,1.33,8.81
+Moong dal halwa,Sweets,-,100g,349.8,40.23,8.35,17.68
+Caramel custard (steamed),Sweets,-,100g,121.58,15.02,4.97,4.87
+Baked custard,Sweets,-,100g,106.53,9.45,5.41,5.3
+Soft Custard (stirred),Sweets,-,100g,109.18,11.19,5.01,5.07
+Chocolate ice cream,Sweets,-,100g,177.7,15.41,4.47,11.25
+Mango ice cream,Sweets,-,100g,125.69,11.14,3.4,7.62
+Fruit Ice cream (Phalon ka Ice cream),Sweets,-,100g,171.46,16.05,4.37,10.38
+Caramel ice cream,Sweets,-,100g,173.52,14.81,4.31,11.15
+Lemon souffle,Sweets,-,100g,168.51,13.43,6.95,10.02
+Orange souffle,Sweets,-,100g,168.28,14.2,6.8,9.73
+Vanilla souffle,Sweets,-,100g,187.85,14.78,7.71,11.19
+Chocolate souffle,Sweets,-,100g,189.32,14.74,7.88,11.36
+Pineapple souffle,Sweets,-,100g,196.14,15.52,8.06,11.72
+Apple mouBeveragese,Sweets,-,100g,106.92,12.77,4.21,4.27
+Rich chocolate mouBeveragese,Sweets,-,100g,188.26,10.84,7.96,12.19
+Mango mouBeveragese,Sweets,-,100g,124.98,9.14,3.21,8.47
+Orange and pineapple cream,Sweets,-,100g,101.18,11.96,1.44,5.43
+Charlotte rouBeveragese,Sweets,-,100g,188.29,34.08,3.95,4.78
+Triffle pudding,Sweets,-,100g,116.97,18.24,2.93,3.93
+Snow flakes pudding,Sweets,-,100g,95.21,8.07,4.67,4.97
+Kulfi,Sweets,-,100g,98.43,11.3,3.21,4.7
+Steamed orange pudding,Sweets,-,100g,278.03,41.53,2.34,12.04
+Meringue and rice pudding,Sweets,-,100g,112.93,14.6,4.84,4.05
+Cheese pudding,Sweets,-,100g,285.01,19.27,11.29,18.37
+Chocolate pudding,Sweets,-,100g,211.96,29.59,3.55,9.48
+Bread and butter pudding,Sweets,-,100g,167.94,19.63,5.59,7.88
+Queen of pudding,Sweets,-,100g,132.92,16.35,5.51,5.38
+Pineapple upside down pudding,Sweets,-,100g,257.73,35.73,3.15,11.91
+Date and nut pie,Sweets,-,100g,322.42,46.86,3.93,13.31
+Stewed apple with custard,Sweets,-,100g,92.87,18.36,1.27,1.82
+Apple snowballs,Sweets,-,100g,101.51,24.58,0.86,0.31
+Hot orange souffle,Sweets,-,100g,179.97,18.77,6.87,8.95
+Hot chocolate souffle,Sweets,-,100g,226.09,26.21,6.7,11.1
+Hot vanilla souffle,Sweets,-,100g,192.93,21.77,6.87,9.07
+Plain burfi (Burfi),Sweets,-,100g,408.32,30.88,9.82,27.96
+Coconut burfi (Nariyal ki burfi),Sweets,-,100g,467.64,32.15,8.81,34.63
+Bottle gourd burfi (Ghiya/Lauki burfi),Sweets,-,100g,275.96,24.51,5.86,17.68
+Chocolate burfi,Sweets,-,100g,339.33,33.15,13,17.86
+Cashewnut burfi (Kaju burfi/Kaju katli),Sweets,-,100g,421.74,37.92,5.48,28.46
+Gram flour burfi (Besan burfi),Sweets,-,100g,421.79,46.59,11.19,22.41
+Semolina ladoo with khoya (Suji/Rava aur khoye ke ladoo ),Sweets,-,100g,428.71,52.86,6.71,21.86
+Semolina ladoo with coconut (Suji/Rava aur nariyal ke ladoo ),Sweets,-,100g,464.43,50.9,5.68,27.03
+Gram flour ladoo (Besan ladoo),Sweets,-,100g,476.91,62.61,8.93,22.76
+Sesame ladoo (Til ke ladoo),Sweets,-,100g,396.96,43.5,10.7,19.64
+Chenna murki,Sweets,-,100g,252.69,36.01,10.46,8.2
+Milk cake,Sweets,-,100g,127.41,9.13,3.01,8.93
+Ghujia/Lavang latika,Sweets,-,100g,768.98,13,1.86,78.93
+Gulab Jamun with khoya,Sweets,-,100g,586.06,26.09,2.03,53.23
+Mal pua,Sweets,-,100g,566.68,17.56,1.71,54.64
+Shahi tukre,Sweets,-,100g,189.81,41.46,2.76,2.54
+Potato pakora/pakoda (Aloo pakoda),Snacks,-,100g,677.19,6.04,1.9,71.84
+Onion pakora/pakoda (Pyaaz ke pakode),Snacks,-,100g,674.61,5.41,1.9,71.84
+Cauliflower pakora/pakoda (Phoolgobhi ke pakode),Snacks,-,100g,671.63,4.52,1.98,71.86
+Mixed vegetable pakora/pakoda,Snacks,-,100g,673.81,5.12,1.94,71.86
+Spinach pakora/pakoda (Palak pakoda),Snacks,-,100g,712.62,4.68,1.96,76.38
+Methi pakora/pakoda (Methi ke pakode),Snacks,-,100g,713.25,4.68,2.06,76.39
+Egg pakora/pakoda (Ande ke pakode),Snacks,-,100g,710.51,4.48,2.83,75.86
+Bread pakora/pakoda,Snacks,-,100g,710.99,8.87,2.57,74.2
+Paneer pakora/pakoda,Snacks,-,100g,718.12,5.52,3.27,76.05
+Potato bonda (Aloo bonda),Snacks,-,100g,632.84,4.53,1.09,67.8
+Potato samosa (Aloo ka samosa),Snacks,-,100g,577.39,9.21,1.71,59.19
+Minced meat samosa (Keema ka samosa),Snacks,-,100g,620.99,6.14,4.43,64.26
+Paneer and pea samosa (Paneer matar ka samosa),Snacks,-,100g,623.81,8.55,4.02,63.65
+Mathri,Snacks,-,100g,805.12,12.32,1.75,83.1
+Khasta kachori,Snacks,-,100g,712.73,12.81,2.51,72.27
+Vegetable cutlet,Snacks,-,100g,665.45,4.68,1.25,71.33
+Flattened rice cutlet (Chirwa cutlet/Chivda cutlet/Poha cutlet),Snacks,-,100g,701.71,7.39,1.76,73.89
+Peanut cutlet (Mungfali ke cutlet),Snacks,-,100g,698.77,5.68,2.63,74
+Fish cutlet (Machli ka cutlet),Snacks,-,100g,654.64,3.13,2.77,70.11
+Paneer potato cutlet (Paneer aloo cutlet),Snacks,-,100g,672.94,5.23,2.47,71.4
+Spinach chickpeas cutlet (Palak channa dal cutlet),Snacks,-,100g,688.03,4.93,1.44,73.6
+Cheese toast,Snacks,-,100g,785.37,5.49,1.98,84.11
+Vegetable burger,Snacks,-,100g,519.93,13.69,3.26,50.63
+Cheese pizza,Snacks,-,100g,249.5,30.62,5.79,12.43
+Vegetable seekh kebab,Snacks,-,100g,690.73,5.32,1.57,73.72
+Masala vada,Snacks,-,100g,826.02,4.06,1.69,89.15
+Peanut sago vada (Sabudana mungfali vada),Snacks,-,100g,749.89,7.14,1.01,79.82
+Vegeterian scotch egg,Snacks,-,100g,681.67,4.64,2.16,72.77
+Paneer shaslik/tikka,Snacks,-,100g,93.85,7.98,5.11,4.49
+Peanut brittle (Moongfali ki chikki),Snacks,-,100g,320.46,47.46,6.94,11.13
+Spring roll,Snacks,-,100g,623.87,8.56,1.81,64.63
+Dry mango chutney (Sookhe aam ki chutney),Other,-,100g,298.13,69.17,2.43,0.7
+Peanut chutney (Mungfali ki chutney),Other,-,100g,258.37,9.87,11.8,19.06
+Coconut chutney (Nariyal ki chutney),Other,-,100g,265.92,8.29,3.59,25
+Mint and coriander chutney (Pudinay aur dhaniye ki chutney),Other,-,100g,102.6,21.18,2.81,0.51
+Custard tart,Sweets,-,100g,225.6,28.66,3.72,10.73
+Lemon tart,Sweets,-,100g,303.35,30.68,6.12,17.45
+Jam tart,Sweets,-,100g,360.72,46.18,4.42,17.35
+Orange cream tart,Sweets,-,100g,197.16,27.43,2.58,8.72
+Pineapple tart,Sweets,-,100g,195.4,28.62,2.29,8.21
+Cheese and mushroom tart,Sweets,-,100g,246.1,21.43,5.51,15.28
+Cottage cheese pie,Sweets,-,100g,238.98,20.66,7.45,13.83
+Minced meat pie,Sweets,-,100g,221.55,18.11,7.38,13.04
+Apple cinnamon pie,Sweets,-,100g,258.73,33.68,3.35,12.21
+Lemon meringue pie,Sweets,-,100g,224.43,35.11,3.88,8.16
+Chocolate meringue pie,Sweets,-,100g,214.76,28.8,4.98,9.17
+Cream puffs,Sweets,-,100g,221.33,16,4.7,15.48
+Chocolate eclairs,Sweets,-,100g,239.42,26.22,4.24,13.5
+Cheese balls,Sweets,-,100g,681.28,4.81,2.21,72.57
+Minced meat patties,Snacks,-,100g,265.72,15.25,6.88,19.57
+Cheese patties,Snacks,-,100g,324.01,22.23,7.38,22.67
+Hot cheese souffle,Sweets,-,100g,177.1,5.41,9.18,13.23
+Hot potato souffle,Sweets,-,100g,125.64,8.56,5.51,7.64
+Hot fish souffle,Sweets,-,100g,142.92,3.69,11.23,9.24
+Hot spinach souffle,Sweets,-,100g,104.25,4.19,5.43,7.24
+Plain cream cake,Sweets,-,100g,353.94,47.18,6.18,16.17
+Apple cake (Seb ka cake),Sweets,-,100g,290.08,39.48,4.94,12.87
+Marble cake,Sweets,-,100g,354.11,46.88,6.3,16.27
+Chocolate cake,Sweets,-,100g,335.61,45.14,6.01,15.18
+Orange cake,Sweets,-,100g,357.61,48.28,6.1,16.21
+Fruit Loaf,Sweets,-,100g,324.19,46.49,5.36,13.31
+Banana cake (Kele ka cake),Sweets,-,100g,389.51,40,5.77,23.31
+Chocolate chiffon cake,Sweets,-,100g,311.71,37.87,5.76,15.8
+Christmas cake,Sweets,-,100g,372.95,48.29,5.49,16.88
+Strawberry and vanilla cake with butter icing,Sweets,-,100g,370.54,44.25,3.89,20.39
+EggleBeverages cake,Sweets,-,100g,318.08,46.14,8.12,11.75
+SwiBeverages roll,Snacks,-,100g,251.87,48.34,7.3,3.77
+Pineapple pastry,Sweets,-,100g,208.21,29.04,6.06,7.87
+Black forest pastry,Sweets,-,100g,233.55,34.48,6.09,8.46
+Coconut finger,Sweets,-,100g,274.86,42.56,7.09,8.86
+Pineapple cake,Sweets,-,100g,195.57,23.51,5.01,9.34
+Chocolate walnut cookies (Chocolate aur akhrot ke cookies),Snacks,-,100g,424.8,47.1,6.56,23.62
+Chocolate chip cookies,Snacks,-,100g,425.29,57.98,5.79,19.38
+Sweet plain biscuit,Snacks,-,100g,380.76,50.29,5.86,17.67
+Chocolate biscuit,Snacks,-,100g,379.76,51.56,5.88,17.09
+Coconut biscuit (Nariyal ke biscuit),Snacks,-,100g,434.98,42.9,5.78,27.16
+Sweet and salty biscuit (Meethay aur namkeen biscuit),Snacks,-,100g,407.96,45.09,6.15,22.39
+Peanut biscuit,Snacks,-,100g,401.05,46.72,8.45,20.41
+Pin wheel biscuit,Snacks,-,100g,404.6,54.56,5.4,18.66
+Saffron biscuit (Kesar biscuit),Snacks,-,100g,458.61,59.7,6.05,22.01
+Masala biscuit,Snacks,-,100g,393.64,45.18,6.06,20.75
+Ice box cookies,Snacks,-,100g,374.24,56.09,5.7,14.44
+Ginger bread man,Snacks,-,100g,365,60.26,6.61,11.01
+Danish cookies,Snacks,-,100g,475.33,58,5.33,24.92
+Short bread cookies,Snacks,-,100g,443.09,64.82,6.03,17.98
+Coffee biscuit,Snacks,-,100g,416.57,46.55,6.9,23
+Melting moments,Snacks,-,100g,437.91,55.84,5.71,21.78
+Ginger biscuit (Adarak ke biscuit),Snacks,-,100g,417.91,58.44,5.98,18.31
+Soyabean muthias,Snacks,-,100g,839.33,3.7,2.46,90.45
+Soyabean tikki,Snacks,-,100g,698.17,4.39,3.53,74.02
+Soyabean namak paras,Snacks,-,100g,838.46,4.65,2.65,89.83
+Peanut burfi (Moongfali ki burfi),Snacks,-,100g,550.99,48.14,9.31,36.84
+Spinach peanut namak paras (Palak moongfali namak paras),Snacks,-,100g,740.16,6.62,1.65,78.51
+Gram flour and semolina chilla/cheela/savory pancake (Besan suji chilla/cheela),Snacks,-,100g,758.89,7.63,2.08,80.04
+Rice moong dal cheela (Chawal aur moong dal ka cheela),Snacks,-,100g,798.26,11.13,2.74,82.44
+Split bengal gram sweet rice (Channa dal sweet rice),Snacks,-,100g,190.21,41.07,4.15,0.64
+Sweet poori (Meethi poori),Snacks,-,100g,782.75,14.26,2.12,79.63
+Wheat flour and moong dal burfi (Atta aur moong dal ki burfi),Snacks,-,100g,441.08,60,9.84,18.41
+Spinach burfi (Palak burfi),Snacks,-,100g,121.17,12.76,2.71,6.81
+Sweet split chickpea roti (Sweet channa dal roti/Puranpoli),Snacks,-,100g,366.59,62.66,9.51,7.93
+Sprouted moong daliya,Snacks,-,100g,111.56,14.77,2.81,4.71
+Sprouted moong poha,Snacks,-,100g,192.6,26.6,5.59,6.89
+Pearl millet ladoo (Bajra ladoo),Sweets,-,100g,319.66,50.98,9.61,8.06
+Paushtik ladoo,Sweets,-,100g,485.87,60.34,7.65,24.98
+Paushtik roti,Sweets,-,100g,149.26,26.59,7.17,1.51
+Semolina carrot vada (Suji gajar vada),Sweets,-,100g,699.53,6.52,1.56,74.07
+Dhokla,Sweets,-,100g,216.49,30.68,13.45,5.28
+Kashmiri tea (Kehwa),Beverages,-,100g,24.9,5.23,0.17,0.51
+Steeped hot coffee,Beverages,-,100g,15.91,3.01,0.39,0.33
+Hot chocolate,Beverages,-,100g,90.01,9.02,3.43,4.61
+Cold coffee (with cream),Beverages,-,100g,82.76,11.98,1.93,3.29
+Banana milkshake with ice cream (Kele ka milkshake ice cream ke saath),Beverages,-,100g,76.45,11.15,2.01,2.77
+Flavoured milkshake,Beverages,-,100g,66.78,8.65,2.06,2.83
+Jal jeera,Beverages,-,100g,30.24,6.7,0.44,0.26
+Gingo,Beverages,-,100g,48.02,12.42,0.14,0.06
+Mintade,Beverages,-,100g,40.32,10.59,0.03,0.02
+Canjee,Main course,-,100g,6.61,0.44,0.24,0.42
+Cauliflower canjee (Phoolgobhi ki canjee),Main course,-,100g,6.9,0.35,0.39,0.42
+Potato canjee (Aloo canjee),Main course,-,100g,16.26,2.69,0.44,0.39
+Vermicelli porridge (Semiya/Seviyan porridge),Main course,-,100g,78.4,10.56,2.5,2.98
+Semolina upma (Suji/Rava upma),Main course,-,100g,147.89,16.31,3.3,7.49
+Vermicelli upma (Semiya/Seviyan upma),Main course,-,100g,149.11,16.88,3.11,7.45
+Rice upma,Main course,-,100g,151.27,17.96,2.63,7.46
+Bread upma,Main course,-,100g,129.51,12.6,2.8,7.75
+Vegetable upma,Main course,-,100g,146.47,16.46,4.73,6.63
+Poha,Main course,-,100g,294.53,35.05,6.09,14.14
+Vegetable poha,Main course,-,100g,180.52,21.52,4.89,8.07
+Moong dal stuffed cheela/chilla (Moong dal ka cheela/chilla),Main course,-,100g,154.89,19.42,6.97,5.11
+Paneer stuffed cheela/chilla,Main course,-,100g,205.19,19.16,11.44,8.89
+Indian style egg bhujia (Anda bhujia (Indian style)),Main course,-,100g,102.83,3.76,6.1,7.02
+French omelette/omlet,Main course,-,100g,211.04,0.41,10.03,18.86
+Puffy omelette/omlet,Main course,-,100g,188.15,0.08,8.82,16.84
+Orange omelette/omlet,Main course,-,100g,194.66,1.68,8.93,16.84
+Cheese and mushroom omelette/omlet,Main course,-,100g,205.63,1.68,9.69,17.82
+Spanish omelette/omlet,Main course,-,100g,157.45,5.1,8.25,11.44
+Mixed stock,Main course,-,100g,25.19,0.33,2.06,1.71
+Meat stock,Main course,-,100g,24.48,0,2.1,1.78
+White stock,Main course,-,100g,6.99,0.4,0.07,0.56
+Meat consomme (with mutton),Main course,-,100g,29.76,0.51,14.86,13.68
+Consomme au julienne,Main course,-,100g,27.76,1.49,12.49,10.66
+Consomme au vermicelli,Main course,-,100g,29.94,1.3,15.23,12.98
+Green pea soup (Matar ka soup),Other,-,100g,39.81,3.63,11.06,12.9
+Spinach soup (Palak ka soup),Other,-,100g,32.59,3.03,10.54,14.26
+Mixed vegetable soup,Other,-,100g,35.71,2.95,8.22,11.66
+Cheese soup,Other,-,100g,41.13,1.87,12.39,17.07
+Mulligatawny soup,Other,-,100g,54.42,8.24,11.26,13.28
+Cream of carrot soup,Other,-,100g,59.77,5.69,8.27,12.35
+Cream of broccoli soup,Other,-,100g,56.14,3.72,8.97,12.75
+Cream of potato soup,Other,-,100g,60.2,6.14,8.1,12.05
+Almond soup (Badam ka soup),Other,-,100g,78.65,3.68,10.13,13.8
+Cold cucumber cream soup,Other,-,100g,11.88,1.76,0.34,0.34
+Cold tomato soup,Other,-,100g,16.9,0.59,0.11,1.56
+Chicken stew,Main course,-,100g,127.55,4.44,7.19,8.91
+Veg paneer stew,Main course,-,100g,145.55,10.22,6.98,8.41
+Onion-green chilli parantha/paratha (Pyaaz aur hari mirch ka parantha/paratha),Main course,-,100g,191.27,26.37,4.37,7.27
+Methi parantha/paratha,Main course,-,100g,148.36,22.19,4.27,4.34
+Bathua poori,Main course,-,100g,598.79,13.85,2.35,59.14
+Gram flour poori (Besan poori),Main course,-,100g,697.66,10.93,2.59,71.51
+Beetroot poori (Chukandar ki poori),Main course,-,100g,527.66,12.29,1.91,52.18
+Peas poori (Matar ki poori),Main course,-,100g,592.83,14.92,3.04,57.69
+Peas kachori (Matar kachori),Main course,-,100g,584.68,13.25,3.21,57.51
+Pizza,Main course,-,100g,146.77,9.94,6.85,8.72
+Bacon and mushroom pancake,Main course,-,100g,157.67,8.47,6.82,10.6
+Cheese and tomato pancake,Main course,-,100g,147.39,10.66,5.15,9.28
+Minced meat pancake (with chicken),Main course,-,100g,116.04,8.18,12.01,10.48
+Eggplant/Brinjal rice (Vangi bhat),Main course,-,100g,184.8,31.74,5.28,3.67
+Kashmiri 'tahar',Main course,-,100g,98.21,19.11,1.95,1.37
+Cumin pulao (Jeera/Zeera pulao),Main course,-,100g,135.24,23.61,2.47,3.2
+Peas pulao (Matar pulao),Main course,-,100g,108.87,18.42,3.89,1.9
+Split bengal gram dal and vegetable pulao (Channa dal and vegetable pulao),Main course,-,100g,116.53,19.72,3.6,2.3
+Black channa pulao/ Bengal gram pulao (Kale chane ka pulao),Main course,-,100g,125.51,21.55,3.44,2.58
+Mutton pulao,Main course,-,100g,130.77,11.26,6.52,10.78
+Chicken pulao,Main course,-,100g,108.24,11.17,6.07,8.48
+Mexican rice,Main course,-,100g,120.57,14.21,4.62,4.88
+Plain khitchdi (Plain khichri/khichdi),Main course,-,100g,57.03,10.04,1.72,1.01
+Instant idli (with semolina),Main course,-,100g,247.29,43.4,9.16,3.61
+Plain dosa,Main course,-,100g,380.91,64.08,10.34,8.43
+Masala dosa mixed vegetable fillings,Main course,-,100g,144.53,23.02,4.84,3.26
+Masala dosa paneer fillings,Main course,-,100g,243.12,29.76,10.31,8.84
+Uttapam,Main course,-,100g,255.95,36.28,6.18,9.03
+Appam,Main course,-,100g,267.7,13.28,3.12,22.63
+Beans and macaroni,Main course,-,100g,136.08,14.24,4.58,7.01
+Spaghetti bolognese,Main course,-,100g,97.43,10.04,9.35,9.51
+Meat and macaroni caBeverageserole,Main course,-,100g,161.55,16.12,9.15,10.17
+Spaghetti with meat balls and tomato sauce,Main course,-,100g,158.13,10.46,5.61,10.64
+Spaghetti with paneer balls and tomato sauce,Main course,-,100g,158.54,12.72,3.95,10.44
+Lasagne with meat sauce,Main course,-,100g,63.38,5.38,2.9,3.43
+Lasagne with vegetables,Main course,-,100g,49.23,5.9,1.71,2.16
+Home made egg noodles,Main course,-,100g,240.84,42.92,6.55,4.37
+Sour lentils (Khatti dal),Main course,-,100g,34.79,6.04,2.22,0.12
+Urad special dehusked,Main course,-,100g,69.43,8.86,3.14,2.17
+Arhar with spinach (Arhar dal aur palak),Main course,-,100g,52.84,4.77,2.05,2.76
+Moong dal with vadi,Main course,-,100g,24.08,1,0.4,2.05
+Rasam with tamarind (Puli rasam/ Chintapandu rasam/ Charu/Saaru),Main course,-,100g,26.74,3.37,1.13,0.88
+Rasam with lemon (Nimmakaya rasam/Nimmakaya charu/Elumichai rasam/Nimbe hannina saaru),Main course,-,100g,24.41,2.85,1.11,0.87
+Green gram whole with baghar (Sabut moong dal with tadka),Main course,-,100g,63.43,6.8,3.23,2.48
+Urad sabut special,Main course,-,100g,79.39,5.03,2.33,5.46
+Kabuli channa curry,Main course,-,100g,68.57,7.63,2.92,3.06
+Besan gatte curry,Main course,-,100g,189.38,16.26,7.75,10.72
+Dry masala chops,Main course,-,100g,135.07,3.3,9.08,9.54
+Mutton korma,Main course,-,100g,115.64,2.53,7.09,8.54
+Shahi keema kofta curry,Main course,-,100g,418.13,1.73,4.14,43.83
+Minced meat ball curry,Main course,-,100g,109.79,2.86,6.82,7.85
+Boti kebab,Main course,-,100g,132.86,3.06,9.22,9.27
+Mutton seekh kebab,Main course,-,100g,133.94,3.11,11.25,8.43
+Indian lamb and egg curry (Nargisi kofta),Main course,-,100g,335.75,2.07,3.84,34.7
+Soya chunks sweet and sour (Nutrinugget sweet and sour),Main course,-,100g,500.94,3.27,2.85,55.99
+Soya chunks korma (Nutrinugget korma),Main course,-,100g,131.43,7.67,3.86,9.5
+Mushroom matar,Main course,-,100g,70.77,5.33,2.79,4.11
+Soya chunks and peas (Nutrinugget matar),Main course,-,100g,82.62,5.82,3.03,5.11
+Vegetable yakhni,Main course,-,100g,406.06,1.94,1.18,43.8
+Spinach mushroom (Palak mushroom),Main course,-,100g,47.63,2.95,1.94,2.96
+Vegetarian nargisi kofta curry,Main course,-,100g,332.15,6.58,2.29,32.94
+Roast chicken,Main course,-,100g,199.9,0.1,20.49,13.06
+Shahi chicken masala,Main course,-,100g,163.7,4.07,9.82,12.02
+Tomato chicken,Main course,-,100g,111.68,2.13,10.57,6.71
+Creamy chicken,Main course,-,100g,152.87,3.13,13.52,9.57
+Broccoli chicken ala king,Main course,-,100g,119.56,5.34,7.97,7.57
+Ginger chicken,Main course,-,100g,129.17,5.6,8.24,8.24
+Chicken sweet and sour,Main course,-,100g,445.09,2.67,6.92,47.59
+Chicken korma,Main course,-,100g,147.96,5.43,9.83,9.67
+Bengal fish curry (Bengali machli curry),Main course,-,100g,109.43,4.42,7.26,7.03
+Fish finger,Main course,-,100g,542.9,4.47,5.66,55.82
+Fish in coconut milk (Nariyal ke doodh ke saath machli),Main course,-,100g,86.21,2.73,8.66,4.43
+Prawn curry (with coconut) (Jhinga curry),Main course,-,100g,109.55,3.1,8.54,6.93
+Baked stuffed fish,Main course,-,100g,121.96,2.12,16.14,5.43
+Fish pie,Main course,-,100g,120.9,7.74,9.25,5.77
+Crispy baked fish,Main course,-,100g,138.4,9.59,10.95,6.41
+Fish souffle,Main course,-,100g,139.71,5.14,10.51,8.55
+Potato curry (Aloo ki sabzi),Main course,-,100g,89.56,10.42,1.52,4.47
+Egg curry (Anda curry),Main course,-,100g,117.52,4.03,5.38,8.81
+Vegetable curry with coconut,Main course,-,100g,83.07,7.19,2.77,4.66
+Curd with potatoes (Dahi aloo),Main course,-,100g,59.9,7.15,1.56,2.72
+Potato kofta curry (Aloo kofta curry),Main course,-,100g,455.4,2.78,0.56,49.08
+Yam kofta curry (Zimikand/Suran kofta curry),Main course,-,100g,322.88,3.75,0.71,33.84
+Jackfruit kofta curry (Kathal ka kofta curry),Main course,-,100g,321.08,3.17,0.8,33.83
+Spinach and potato (Palak aloo),Main course,-,100g,57.17,5.91,1.63,2.82
+Mooli bhujia,Main course,-,100g,91.2,4.74,1.69,7.25
+Bathua bhujia,Main course,-,100g,90.9,3.63,2.26,7.29
+Cabbage rolls (dry) ((Pattagobhi rolls) (dry)),Main course,-,100g,142.48,6.09,8.21,9.36
+Cabbage rolls (curry) ((Pattagobhi rolls)(curry)),Main course,-,100g,124.63,7.03,5.76,8.17
+Dry arbi (Sookhi arbi),Main course,-,100g,134.95,11.11,2.12,8.97
+Masala arbi,Main course,-,100g,185.38,16.16,3.01,11.9
+Peas brinjal bhartha (Matar baingan bhartha),Main course,-,100g,84.55,5.02,2.05,6.05
+Okra/Lady's fingers fry (Bhindi sabzi/sabji/subji),Main course,-,100g,110.81,4.5,1.83,9.27
+Crispy okra/Crispy lady's fingers (Karare bhindi),Main course,-,100g,657.76,4.35,1.91,70.4
+Beans foogath,Main course,-,100g,105.06,3.26,2.03,9.22
+Stuffed bittergourd (wet) (Bharwa karele),Main course,-,100g,162.36,4.68,1.36,15.24
+Jackfruit/Kathal (dry),Main course,-,100g,488.97,4.56,0.93,51.78
+Yam fried (Zimikand/Suran fried),Main course,-,100g,491.76,5.47,0.79,51.79
+"Cauliflower, pea and potato bhujia (Phoolgobhi, matar aur aloo bhujia)",Main course,-,100g,95.67,8.23,2.75,5.54
+Vegetable jalfrezi,Main course,-,100g,68.48,5.43,1.4,4.38
+Vegetables stir fry,Main course,-,100g,30.78,3.19,1.04,1.47
+Broccoli delight,Main course,-,100g,40.7,2.34,2.49,2.48
+Dhansak (vegetarian),Main course,-,100g,82.8,7.28,3.32,4.18
+Cauliflower basket,Main course,-,100g,90.95,3.97,5.21,5.88
+Stuffed bottle gourd (Stuffed ghiya/lauki),Main course,-,100g,93.19,4.36,5.84,5.8
+Ducheese potato,Main course,-,100g,140.54,10.94,3.6,9.01
+Roast potatoes,Main course,-,100g,87.32,14.52,1.53,2.35
+Stuffed baked potatoes,Main course,-,100g,100.2,11.03,3.82,4.39
+Potato nests,Main course,-,100g,111.62,11.05,5.71,4.77
+Parsley potato,Main course,-,100g,119.51,13.81,1.49,6.28
+Creamed spinach and mushroom,Main course,-,100g,419.62,3.17,2.28,44.14
+FricaBeveragesee of Mushroom,Main course,-,100g,106.66,8.13,3.65,6.63
+Cauliflower au gratin,Main course,-,100g,145.9,9.13,4.45,10.2
+Vegetable and cheese pie,Main course,-,100g,126.88,8.76,4.03,8.28
+Spinach souffle,Main course,-,100g,150.18,6.27,7.36,10.52
+Beetroot and egg salad (Chukandar aur ande ka salad),Main course,-,100g,84.92,3.4,3.36,6.45
+Sour cream potato salad,Main course,-,100g,121.9,9.05,2.89,8.13
+ToBeveragesed green salad,Main course,-,100g,49.88,3.82,1.33,3.24
+Spring basket salad,Main course,-,100g,160.46,11.61,3.36,11.3
+Cucumber and yogurt salad (Kheere aur dahi ka salad),Main course,-,100g,36.13,4.72,2.09,0.93
+Chicken and tomato towers,Main course,-,100g,100.55,2.36,6.9,6.99
+Jellied sunshine fruit salad,Main course,-,100g,48.86,4.21,5.85,0.85
+Tomato aspic,Main course,-,100g,50.37,5.02,6.87,0.26
+Frozen frosty fruit salad (Phalon ka salaad),Main course,-,100g,103.51,15.61,1.68,4.17
+French dreBeveragesing,Main course,-,100g,733.77,3.68,0.32,79.65
+Mayonnaise without eggs,Main course,-,100g,329.05,3.98,2.13,33.84
+Curd dreBeveragesing,Main course,-,100g,78.8,8.03,5.59,2.9
+Carrot raita (Gajar ka raita),Other,-,100g,64.78,7.19,4.14,2.19
+Pumpkin raita (Kaddu ka raita),Other,-,100g,55.6,6.02,3.74,1.88
+Mint and peanut raita (Pudinay aur moongfali ka raita),Other,-,100g,112.05,7.31,7.05,6.19
+Spinach raita (Palak ka raita),Other,-,100g,52.75,5.06,3.95,1.86
+Bathua raita,Other,-,100g,54.4,5.31,4.13,1.76
+Pineapple raita (Ananas ka raita),Other,-,100g,67.74,8.62,3.9,2.02
+Banana raita (Kele ka raita),Other,-,100g,89.03,13.51,4.13,2.07
+Mango raita (Aam ka raita),Other,-,100g,67.37,8.23,3.9,2.14
+Guava raita (Amarood ka raita),Other,-,100g,64.36,7.27,4.19,2.07
+Grapes raita (Angoor ka raita),Other,-,100g,72.59,9.66,3.98,2.07
+Bottle gourd kheer (Ghiya/Lauki kheer),Sweets,-,100g,84.07,10,2.7,3.86
+Pumpkin kheer (Kaddu ki kheer),Sweets,-,100g,86.35,10.44,2.76,3.86
+Apple kheer (Seb ki kheer),Sweets,-,100g,81.3,11.34,2.14,3.18
+Caramel custard (baked),Sweets,-,100g,122.7,14.95,5.11,5.01
+Vanilla ice cream without egg,Sweets,-,100g,228.67,14.21,2.69,18.15
+Vanilla ice cream with egg,Sweets,-,100g,214.85,11.71,4.16,17.02
+Strawberry ice cream,Sweets,-,100g,215.61,12.26,4.15,16.96
+Chocochip ice cream,Sweets,-,100g,241.45,16.75,4.23,17.93
+Choconut ice cream,Sweets,-,100g,273.96,23.13,5.04,18.49
+Pear chocholate sunday,Sweets,-,100g,183.49,15.02,2.08,13.11
+Chocolate sauce,Sweets,-,100g,263.2,43.21,1.91,10.39
+Coffee ice cream,Sweets,-,100g,150.62,14.09,3.15,9.43
+Coffee pear alaska,Sweets,-,100g,203.99,19.36,2.88,13.22
+Crunchy butterscotch,Sweets,-,100g,277.32,19.92,3.11,20.99
+Peach melba ice cream,Sweets,-,100g,200.85,16.31,2.06,14.51
+Vanilla ice cream with apples in hot cherry sauce,Sweets,-,100g,196.32,22.75,1.73,11.45
+Grape and orange whip,Sweets,-,100g,57.39,6.72,1.41,2.62
+Honey banana cream,Sweets,-,100g,125.49,13.64,2.78,6.68
+Raspberry bavarian cream,Sweets,-,100g,150.1,17.82,3.34,7.88
+Fruit delight,Sweets,-,100g,107.09,9.11,2.09,7.09
+Creamy chocolate mouBeveragese,Sweets,-,100g,230.52,9.53,6.85,18.16
+Cold lemon souffle,Sweets,-,100g,169.87,15.62,5.89,9.78
+Cold orange souffle,Sweets,-,100g,173.19,16.27,5.94,9.82
+Cold pineapple souffle,Sweets,-,100g,181.22,16.85,6.23,10.39
+Cold vanilla souffle,Sweets,-,100g,179.54,16.29,6.22,10.32
+Cold chocolate souffle,Sweets,-,100g,187.53,17.22,6.37,10.86
+Stewed fruit (with pear),Sweets,-,100g,74.32,18.22,0.25,0.32
+Apricot fool,Sweets,-,100g,240.79,33.64,1.54,11.35
+Pavlova,Sweets,-,100g,200.6,21.84,1.84,12.29
+Apple crumb pudding,Sweets,-,100g,220.85,35.17,1.54,8.87
+Steamed cake with chocolate sauce,Sweets,-,100g,301.91,29.06,4.49,19.01
+Hot lemon souffle,Sweets,-,100g,155.25,16.31,5.29,7.93
+Gulab jamun with milk powder,Sweets,-,100g,471.15,28.24,0.85,40.15
+Chum chum,Sweets,-,100g,130.05,28.27,1.52,1.92
+Dil bahar,Sweets,-,100g,130.05,28.27,1.52,1.92
+Rasbhari,Sweets,-,100g,130.05,28.27,1.52,1.92
+Rajbogh,Sweets,-,100g,133.7,28.16,1.71,2.28
+Rasgulla,Sweets,-,100g,118.64,25.79,1.38,1.75
+Rasmalai,Sweets,-,100g,135.55,29.17,1.61,2.11
+Khoa coconut burfi,Sweets,-,100g,411.45,36.55,9.98,26.01
+Danedar burfi,Sweets,-,100g,102.68,12.33,3.24,4.72
+Semolina burfi (Suji/Rava burfi),Sweets,-,100g,348.67,47.1,3.47,16.86
+Pumpkin coconut burfi (Kaddu aur nariyal ki burfi),Sweets,-,100g,186.18,17.02,1.75,12.66
+Khoa ladoo,Sweets,-,100g,396.02,34.43,12.21,24.09
+Wheat and gram flour ladoo (Atta besan ladoo),Sweets,-,100g,501.7,50.5,9.38,29.86
+Semolina ladoo with nuts (Suji/Rava ladoo with nuts),Sweets,-,100g,441.84,48.02,5.44,25.45
+Sesame chickpeas brittle (Til aur channe ki chikki),Sweets,-,100g,282.74,50.49,8.5,4.66
+Murmura chikki,Sweets,-,100g,253.82,59.59,2.12,0.32
+Masala onion pakora/pakoda (Pyaaz ke pakode),Snacks,-,100g,551.64,6.48,2.05,57.61
+Masala green chilli pakora/pakoda (Hari mirch kay pakode),Snacks,-,100g,668.76,5.55,2.22,71.01
+Chicken pakora/pakoda,Snacks,-,100g,590.09,4.55,6.03,60.98
+Fish pakora/pakoda,Snacks,-,100g,577.03,4.55,5.97,59.52
+Paneer cutlet,Snacks,-,100g,672.2,7.62,4.59,69.38
+Sago cutlet/vadas (Sabudana cutlet/vadas),Snacks,-,100g,558.76,11.23,0.56,56.97
+Poshtik cutlet,Snacks,-,100g,496.45,7.39,2,50.94
+Egg cutlet (Anda cutlet),Snacks,-,100g,575.02,5.77,2.45,60.25
+Minced meat cutlet,Snacks,-,100g,531.86,5.61,5.1,54.47
+Vegetable samosa,Snacks,-,100g,443.11,13.22,2.21,42.22
+Plain urad dal vada (Uzunne vada/Minapa garelu/Ulundu vadai/Medu vada),Snacks,-,100g,745.5,9.7,4.39,76.32
+Masala urad dal vada,Snacks,-,100g,703.78,9.93,4.32,71.62
+Khaman (dhokla),Snacks,-,100g,54.73,5.36,1.92,2.8
+Instant dhokla,Snacks,-,100g,207.11,24.11,7.66,9.37
+Tomato ginger chutney (Tamatar adarak ki chutney),Snacks,-,100g,44.66,9.11,1.05,0.32
+Mint tomato chutney (Pudinay aur tamatar ki chutney),Snacks,-,100g,43.65,8.22,1.53,0.36
+Coriander chutney (Hare dhaniye ki chutney),Snacks,-,100g,42.86,8.16,1.38,0.37
+Gooseberry chutney (Amla chutney),Snacks,-,100g,43.02,8.83,1.44,0.62
+Walnut chutney (Akhrot ki chutney),Snacks,-,100g,370.43,8.91,9.44,33.46
+Saunth/Sonth chutney with ginger,Snacks,-,100g,84.22,20.62,0.28,0.11
+Gun powder chutney,Snacks,-,100g,312.34,47.65,21.55,2.67
+DeBeveragesicated coconut chutney (Sookhe kase nariyal ki chutney),Snacks,-,100g,346.36,36.72,12.88,15.88
+Curd mint dip,Snacks,-,100g,76.13,9.11,4.82,2.44
+Curd vegetable dip,Snacks,-,100g,56.21,6.04,3.88,1.94
+Mayonnaise vegetable dip,Snacks,-,100g,241.27,4.8,3.01,23.44
+Tomato and cucumber sandwich (Tamatar aur kheere ka sandwich),Snacks,-,100g,150.68,20.51,4.03,6.31
+Tomato sandwich (grilled),Snacks,-,100g,189.92,21.29,6.26,9.39
+French sandwich (toasted),Snacks,-,100g,186.75,14.82,6.82,11.51
+Peanut butter cucumber sandwich,Snacks,-,100g,243.33,29.76,9.04,10.56
+Mint and peanut sandwich,Snacks,-,100g,273.59,31.83,7.18,13.88
+Spicy chutney sandwich,Snacks,-,100g,249.58,34.03,8.74,9.58
+Chicken walnut sandwich (Chicken aur akhrot ke sandwich),Snacks,-,100g,285.78,22.62,12.58,16.77
+Rolled sandwich,Snacks,-,100g,293.07,34.69,6.45,15.29
+Ribbon sandwich,Snacks,-,100g,239.26,24.76,6.26,13.37
+Checker board sandwich,Snacks,-,100g,348.37,25.94,7.37,24.65
+Submarine sandwich,Snacks,-,100g,216.92,13.6,6.09,15.32
+Cheese open sandwich,Snacks,-,100g,274.07,28.42,9.84,14.24
+Sunset and sunrise open sandwich,Snacks,-,100g,241.31,18.89,8.58,15.14
+Danish luncheon sandwich,Snacks,-,100g,193.82,17.77,9.03,10.1
+Chicken and corn open sandwich,Snacks,-,100g,188.16,19.21,8.63,8.83
+Chocolate sponge cake,Snacks,-,100g,239.86,39.54,9.13,5.51
+Chocolate swiBeverages roll,Snacks,-,100g,306.08,26.97,6.01,19.76
+Lemon curd filling,Snacks,-,100g,225.62,26.41,3.43,12.58
+Jam filling,Snacks,-,100g,184.62,46.15,0,0
+Chocolate pastry,Sweets,-,100g,243.37,32.24,7.05,10.12
+ABeveragesorted pastry,Sweets,-,100g,230.74,31.99,6.78,8.91
+Orange gateau,Sweets,-,100g,178.05,27.01,4.78,6.02
+Black forest gateau,Sweets,-,100g,217.82,30.57,5.94,8.58
+Lemon cake,Sweets,-,100g,373.85,43.1,5.29,20.63
+Dundee cake,Sweets,-,100g,396.62,41.4,7.78,22.7
+Victorian sandwich cake,Sweets,-,100g,373.09,44.74,5.18,19.83
+Chocolate eggleBeverages cake,Sweets,-,100g,312.01,43.45,6.66,13.19
+Orange eggleBeverages cake,Sweets,-,100g,355.62,52.65,7.16,13.82
+Chocolate glace icing,Sweets,-,100g,436.29,62.43,3.22,20.8
+Butter icing,Sweets,-,100g,500.72,71.64,0.19,25.37
+Chocolate butter icing,Sweets,-,100g,469.59,61.72,3.21,24.77
+Almond biscuit (Badam ke biscuit),Snacks,-,100g,407.74,52.14,6.25,19.7
+Orange biscuit,Snacks,-,100g,354.78,62.11,3.63,11.01
+Gingerman biscuit,Snacks,-,100g,357.43,55.24,6.26,12.73
+Coffee drops,Snacks,-,100g,443.07,43.06,7.57,27.16
+Christmas biscuit,Snacks,-,100g,406.07,60.97,5.67,15.88
+Christmas wreath biscuit,Snacks,-,100g,386.05,58.07,5.43,15.01
+Christmas bell biscuit,Snacks,-,100g,404.85,60.79,5.66,15.84
+Christmas star biscuit,Snacks,-,100g,392.03,74.54,3.54,10.04
+Christmas tree biscuit,Snacks,-,100g,385.63,58.41,5.43,15
+Chocolate cream shells,Snacks,-,100g,427.17,59.26,5.1,19.34
+Jelly biscuit,Snacks,-,100g,404.61,55.24,4.23,19.33
+Cherry and walnut cookies,Snacks,-,100g,422.6,59.35,5.63,18.75
+Cheese straws,Snacks,-,100g,382,30.61,9.83,24.28
+Butterfly biscuit,Snacks,-,100g,341.45,25.33,9.98,22.11
+Flan pastry,Sweets,-,100g,445.8,47.84,6.72,25.04
+Fruit flan,Sweets,-,100g,261.35,34.71,3.3,12.48
+Orange cream flan,Sweets,-,100g,280.28,36.16,4.73,13.59
+Fruit puree tart,Sweets,-,100g,286.5,30.42,3.35,16.83
+Apple banana pie,Sweets,-,100g,243.99,32.12,3.13,11.39
+Lemon chiffon pie,Sweets,-,100g,259.31,27.63,4.88,14.52
+Orange chiffon pie,Sweets,-,100g,207.57,23.14,3.89,11.16
+Cream buns,Sweets,-,100g,215.74,14.16,4.45,15.81
+Savoury puffs,Sweets,-,100g,190.79,10.8,9.51,15.24
+Choux swans,Sweets,-,100g,216.34,14.92,4.35,15.6
+Potato aigrettes,Sweets,-,100g,530.03,8.01,2.35,54.24
+Cream horns,Sweets,-,100g,408.23,23.12,3.42,33.55
+Savoury cheese horns,Sweets,-,100g,295.15,21.38,5.66,20.71
+Paneer patties,Snacks,-,100g,338.58,22.79,7.6,23.96
+Vegetable patties,Snacks,-,100g,261.92,20.98,4.01,17.74
+Pearl millet infant food (Bajra shishu aahaar),Snacks,-,100g,362.44,62.1,11.98,6.62
+Sajina,Snacks,-,100g,345.26,66.87,10.81,3.03
+Cereal mix,Snacks,-,100g,120.81,21.84,3.32,2.02
+Pulse mix,Snacks,-,100g,83.29,16,3.16,0.54
+Shishu ahar,Snacks,-,100g,93.37,17.42,2.61,1.43
+Cereal pulse mix with amylase rice flour,Other,-,100g,151.57,27.8,4.27,2.74
+Banana groundnut paste/puree,Other,-,100g,213.19,36.15,4.27,5.45
+Rice dal porridge (Chawal dal ki khichdi/khichri),Main course,-,100g,383.33,65.04,10.8,8.33
+Lentils and semolina porridge (Dal suji porridge/daliya),Main course,-,100g,117.29,23.19,3.26,1.06
+Spinach khichri (Palak khichri/khichdi),Main course,-,100g,102.18,17.35,3.43,1.91
+Vegetable mix,Main course,-,100g,174.21,36.02,4.7,0.94
+Lentils and wheat porridge (Dal wheat porridge/daliya ),Main course,-,100g,52.54,8.36,2.71,0.94
+Maize porridge,Main course,-,100g,89.57,15.64,2.14,1.89
+Spinach peanut burfi (Palak aur mungfali ki burfi),Main course,-,100g,105.37,13.59,3.36,4.39
+Split bengal gram burfi/fudge (Channa dal burfi),Main course,-,100g,287.36,54.63,4.65,7.09
+Chickpea flour cookies (Sweet besan rounds/cookies),Main course,-,100g,207.01,39.64,4.29,3.42
+Pearl millet mathri (Bajra mathri),Main course,-,100g,785.08,7.42,1.82,83.12
+Sesame biscuit (Til ke biscuit),Main course,-,100g,424.03,53.65,8.27,19.34
+Fermented bengal gram vada (Khameerikrit/Ufna hua channa dal ka vada),Main course,-,100g,657.57,8.68,4.05,67.19
+Poshtik namak paras,Main course,-,100g,613.39,19.52,6.49,56.58
+Soya chikki,Main course,-,100g,423.7,62.89,7.18,15.51
+Besan bathua chilla/cheela,Main course,-,100g,373.82,40.65,11.48,18.57
+Wheat flour and nuts ladoos (Atta nuts ladoos),Main course,-,100g,391.9,44.31,9.46,19.19
+Gram flour and semolina dhokla (Besan suji dhokla),Main course,-,100g,198.91,25.92,8.52,7.1
+Atta dal burfi,Main course,-,100g,298.8,40.64,6.66,12.47
+Soya roti,Main course,-,100g,283.96,40.03,9.18,9.23
+Poshtik khichdi/khichri,Main course,-,100g,93.37,15.64,3.04,1.88
+Namkeen daliya,Main course,-,100g,295.11,49.32,8.29,7.99
+Sprouts upma,Main course,-,100g,316.25,44.96,9.5,10.44
+Semolina idli (Suji/Rava idli),Main course,-,100g,206.39,33.67,9.34,3.47
+Poshtik chilla/cheela,Main course,-,100g,159.53,27.47,4.85,3.04
+Stuffed bittergourd (dry) (Bharwa karela),Main course,-,100g,217.65,2.49,1.29,22.38
+Cauliflower potato canjee,Main course,-,100g,16.79,2.63,0.57,0.39
+Creamed spinach,Main course,-,100g,96.91,4.44,5.18,6.39
+Mango milkshake with ice cream (Aam milkshake ice cream ke saath),Beverages,-,100g,68.35,9.18,1.93,2.8
+Pineapple milkshake with ice cream (Ananas milkshake ice cream ke saath),Beverages,-,100g,68.49,9.33,1.93,2.75
+Orange milkshake with ice cream (Narangi milkshake ice cream ke saath),Beverages,-,100g,67.82,9.15,1.95,2.75
+Woodapple juice (Bel ka sharbat),Beverages,-,100g,34.18,6.51,0.63,0.7
+Sattu drink,Beverages,-,100g,23.38,5.16,0.56,0.14
+Apple and honey sorbet (Seb aur shehad ka sharbat),Beverages,-,100g,121.3,30.74,0.15,0.29
+Thandai,Beverages,-,100g,101.18,9.13,3.59,5.89
+Cucumber sharbat (Kheere ka sharbat),Beverages,-,100g,27.28,6.64,0.26,0.06
+Apple oats chia seed smoothie,Beverages,-,100g,85.64,13.07,3.49,2.48
+Nannari sharbat,Beverages,-,100g,88.79,23.62,0.01,0.01
+Semolina milk drink (Thari kanji),Beverages,-,100g,44.16,6.93,0.98,1.36
+Saffron milk (Kesariya doodh),Beverages,-,100g,102.18,12.64,3.17,4.57
+Black rice kheer (Chak-hao kheer),Sweets,-,100g,147.94,22.93,4.37,4.91
+Coconut kheer (Nariyal ki kheer),Sweets,-,100g,162.61,14.42,3.4,10.55
+Apple sago payasam (Seb aur sabudana ki kheer),Sweets,-,100g,136.5,14.4,3.13,7.66
+Kesari bath,Sweets,-,100g,244.57,31.38,2.4,12.59
+Putharekulu,Sweets,-,100g,318.3,59.61,3.66,7.55
+Mango malpua,Sweets,-,100g,334.64,12.84,1.65,30.67
+Mango vanilla custard,Sweets,-,100g,147.63,18.41,3.43,7.04
+Kiwi granola pudding,Sweets,-,100g,280.99,32.33,5.6,15.36
+Oats burfi,Sweets,-,100g,425.19,62.47,8.89,17.27
+Lotus seed halwa (Kamal gattay ka halwa),Sweets,-,100g,370.55,39.56,7.79,20.69
+Amaranth ladoo (Rajgira ladoo),Sweets,-,100g,454.15,51.33,10.12,22.7
+Chhena poda,Sweets,-,100g,344.57,33.64,13.68,17.94
+Sweet couscous deBeveragesert,Sweets,-,100g,196.2,29.69,3.81,7.69
+Sweetened yogurt (Shrikhand),Sweets,-,100g,107.18,16.02,5.27,2.89
+Thickened sweetened milk (Rabri),Sweets,-,100g,102.79,10.55,3.52,5.35
+Gram flour halwa (Besan halwa),Sweets,-,100g,276.79,25.78,5.88,17.3
+Prawn sandwich,Snacks,-,100g,169.65,11.89,10.36,9.27
+WatercreBeverages sandwich,Snacks,-,100g,229.42,28.03,5.17,11.47
+Fish sandwich,Snacks,-,100g,150.2,10.09,4.72,10.37
+Kidney bean sandwich with cottage cheese,Snacks,-,100g,176.64,18.86,9.85,6.84
+Finger millet biscuit (Ragi biscuit),Snacks,-,100g,458.56,52.69,4.03,25.79
+Buttermilk biscuit,Snacks,-,100g,322.54,34.93,5.76,17.5
+Lemon cookies,Snacks,-,100g,394.48,42.19,5.63,23.02
+Sweet potato biscuit (Shakarkand ke biscuit),Snacks,-,100g,296.4,38.13,5.14,13.31
+Raspberry shortbread cookies,Snacks,-,100g,441.12,61.25,3,21.25
+Pumpkin cookies,Snacks,-,100g,218.4,44.69,2.51,3.93
+Greenpea cookies,Snacks,-,100g,159.42,23.07,6.53,4.24
+Sunflower cookies,Snacks,-,100g,520.62,40.06,9.49,36.28
+Cardamom cookies (Elaichi cookies),Snacks,-,100g,400.49,53.99,5.1,19.12
+Hazelnut cookies,Snacks,-,100g,493.32,39.44,6.25,34.97
+Milk cookies,Snacks,-,100g,459.43,48.43,10.49,24.96
+Cranberry cookies,Snacks,-,100g,272.48,36.39,3.92,12.66
+Olive biscuit,Snacks,-,100g,438.29,55.01,3.2,23.75
+Tutti fruitti biscuit,Snacks,-,100g,420.78,53.12,5.21,17.9
+Peach blueberry preserves,Other,-,100g,177.38,45.76,0.53,0.2
+Pear preserves (Naashpati ka murabba),Other,-,100g,101.24,25.67,0.25,0.19
+Starfruit preserves,Other,-,100g,128.93,33.62,0.24,0.12
+Gooseberry pickle (Amla ka achaar),Other,-,100g,278.58,7.61,1.55,27.61
+Lotus stem pickle (Kamal kakdi ka achar),Other,-,100g,102.69,20.07,1.44,1.6
+Date pickle (Khajoor ka achaar),Other,-,100g,182.29,34.66,1.68,4.21
+Garlic pickle (Lahasun ka achar),Other,-,100g,413.62,9.75,3.72,39.88
+Fermented bamboo shoot pickle (Mesu pickle),Other,-,100g,59.83,1.73,1.58,5.59
+Sweet peach pickle (Aadoo ka achaar),Other,-,100g,144.64,37.01,0.46,0.2
+Pickled mustard greens,Other,-,100g,13.12,1.05,1.51,0.22
+Small onion pickle,Other,-,100g,16.86,2.76,1.65,0.64
+Green tomato pickle (Haray tamatar ka achaar),Other,-,100g,193.26,2.87,1.23,19.67
+Pickled cabbage,Other,-,100g,13.69,2.56,0.39,0.14
+Coconut pickle (Nariyal ka aachar),Other,-,100g,517.26,11.53,3.02,51.71
+Potato pickle (Aloo ka achaar),Other,-,100g,369.14,7.87,2.07,36.46
+Mango murabba candy,Sweets,-,100g,293.35,77.32,0.27,0.05
+Afghani chicken,Main course,-,100g,151.51,1.95,15.66,9.07
+Fish orly,Main course,-,100g,563.7,4.27,5.87,58.18
+Hariyali Fish Tikka,Main course,-,100g,150.24,2.21,14.01,9.41
+Chicken manchurian,Main course,-,100g,142.34,6.06,9.53,11.96
+Handi chicken,Main course,-,100g,166.02,1.49,12.32,12.46
+Lemon chicken,Main course,-,100g,169.79,0.55,20.2,9.66
+Lemon butter fish,Main course,-,100g,160.25,0.75,16.38,10.26
+Baked eggs in tomato sauce,Main course,-,100g,80.05,3.78,4.92,5.22
+Egg in a pepper,Main course,-,100g,128.78,0.17,12.64,8.68
+Spinach mushroom scrambled egg (Palak mushroom bhurji),Main course,-,100g,158.85,0.59,13.28,11.51
+Corn omelette/omlet,Main course,-,100g,166.93,1.57,11.37,12.89
+Cajun chicken,Main course,-,100g,184.94,1.94,12.69,13.99
+Paaner do pyaza,Main course,-,100g,127.7,3.41,4.22,10.87
+Cabbage manchurian (Pattagobhi manchurian),Main course,-,100g,224.26,4.85,0.64,22.48
+Gobi 65,Main course,-,100g,278.29,3.59,0.56,29.11
+Paneer lababdar,Main course,-,100g,105.48,3.37,3.98,8.46
+Roasted cauliflower steak,Main course,-,100g,78.68,2.02,2.05,6.7
+Sauteed radishes with green beans,Main course,-,100g,94.32,6.04,2.41,6.61
+Garlic chutney/Poondu chutney (Lahasun ki chutney),Main course,-,100g,255.51,20.44,3.34,17.55
+Schezwan chutney,Main course,-,100g,205.19,10.79,3.33,17.72
+Onion chutney (Pyaaz ki chutney/Vengaya chutney),Main course,-,100g,143.94,13.52,2.97,8.38
+Dates chutney (Khajoor ki chutney),Main course,-,100g,103.57,21.69,1.07,1.12
+Chicken salad,Main course,-,100g,338.19,1.3,15.33,30.26
+Macaroni salad,Main course,-,100g,262.19,21.63,5.02,17.78
+Cabbage raita (Pattagobhi raita),Other,-,100g,84.84,5.25,3.24,5.76
+Pomegranate raita (Anaar ka raita),Other,-,100g,72.64,7.15,4.05,3.24
+Onion raita (Pyaaz ka raita),Other,-,100g,71.56,7.86,4.86,2.43
+Green chilli raita (Hari mirch ka raita),Other,-,100g,77.13,7.66,5.58,2.92
+Kale salad,Other,-,100g,177.71,5.01,4.86,15.33
+Spinach and paneer souffle,Other,-,100g,186.19,9.64,7.56,13.49
+Masala souffle,Other,-,100g,123.51,8.02,6.38,7.37
+Chicken and cheese souffle,Other,-,100g,182.35,3.47,9.07,14.74
+Tamarind chutney (Chintapandu pachadi/Puli chutney),Other,-,100g,109.15,25.07,0.88,0.48
+Pav bhaji masala,Other,-,100g,230.47,29.15,9.13,10.96
+Green chutney,Other,-,100g,79.42,10.01,5.42,1.6
+Sago khitchdi/khichri (Sabudana khitchdi/khichri),Main course,-,100g,187.16,22.41,2.72,10.1
+Gram flour chilla/cheela (Besan chilla/cheela),Main course,-,100g,135.93,21.03,7.8,2.85
+Vegetable namkeen jave,Main course,-,100g,112.23,18.98,2.93,2.51
+Khakhra,Main course,-,100g,178.5,27.66,4.78,5.32
+Moong bean dosa (Pesarattu),Main course,-,100g,285.96,31.91,12.32,11.67
+Methi thepla,Main course,-,100g,346.16,41.34,8.98,15.95
+Rice puttu (Ari puttu),Main course,-,100g,81.98,11.82,1.26,3.13
+Buckwheat pancake (Khura),Main course,-,100g,263.3,27.28,2.91,16.43
+Quinoa khichdi/khichri,Snacks,-,100g,64.01,8.83,3.18,1.59
+Khakhra chaat,Snacks,-,100g,358.66,16.64,4.52,30.65
+Banana appam,Snacks,-,100g,469.81,20.06,1.17,42.53
+Veg manchurian,Snacks,-,100g,585.64,6.82,0.89,61.65
+Pav bhaji,Snacks,-,100g,96.53,11.99,2.66,4.32
+Rice murukku,Snacks,-,100g,593.99,33.29,5.41,48.22
+Bhel puri,Snacks,-,100g,509.89,16.47,3.52,47.91
+Semolina dhokla (Suji/Rava dhokla),Snacks,-,100g,194.91,30.86,5.44,5.2
+Spicy corn chaat,Snacks,-,100g,479.8,11.45,4.61,46.55
+Jackfruit fritters (Ponsa mulik/Kathal ka pakora),Snacks,-,100g,597.79,24,2.34,54.41
+Banana chips (Kele ke chips),Snacks,-,100g,665.67,7.32,0.37,70.46
+Wheat cake,Sweets,-,100g,314.63,41.13,4.79,14.95
+Mango cheesecake,Sweets,-,100g,152.46,20.06,2.39,7.3
+Carrot cake (Gajar ka cake),Sweets,-,100g,255.59,35.98,5.6,10.27
+Semolina cake (Suji/Rava cake),Sweets,-,100g,374.14,31.32,6.58,25.18
+Finger millet cake (Ragi cake),Sweets,-,100g,279.46,38.93,3.96,12.27
+Honey cake,Sweets,-,100g,333.59,49.04,3.08,14.7
+Almond cardamom cake (Badam elaichi cake),Sweets,-,100g,356.35,34.53,7.18,21.36
+Tutti frutti cake,Sweets,-,100g,347.72,52.94,4.49,12.68
+Ham and Bean soup,Other,-,100g,96.04,4.18,10.61,4.15
+Whey soup,Other,-,100g,68.91,6.26,3.45,3.34
+Bottle gourd soup (Ghiya/Lauki soup),Other,-,100g,23.05,1.16,0.45,1.79
+Baked potato soup,Other,-,100g,147.05,5.85,5.73,11.21
+Pumpkin soup,Other,-,100g,40.05,2.08,0.47,3.2
+Sweet corn soup,Other,-,100g,32.25,3.56,0.99,1.63
+Paneer soup,Other,-,100g,47.85,2.42,3.22,2.8
+Curried Cauliflower soup,Other,-,100g,37.32,3.12,6.72,9.77
+Millet soup,Other,-,100g,55.99,8.22,11.26,12.57
+Lemon coriander soup,Other,-,100g,108.06,10.32,2.27,6.26
+Garlic soup,Other,-,100g,194.86,6.99,2.38,17.62
+Dal makhani,Main course,-,100g,74.04,7.96,3.32,3.06
+Dalma,Main course,-,100g,118.93,15.04,4.91,4.58
+Split bengal gram dal (Channa dal),Main course,-,100g,99.67,9.99,4.15,4.62
+Horsegram dal (Kulthi dal),Main course,-,100g,55.65,8.21,2.91,1.13
+Panchmel dal,Main course,-,100g,111.22,10.71,4.63,5.36
+Dal dhokli,Main course,-,100g,68.74,8.55,2.96,2.47
+Gujarati handvo,Main course,-,100g,207.09,31.86,8.24,4.8
+Sev (Omapodi/Karapusa),Main course,-,100g,609.14,12.87,5.12,60.08
+Papdi,Main course,-,100g,708.96,12.89,1.83,72.11
+Jowar dosa,Main course,-,100g,294.35,40.53,8.5,10.28
+Bread roll,Main course,-,100g,435.46,16.12,2.85,40.25
+Soya seekh kebab,Main course,-,100g,115.05,10,5.4,5.88
+ClaBeveragesic seasoned black beans,Main course,-,100g,28.78,7.66,8.01,8.28
+Maa chaane ki dal,Main course,-,100g,344.67,43.11,19.8,9.5
+Garlic chickpea soup (Lahasun aur chane ka shoraba),Main course,-,100g,89.53,13.92,4.45,2.01
+White sauce (thin),Main course,-,100g,115.17,6.58,3.31,8.41
+White sauce (medium),Main course,-,100g,151.27,7.98,3.36,11.76
+White sauce (thick),Main course,-,100g,209.69,10.24,3.43,17.19
+Cheese sauce,Main course,-,100g,194.76,7.08,7.68,15.12
+Egg sauce,Main course,-,100g,146.85,5.88,5.97,11.08
+Mushroom sauce,Main course,-,100g,137.56,7.31,3.39,10.51
+Mustard sauce,Main course,-,100g,158.58,8.29,3.98,12.17
+Brown sauce,Main course,-,100g,109.18,5.38,11.92,23.67
+ClaBeveragesic italian pasta,Main course,-,100g,42.12,4.4,0.57,2.45
+Pasta spinach sauce,Main course,-,100g,85.46,1.76,1.76,7.9
+Pasta cheese sauce,Main course,-,100g,149.26,9,4.33,10.84
+Mayonnaise,Main course,-,100g,774.86,1.65,1.86,84.52
+Low calorie quick mayonnaise,Main course,-,100g,242.89,4.71,1.41,24.35
+Thousand island dreBeveragesing,Main course,-,100g,407.87,4.49,1.37,42.87
+Curd dip,Main course,-,100g,79.95,7.95,5.04,3.36
+Short crust pastry,Sweets,-,100g,422.1,44.72,6.11,23.98
+Choux pastry,Sweets,-,100g,222.37,16.2,5.55,14.96
+Flaky pastry,Sweets,-,100g,443.94,33.61,4.69,31.99
+Sponge cake,Sweets,-,100g,253.77,44.63,9.18,4.74
+Glace icing,Sweets,-,100g,323.51,86.31,0.01,0.01
+Royal icing,Sweets,-,100g,332.58,86.53,1.74,0.02
+American frosting,Sweets,-,100g,257.57,67.48,1.05,0.01
+Gum icing,Sweets,-,100g,223.07,53.19,5.94,0
+Channa murmura premix,Snacks,-,100g,339.09,72.59,10.59,3.28
+Cracked wheat and green gram dal premix (Dalia moong dal premix),Snacks,-,100g,362.16,64.75,15.89,5.11
+Rice flakes and roasted channa,Snacks,-,100g,333.4,71.94,10.57,2.94
+Spinach soup in milk,Snacks,-,100g,56.72,3.98,2.89,3.2
+Vegetable soup,Snacks,-,100g,55.21,7.6,2.22,1.55
+Mashed banana with milk,Snacks,-,100g,95.43,14.62,2.51,2.99
+Poha with curd (Poha aur dahi),Snacks,-,100g,173.32,26.72,6.01,4.65
+Potato with curd,Snacks,-,100g,73.18,12.01,3.19,1.33
+Sweet wheat porridge (Sweet dalia),Snacks,-,100g,140.66,23.77,5.11,2.79
+Vegetable khichdi/khichri,Snacks,-,100g,143.17,19.57,5.61,4.53
+Moong dal mixture,Snacks,-,100g,158.84,33.93,4.62,1
+Cracked wheat khichri/khichdi (Dalia khichri/khichdi),Snacks,-,100g,167.45,22.35,7.56,5.52
+Stewed apple,Snacks,-,100g,91.93,22.49,0.17,0.37
+Lemon squash (Nimbu ka squash),Beverages,-,100g,184.56,48.88,0.15,0.06
+Orange squash (Santre ka squash),Beverages,-,100g,193.26,50.88,0.22,0.04
+Lichi squash,Beverages,-,100g,198.33,51.96,0.3,0.08
+Mango squash (Aam ka squash),Beverages,-,100g,194.66,50.96,0.17,0.17
+Pineapple squash (Ananas ka squash),Beverages,-,100g,195.02,51.34,0.16,0.05
+Lemon and ginger squash (Nimbu aur adrak ka squash),Beverages,-,100g,170.34,44.06,0.54,0.21
+Apple jam (Seb ka murabba),Other,-,100g,188.79,48.56,0.14,0.32
+Plum jam (Aloo bukhara jam),Other,-,100g,178.89,46.2,0.31,0.19
+Pineapple jam,Other,-,100g,149.18,38.27,0.32,0.15
+Guava jelly (Amrood ki jelly),Other,-,100g,115.74,28.18,1.11,0.25
+Orange marmalade (Santray ka murabba),Other,-,100g,104.17,25.94,0.66,0.13
+Carrot murabba (Gajar ka murabba),Other,-,100g,175.24,45.6,0.32,0.16
+Gooseberry marmalade (Amla murabba),Other,-,100g,123.16,32.34,0.14,0.03
+Ginger candy (Adrak ki candy),Other,-,100g,195.71,50.38,0.69,0.27
+Mango pickle (Aam ka achaar),Other,-,100g,192.12,8.11,1.6,17.89
+Mixed vegetable pickle (Sabziyoon ka achaar),Other,-,100g,211.2,7.48,1.9,19.68
+Sweet lemon pickle (Neembu ka meetha achaar),Other,-,100g,69.54,16.87,1.22,0.21
+Plum chutney (Aloo bukhara ki chutney),Other,-,100g,177.11,44.95,0.47,0.29
+Raw mango chutney (Kachhe aam/Kairi ki chutney),Other,-,100g,193.13,49.94,0.51,0.16
+Tomato sauce,Other,-,100g,34.33,7.23,0.81,0.27
+Tomato puree,Other,-,100g,20.62,3.68,0.75,0.25
+Garam masala,Other,-,100g,254.21,26.2,9.89,10.97
+Chat masala,Other,-,100g,222.58,23.87,8.19,9.91
+Kashmiri masala,Other,-,100g,389.02,23.16,8.26,31.03
+Rasam powder (Rasam masala),Other,-,100g,267.96,25.19,12.04,11.8
+Sambar powder (Sambar masala),Other,-,100g,297.46,23.38,12.5,15.58
+Tartare sauce,Other,-,100g,610.93,2.96,1.44,66.12
+Barbeque sauce,Other,-,100g,121.93,20.46,0.96,4.51
+Bread sauce,Other,-,100g,111.04,8.69,3.46,7.05
+Green chilli sauce,Other,-,100g,46.06,7.36,1.25,0.27
+Home made plain noodles,Snacks,-,100g,238.78,44.5,6.21,3.56
+Dal moong,Other,-,100g,43.69,4.92,2.2,1.62
+Cumin seeds baghar (Jeera baghar/tadka),Other,-,100g,736.81,5.22,3.34,78.77
+Onion tomato baghar (Pyaaz tamatar ka tadka),Other,-,100g,137.52,6.17,1.26,11.98
+Mustard seeds baghar (Mustard seed tadka),Other,-,100g,552.59,10.45,4.73,54.3
+Hot cherry sauce,Other,-,100g,252.74,67.95,0.13,0.07
+Apple jelly (Seb ki jelly),Other,-,100g,152.13,39.37,0.1,0.21
+Marmalade (Murabba),Other,-,100g,143.76,37.64,0.23,0.04
+Plum squash (Aloo bukhara squash),Beverages,-,100g,211.17,55.51,0.16,0.1
+Lemon green chilli pickle (Nimboo aur hari mirch ka achaar),Other,-,100g,14.07,2.14,0.85,0.24
+Brinjal pickle (Baingan ka achaar),Other,-,100g,139.01,4.23,2.24,12.98
+Sweet and sour tomato pickle (Khatta meetha tamatar ka achaar),Other,-,100g,60.88,6.55,1.26,3.24
+Jhatpat achar with carrot (Jhatpat achaar gajar ke saath),Other,-,100g,91.21,6.32,1.98,6.55
+Tomato chutney (Tamatar ki chutney),Other,-,100g,176.07,31.85,0.97,6.01
+Tomato ketchup,Other,-,100g,33.07,6.48,0.91,0.3
+Bengal 5 Spice Blend (Panch Phoran),Other,-,100g,289.79,20,18.26,22.16
+White Rice,Main course,1 plate,200g,260,57,4.5,0.4
+Roti,Main course,1 piece,40g,120,18,3,3
+Chapati,Main course,1 piece,35g,104,15,3,2.5
+Dal,Main course,1 bowl,150g,180,30,9,4
+Rajma,Main course,1 bowl,150g,215,35,9,6
+Chole,Main course,1 bowl,150g,220,32,10,6
+Aloo Gobi,Main course,1 bowl,150g,130,15,3,7
+Palak Paneer,Main course,1 bowl,150g,190,10,11,13
+Paneer Butter Masala,Main course,1 bowl,150g,295,14,9,23
+Butter Naan,Main course,1 piece,80g,270,35,7,10
+Tandoori Roti,Main course,1 piece,50g,150,25,4,2
+Plain Dosa,Main course,1 piece,100g,165,30,4,6
+Masala Dosa,Main course,1 piece,150g,350,45,6,15
+Idli,Main course,2 pieces,100g,140,30,4,1
+Sambar,Main course,1 bowl,150g,120,22,4,2
+Upma,Main course,1 bowl,150g,200,30,4,6
+Poha,Main course,1 bowl,150g,180,27,3,5
+Vegetable Pulao,Main course,1 plate,200g,240,35,5,6
+Fried Rice,Main course,1 plate,200g,300,42,6,10
+Biryani,Main course,1 plate,300g,450,60,12,15
+Chicken Curry,Main course,1 bowl,150g,300,8,20,20
+Egg Curry,Main course,1 bowl,150g,250,10,13,18
+Fish Curry,Main course,1 bowl,150g,230,8,19,14
+Mutton Curry,Main course,1 bowl,150g,330,7,18,25
+Bhindi Fry,Main course,1 bowl,150g,180,14,3,12
+Kadhi,Main course,1 bowl,150g,160,12,5,9
+Curd,Other,1 bowl,100g,60,4,3,3
+LaBeveragesi,Beverages,1 glaBeverages,250ml,160,25,6,4
+Buttermilk,Beverages,1 glaBeverages,250ml,50,6,2,2
+Tea with milk & sugar,Beverages,1 cup,150ml,90,12,2,4
+Black Coffee,Beverages,1 cup,150ml,5,0,0.5,0
+Vegetable Cutlet,Snacks,1 piece,80g,180,22,4,8
+Samosa,Snacks,1 piece,100g,260,30,5,13
+Pakora,Snacks,1 serving,100g,300,20,6,20
+Kachori,Snacks,1 piece,80g,200,25,4,10
+Pani Puri,Snacks,6 pcs,120g,180,28,3,6
+Bhel Puri,Snacks,1 bowl,150g,200,35,5,4
+Sev Puri,Snacks,6 pcs,150g,220,30,4,7
+Moong Dal Chilla,Snacks,2 pieces,150g,180,18,9,5
+Sprouts Salad,Snacks,1 bowl,150g,110,16,8,2
+Oats Upma,Snacks,1 bowl,150g,180,25,5,5
+Fruit Salad,Snacks,1 bowl,200g,100,22,1,0.5
+Khichdi,Snacks,1 plate,200g,210,30,7,6
+Sabudana Khichdi,Snacks,1 plate,200g,300,40,4,12
+Sheera/Sooji Halwa,Sweets,1 bowl,150g,350,40,5,15
+Gulab Jamun,Sweets,2 pcs,100g,300,45,4,12
+Rasgulla,Sweets,2 pcs,100g,240,35,6,8
+Jalebi,Sweets,2 pcs,80g,300,50,2,10
+Modak,Sweets,1 piece,50g,140,25,2,5
+Kaju Katli,Sweets,2 pieces,40g,230,20,4,12
+Besan Ladoo,Sweets,2 pcs,50g,220,18,4,10
+Chole Bhature,Main course,1 plate (2 bhature + chole),400g,450,45,12,22
+Masala Dosa,Main course,1 dosa + chutney,250g,380,46,8,15
+Paneer Butter Masala,Main course,1 bowl,200g,410,20,14,32
+Dal Tadka,Main course,1 bowl,150g,180,24,9,6
+Rajma Chawal,Main course,1 plate,350g,400,55,13,10
+Aloo Paratha,Main course,1 paratha + butter,180g,330,35,6,18
+Pav Bhaji,Main course,2 pav + bhaji,300g,420,40,8,24
+Idli Sambar,Main course,2 idlis + sambar,200g,180,30,7,3
+Medu Vada,Main course,2 pcs + chutney,150g,260,18,5,18
+Pulao,Main course,1 bowl,200g,310,40,5,12
+Vegetable Biryani,Main course,1 plate,300g,450,50,8,20
+Chicken Biryani,Main course,1 plate,350g,520,42,25,25
+Mutton Curry,Main course,1 bowl,200g,480,15,30,36
+Fish Curry,Main course,1 bowl,200g,320,10,28,18
+Palak Paneer,Main course,1 bowl,200g,350,14,11,28
+Butter Chicken,Main course,1 bowl,250g,480,18,28,35
+Poori Sabzi,Main course,4 pooris + sabzi,250g,450,40,6,30
+Kadhi Pakora,Main course,1 bowl,200g,220,18,7,14
+Vegetable Korma,Main course,1 bowl,200g,330,22,5,24
+Bhindi Masala,Main course,1 bowl,150g,180,10,3,14
+Baingan Bharta,Main course,1 bowl,150g,160,12,4,10
+Jeera Rice,Main course,1 bowl,200g,250,38,5,6
+Curd Rice,Main course,1 bowl,200g,200,28,6,5
+Buttermilk,Beverages,1 glaBeverages,200ml,90,8,4,3
+Dhokla,Snacks,2 pcs,100g,160,22,5,6
+Khandvi,Snacks,4 rolls,80g,140,16,4,5
+Vegetable Upma,Snacks,1 bowl,200g,210,35,4,5
+Poha,Snacks,1 bowl,200g,240,34,5,7
+Sabudana Khichdi,Snacks,1 bowl,200g,300,45,4,12
+Thepla,Snacks,1 pc,60g,130,22,3,5
+Khichdi,Main course,1 bowl,250g,290,38,8,9
+Moong Dal,Main course,1 bowl,150g,180,24,9,4
+Chana Masala,Main course,1 bowl,200g,280,30,10,12
+Tandoori Chicken,Main course,2 pieces,200g,320,6,34,16
+Kebabs,Main course,3 pcs,150g,340,10,28,22
+Sambar,Other,1 bowl,150g,120,16,5,4
+Rasam,Other,1 bowl,150g,60,8,2,2
+Coconut Chutney,Other,2 tbsp,30g,100,5,1,9
+Mint Chutney,Other,2 tbsp,30g,40,4,1,2
+Gulab Jamun,Sweets,2 pcs,100g,300,40,4,14
+Rasgulla,Sweets,2 pcs ~ 100g,100g,180,38,4,0.5
+Jalebi,Sweets,2 pcs,100g,350,60,2,15
+Halwa,Sweets,1 bowl,150g,400,50,4,20
+Kheer,Sweets,1 bowl,200g,280,32,6,12
+Basundi,Sweets,1 bowl,150g,330,28,7,18
+Shrikhand,Sweets,1 bowl,150g,310,38,8,14
+Papad,Other,1 pc,15g,55,5,2,3
+Grilled Chicken Breast,Main course,1 piece,150g,240,0,35,10
+Scrambled Eggs,Main course,2 eggs,120g,200,2,14,16
+Boiled Eggs,Main course,2 eggs,100g,155,1,13,11
+Avocado Toast,Main course,1 slice,100g,250,22,6,15
+Caesar Salad,Main course,1 bowl,200g,330,12,8,28
+Greek Yogurt (plain),Main course,1 cup,200g,120,8,10,5
+Pasta Alfredo,Main course,1 plate,250g,540,60,12,30
+Spaghetti Bolognese,Main course,1 plate,300g,480,55,18,20
+Margherita Pizza,Main course,2 slices,200g,500,50,18,22
+Cheeseburger,Main course,1 piece,220g,600,36,28,38
+French Fries,Main course,1 serving,150g,400,45,4,22
+Hot Dog,Main course,1 piece,150g,400,28,15,28
+Grilled Cheese Sandwich,Main course,1 sandwich,160g,380,35,12,22
+Peanut Butter Sandwich,Main course,1 sandwich,150g,420,30,15,28
+Omelette with Veggies,Main course,1 omelette,180g,280,6,16,22
+Bagel with Cream Cheese,Main course,1 bagel,130g,350,50,9,12
+Chicken Nuggets,Main course,6 pieces,150g,450,28,20,30
+Tuna Sandwich,Main course,1 sandwich,200g,400,30,25,20
+BLT Sandwich,Main course,1 sandwich,180g,390,32,18,24
+Beef Burrito,Main course,1 piece,250g,600,50,28,30
+Chicken Quesadilla,Main course,1 piece,200g,520,40,25,28
+Vegetable Wrap,Main course,1 wrap,180g,360,42,10,16
+Falafel Wrap,Main course,1 wrap,200g,450,40,15,20
+Hummus with Pita,Main course,1 serving,150g,350,30,10,18
+Shawarma Roll (Chicken),Main course,1 roll,200g,480,35,25,22
+Grilled Salmon,Main course,1 fillet,180g,360,0,30,24
+Tuna Salad,Main course,1 bowl,200g,280,10,25,18
+Cobb Salad,Main course,1 bowl,250g,420,14,20,32
+Veggie Burger,Main course,1 burger,180g,380,40,15,16
+Mac and Cheese,Main course,1 bowl,250g,500,50,12,28
+Baked Potato with Cheese,Main course,1 piece,200g,400,45,10,20
+Mashed Potatoes,Main course,1 bowl,200g,280,35,5,12
+Steak (grilled),Main course,1 piece,200g,450,0,40,32
+Pancakes (with syrup),Main course,2 pancakes,200g,500,60,8,20
+Waffles (with butter),Main course,2 waffles,200g,520,55,9,28
+Hash Browns,Main course,1 serving,150g,350,30,4,22
+Chili Con Carne,Main course,1 bowl,250g,420,35,25,20
+Lasagna (meat),Main course,1 piece,250g,480,40,22,28
+Quiche (vegetable),Main course,1 slice,180g,360,28,12,22
+Ramen (instant),Main course,1 bowl,250g,450,50,10,20
+Tofu Stir Fry,Main course,1 bowl,200g,350,20,18,22
+Teriyaki Chicken,Main course,1 bowl,200g,400,25,30,18
+Sushi Rolls (6 pcs),Main course,6 pieces,200g,300,45,10,5
+California Roll (8 pcs),Main course,8 pieces,250g,340,38,12,10
+Beef Tacos,Main course,2 tacos,180g,420,30,20,24
+Chicken Tacos,Main course,2 tacos,180g,380,28,22,20
+Vegetable Soup,Main course,1 bowl,200g,150,18,5,6
+Cream of Mushroom Soup,Main course,1 bowl,200g,220,14,5,16
+Clam Chowder,Main course,1 bowl,250g,320,25,12,20
+Apple Pie,Sweets,1 slice,150g,350,45,3,18
+Chocolate Cake,Sweets,1 slice,150g,400,50,5,22
+Brownie,Sweets,1 piece,100g,420,45,5,24
+Eggs Benedict,Main course,1 plate,200g,420,28,18,28
+Tofu Salad,Main course,1 bowl,200g,260,18,14,16
+Chicken Caesar Wrap,Main course,1 wrap,200g,470,35,28,24
+Lentil Soup,Main course,1 bowl,200g,180,28,12,4
+Beef Stroganoff,Main course,1 bowl,250g,480,30,25,28
+Stuffed Bell Peppers,Main course,2 halves,200g,320,22,18,18
+Shrimp Scampi,Main course,1 plate,200g,400,35,20,22
+Chicken Pot Pie,Main course,1 slice,250g,450,30,22,28
+Crab Cakes,Main course,2 pieces,150g,320,18,20,20
+Fish Tacos,Main course,2 tacos,180g,370,30,22,18
+BBQ Chicken Wings,Main course,4 pieces,200g,420,10,28,30
+Turkey Sandwich,Main course,1 sandwich,180g,350,32,20,14
+Spinach Ricotta Cannelloni,Main course,2 rolls,250g,390,34,16,22
+Gnocchi in Tomato Sauce,Main course,1 plate,250g,460,55,10,18
+Pesto Pasta,Main course,1 bowl,250g,500,52,12,26
+Egg Salad Sandwich,Main course,1 sandwich,180g,380,30,14,24
+Chicken Enchiladas,Main course,2 enchiladas,250g,480,38,24,28
+Vegetarian Burrito Bowl,Main course,1 bowl,300g,430,45,18,18
+Tortilla Chips with Guacamole,Main course,1 serving,150g,420,40,6,24
+Lamb Gyro,Main course,1 wrap,200g,520,38,22,28
+Chicken Fried Rice,Main course,1 bowl,250g,480,55,20,20
+Sweet and Sour Chicken,Main course,1 bowl,250g,510,45,22,24
+Pad Thai (Chicken),Main course,1 plate,300g,540,58,24,22
+General Tso's Chicken,Main course,1 bowl,250g,550,45,25,28
+Peking Duck,Main course,1 serving,200g,480,15,35,32
+Kimchi Fried Rice,Main course,1 bowl,250g,420,48,12,18
+Bibimbap,Main course,1 bowl,300g,480,60,16,18
+Miso Soup,Main course,1 bowl,200g,90,8,5,4
+Pho (Beef),Main course,1 bowl,350g,400,50,20,10
+Udon Noodle Soup,Main course,1 bowl,300g,380,60,12,8
+Shoyu Ramen,Main course,1 bowl,300g,420,55,15,12
+Salmon Poke Bowl,Main course,1 bowl,300g,460,40,25,22
+Vegetable Tempura,Main course,1 plate,200g,380,35,8,24
+Tofu Katsu Curry,Main course,1 plate,300g,490,50,16,24
+Yakitori Chicken,Main course,3 skewers,150g,300,10,25,16
+Tamago Sushi,Main course,2 pieces,100g,180,24,6,6
+Beef Bulgogi,Main course,1 bowl,250g,460,30,25,26
+Turkey Meatballs,Main course,4 pieces,150g,320,10,28,20
+Baked Ziti,Main course,1 plate,250g,480,50,18,24
+Eggplant Parmesan,Main course,1 slice,200g,420,30,14,26
+Pumpkin Soup,Main course,1 bowl,200g,160,22,4,6
+Broccoli Cheddar Soup,Main course,1 bowl,250g,280,20,8,18
+Avocado Salad,Main course,1 bowl,200g,300,20,6,22
+Fruit Smoothie (Banana-Strawberry),Main course,1 glaBeverages,300ml,220,40,5,4
+Granola with Milk,Main course,1 bowl,200g,380,50,8,14
+Chia Pudding,Sweets,1 bowl,150g,250,20,6,16
+Couscous Salad,Sweets,1 bowl,200g,320,40,8,14
+Caprese Salad,Sweets,1 plate,200g,280,10,12,20
+Bruschetta,Sweets,3 pieces,120g,260,32,6,10
+Tiramisu,Sweets,1 slice,150g,420,45,6,24
+Crepes with Nutella,Sweets,2 pieces,180g,440,48,8,22

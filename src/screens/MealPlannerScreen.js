@@ -5,13 +5,13 @@ import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
 import { indianFoods } from '../data/indianFoods';
+import { formatDate } from '../utils/dateUtils';
 
-const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MEAL_TYPES = ['Breakfast', 'Lunch', 'Dinner', 'Snacks'];
 
 const MealPlannerScreen = ({ navigation }) => {
   const { theme } = useTheme();
-  const [selectedDay, setSelectedDay] = useState(new Date().getDay());
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const [mealPlan, setMealPlan] = useState({});
   const [userProfile, setUserProfile] = useState({
     calorieGoal: 2000,
@@ -20,11 +20,14 @@ const MealPlannerScreen = ({ navigation }) => {
     fatGoal: 65
   });
   
-  // Load meal plan data when component mounts or selected day changes
+  // Load meal plan data when component mounts or selected date changes
   useEffect(() => {
+    navigation.setOptions({
+      title: 'Meal Planner',
+    });
     loadMealPlan();
     loadUserProfile();
-  }, [selectedDay]);
+  }, [selectedDate, navigation]);
   
   const loadUserProfile = async () => {
     try {
@@ -45,8 +48,8 @@ const MealPlannerScreen = ({ navigation }) => {
   
   const loadMealPlan = async () => {
     try {
-      const dayKey = DAYS_OF_WEEK[selectedDay].toLowerCase();
-      const mealPlanKey = `mealPlan_${dayKey}`;
+      const dateString = selectedDate.toISOString().split('T')[0];
+      const mealPlanKey = `mealPlan_${dateString}`;
       
       const mealPlanString = await AsyncStorage.getItem(mealPlanKey);
       
@@ -54,11 +57,14 @@ const MealPlannerScreen = ({ navigation }) => {
         const loadedMealPlan = JSON.parse(mealPlanString);
         setMealPlan(loadedMealPlan);
       } else {
-        // Initialize empty meal plan for the day
+        // Initialize empty meal plan for the date
         const emptyMealPlan = {};
         MEAL_TYPES.forEach(mealType => {
           emptyMealPlan[mealType] = [];
         });
+        
+
+        
         setMealPlan(emptyMealPlan);
       }
     } catch (error) {
@@ -66,13 +72,12 @@ const MealPlannerScreen = ({ navigation }) => {
     }
   };
   
-  const saveMealPlan = async () => {
+  const saveMealPlan = async (updatedMealPlan = mealPlan) => {
     try {
-      const dayKey = DAYS_OF_WEEK[selectedDay].toLowerCase();
-      const mealPlanKey = `mealPlan_${dayKey}`;
+      const dateString = selectedDate.toISOString().split('T')[0];
+      const mealPlanKey = `mealPlan_${dateString}`;
       
-      await AsyncStorage.setItem(mealPlanKey, JSON.stringify(mealPlan));
-      Alert.alert('Success', 'Meal plan saved successfully');
+      await AsyncStorage.setItem(mealPlanKey, JSON.stringify(updatedMealPlan));
     } catch (error) {
       console.error('Error saving meal plan:', error);
       Alert.alert('Error', 'Failed to save meal plan');
@@ -80,7 +85,7 @@ const MealPlannerScreen = ({ navigation }) => {
   };
   
   const addFoodToMeal = (mealType) => {
-    navigation.navigate('Food Database', { 
+    navigation.navigate('Food Vault', { 
       onFoodSelect: (food) => {
         const updatedMealPlan = { ...mealPlan };
         if (!updatedMealPlan[mealType]) {
@@ -88,11 +93,11 @@ const MealPlannerScreen = ({ navigation }) => {
         }
         updatedMealPlan[mealType].push({
           ...food,
-          id: Date.now().toString(),
+          id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
           quantity: 1
         });
         setMealPlan(updatedMealPlan);
-        saveMealPlan();
+        saveMealPlan(updatedMealPlan);
       }
     });
   };
@@ -101,7 +106,101 @@ const MealPlannerScreen = ({ navigation }) => {
     const updatedMealPlan = { ...mealPlan };
     updatedMealPlan[mealType] = updatedMealPlan[mealType].filter(food => food.id !== foodId);
     setMealPlan(updatedMealPlan);
-    saveMealPlan();
+    saveMealPlan(updatedMealPlan);
+  };
+
+  const copyMealToIntake = async (mealType) => {
+    try {
+      const currentDate = new Date();
+      const dateString = currentDate.toISOString().split('T')[0];
+      const foodEntriesKey = `foodEntries_${dateString}`;
+      
+      // Get existing entries for today
+      const existingEntriesString = await AsyncStorage.getItem(foodEntriesKey);
+      const existingEntries = existingEntriesString ? JSON.parse(existingEntriesString) : [];
+      
+      // Convert meal plan foods to diary entries format
+      const mealFoods = mealPlan[mealType] || [];
+      
+      if (mealFoods.length === 0) {
+        Alert.alert('No Foods to Copy', `There are no foods in ${mealType} to copy to the intake tracker.`);
+        return;
+      }
+      
+      const newEntries = mealFoods.map(food => ({
+        id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+        name: food.name,
+        calories: food.calories * food.quantity,
+        protein: food.protein * food.quantity,
+        carbs: food.carbs * food.quantity,
+        fat: food.fat * food.quantity,
+        servingSize: food.servingSize,
+        quantity: food.quantity,
+        timestamp: new Date().toISOString(),
+        mealType: mealType
+      }));
+      
+      // Combine with existing entries
+      const updatedEntries = [...existingEntries, ...newEntries];
+      
+      // Save to intake tracker
+      await AsyncStorage.setItem(foodEntriesKey, JSON.stringify(updatedEntries));
+      
+      const totalCalories = newEntries.reduce((total, entry) => total + entry.calories, 0);
+      const message = `${mealType} has been copied to today's intake tracker.\n\n📊 ${newEntries.length} food item${newEntries.length > 1 ? 's' : ''} added\n🔥 ${totalCalories} calories added`;
+      
+      // Check if running in web browser (not React Native WebView)
+      const isWebBrowser = typeof window !== 'undefined' && window.confirm && !window.ReactNativeWebView;
+      
+      if (isWebBrowser) {
+        const result = window.confirm(`✅ Meal Copied Successfully!\n\n${message}\n\nWould you like to view the Intake Tracker?`);
+        if (result) {
+          navigation.navigate('Intake Tracker');
+        }
+      } else {
+        Alert.alert(
+          '✅ Meal Copied Successfully!', 
+          message,
+          [
+            { text: 'Got it!', style: 'default' },
+            { 
+              text: 'View Intake Tracker', 
+              style: 'default',
+              onPress: () => navigation.navigate('Intake Tracker')
+            }
+          ],
+          { cancelable: true }
+        );
+      }
+    } catch (error) {
+      console.error('Error copying meal to intake:', error);
+      Alert.alert('Error', 'Failed to copy meal to intake tracker');
+    }
+  };
+
+  const goToPreviousDay = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() - 1);
+    setSelectedDate(newDate);
+  };
+
+  const goToNextDay = () => {
+    const newDate = new Date(selectedDate);
+    newDate.setDate(newDate.getDate() + 1);
+    setSelectedDate(newDate);
+  };
+
+  const goToToday = () => {
+    setSelectedDate(new Date());
+  };
+
+  // Helper function to check if two dates are the same day
+  const isSameDay = (date1, date2) => {
+    return (
+      date1.getFullYear() === date2.getFullYear() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getDate() === date2.getDate()
+    );
   };
   
   const generateMealPlan = () => {
@@ -189,7 +288,18 @@ const MealPlannerScreen = ({ navigation }) => {
       <View style={[styles.mealSection, { backgroundColor: theme.card }]}>
         <View style={styles.mealHeader}>
           <Text style={[styles.mealTitle, { color: theme.text }]}>{mealType}</Text>
-          <Text style={[styles.mealCalories, { color: theme.primary }]}>{mealNutrition.calories} cal</Text>
+          <View style={styles.mealHeaderRight}>
+            <Text style={[styles.mealCalories, { color: theme.primary }]}>{mealNutrition.calories} cal</Text>
+            {mealFoods.length > 0 && (
+              <TouchableOpacity
+                style={[styles.copyButton, { backgroundColor: theme.success }]}
+                onPress={() => copyMealToIntake(mealType)}
+              >
+                <Ionicons name="copy" size={14} color="white" />
+                <Text style={styles.copyButtonText}>Copy to Intake</Text>
+              </TouchableOpacity>
+            )}
+          </View>
         </View>
         
         {mealFoods.length > 0 ? (
@@ -233,26 +343,21 @@ const MealPlannerScreen = ({ navigation }) => {
   
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
-      <View style={styles.daySelector}>
-        {DAYS_OF_WEEK.map((day, index) => (
-          <TouchableOpacity
-            key={day}
-            style={[
-              styles.dayButton,
-              selectedDay === index && { backgroundColor: theme.primary }
-            ]}
-            onPress={() => setSelectedDay(index)}
-          >
-            <Text
-              style={[
-                styles.dayButtonText,
-                { color: selectedDay === index ? 'white' : theme.text }
-              ]}
-            >
-              {day.substring(0, 3)}
-            </Text>
-          </TouchableOpacity>
-        ))}
+      <View style={[styles.dateSelector, { backgroundColor: theme.card, borderBottomColor: theme.border }]}>
+        <TouchableOpacity onPress={goToPreviousDay}>
+          <Ionicons name="chevron-back" size={24} color={theme.primary} />
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={goToToday} style={styles.dateContainer}>
+          <Text style={[styles.dateText, { color: theme.text }]}>{formatDate(selectedDate)}</Text>
+          {!isSameDay(selectedDate, new Date()) && (
+            <Text style={[styles.todayText, { color: theme.primary }]}>Today</Text>
+          )}
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={goToNextDay}>
+          <Ionicons name="chevron-forward" size={24} color={theme.primary} />
+        </TouchableOpacity>
       </View>
       
       <View style={[styles.nutritionSummary, { backgroundColor: theme.card }]}>
@@ -302,7 +407,11 @@ const MealPlannerScreen = ({ navigation }) => {
       </View>
       
       <ScrollView style={styles.mealsContainer}>
-        {MEAL_TYPES.map(mealType => renderMealSection(mealType))}
+        {MEAL_TYPES.map(mealType => (
+          <View key={mealType}>
+            {renderMealSection(mealType)}
+          </View>
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
@@ -312,20 +421,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  daySelector: {
+  dateSelector: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 10,
-    paddingVertical: 10,
+    alignItems: 'center',
+    padding: 15,
+    borderBottomWidth: 1,
   },
-  dayButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 20,
+  dateContainer: {
+    alignItems: 'center',
   },
-  dayButtonText: {
-    fontWeight: '500',
-    fontSize: 14,
+  dateText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  todayText: {
+    fontSize: 12,
+    marginTop: 4,
   },
   nutritionSummary: {
     margin: 10,
@@ -394,6 +506,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
   },
+  mealHeaderRight: {
+    alignItems: 'flex-end',
+  },
   mealTitle: {
     fontSize: 16,
     fontWeight: 'bold',
@@ -440,6 +555,20 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: '500',
+  },
+  copyButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderRadius: 12,
+    marginTop: 4,
+  },
+  copyButtonText: {
+    color: 'white',
+    fontSize: 10,
+    fontWeight: '500',
+    marginLeft: 4,
   },
 });
 

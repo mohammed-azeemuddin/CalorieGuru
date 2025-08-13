@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -7,15 +8,17 @@ import { StatusBar } from 'expo-status-bar';
 
 // Import screens
 import HomeScreen from './src/screens/HomeScreen';
-import FoodDatabaseScreen from './src/screens/FoodDatabaseScreen';
+import FoodVaultScreen from './src/screens/FoodVaultScreen';
 import FoodDetailScreen from './src/screens/FoodDetailScreen';
-import DiaryScreen from './src/screens/DiaryScreen';
+import IntakeTrackerScreen from './src/screens/IntakeTrackerScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import AddFoodScreen from './src/screens/AddFoodScreen';
 import MealPlannerScreen from './src/screens/MealPlannerScreen';
 import ExerciseLogScreen from './src/screens/ExerciseLogScreen';
 import BarcodeScannerScreen from './src/screens/BarcodeScannerScreen';
 import NotificationsScreen from './src/screens/NotificationsScreen';
+import FeaturesScreen from './src/screens/FeaturesScreen';
+import ImportFoodDataScreen from './src/screens/ImportFoodDataScreen';
 
 // Import theme context
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
@@ -34,10 +37,12 @@ function HomeTabs() {
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Food Database') {
+          } else if (route.name === 'Food Vault') {
             iconName = focused ? 'fast-food' : 'fast-food-outline';
-          } else if (route.name === 'Diary') {
+          } else if (route.name === 'Intake Tracker') {
             iconName = focused ? 'book' : 'book-outline';
+          } else if (route.name === 'Features') {
+            iconName = focused ? 'apps' : 'apps-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'person' : 'person-outline';
           }
@@ -58,8 +63,9 @@ function HomeTabs() {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Food Database" component={FoodDatabaseScreen} />
-      <Tab.Screen name="Diary" component={DiaryScreen} />
+      <Tab.Screen name="Food Vault" component={FoodVaultScreen} />
+      <Tab.Screen name="Intake Tracker" component={IntakeTrackerScreen} />
+      <Tab.Screen name="Features" component={FeaturesScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
@@ -150,6 +156,17 @@ function MainNavigator() {
           component={NotificationsScreen} 
           options={{ 
             title: 'Notifications',
+            headerStyle: {
+              backgroundColor: theme.card,
+            },
+            headerTintColor: theme.text,
+          }} 
+        />
+        <Stack.Screen 
+          name="ImportFoodData" 
+          component={ImportFoodDataScreen} 
+          options={{ 
+            title: 'Import Food Data',
             headerStyle: {
               backgroundColor: theme.card,
             },

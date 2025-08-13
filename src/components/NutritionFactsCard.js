@@ -34,16 +34,6 @@ const NutritionFactsCard = ({ calories, protein, carbs, fat, fiber, sugar, servi
           <Text style={[styles.nutrientValue, { color: theme.text }]}>{carbs}g</Text>
         </View>
         
-        <View style={styles.nutrientIndentedRow}>
-          <Text style={[styles.nutrientIndentedLabel, { color: theme.textSecondary }]}>Dietary Fiber</Text>
-          <Text style={[styles.nutrientValue, { color: theme.text }]}>{fiber || 0}g</Text>
-        </View>
-        
-        <View style={styles.nutrientIndentedRow}>
-          <Text style={[styles.nutrientIndentedLabel, { color: theme.textSecondary }]}>Sugars</Text>
-          <Text style={[styles.nutrientValue, { color: theme.text }]}>{sugar || 0}g</Text>
-        </View>
-        
         <View style={[styles.dividerThin, { backgroundColor: theme.border }]} />
         
         <View style={styles.nutrientRow}>

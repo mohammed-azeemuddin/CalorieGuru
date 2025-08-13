@@ -8,20 +8,37 @@ const FoodItem = ({ food, onPress }) => {
   // Get appropriate icon based on food category
   const getCategoryIcon = (category) => {
     switch (category) {
-      case 'Breakfast':
-        return 'sunny-outline';
-      case 'Lunch':
+      case 'Main course':
         return 'restaurant-outline';
-      case 'Dinner':
-        return 'moon-outline';
       case 'Snacks':
         return 'cafe-outline';
       case 'Sweets':
         return 'ice-cream-outline';
       case 'Beverages':
         return 'beer-outline';
+      case 'Beverage':
+        return 'beer-outline';
+      case 'Other':
+        return 'nutrition-outline';
       default:
         return 'nutrition-outline';
+    }
+  };
+
+  // Format serving and quantity information
+  const getServingInfo = () => {
+    if (food.servingSize && food.quantity) {
+      if (food.servingSize !== '-' && food.servingSize !== food.quantity) {
+        return `${food.servingSize} • ${food.quantity}`;
+      } else {
+        return food.quantity;
+      }
+    } else if (food.servingSize) {
+      return food.servingSize;
+    } else if (food.quantity) {
+      return food.quantity;
+    } else {
+      return '100g'; // Default
     }
   };
 
@@ -33,7 +50,7 @@ const FoodItem = ({ food, onPress }) => {
       
       <View style={styles.infoContainer}>
         <Text style={[styles.foodName, { color: theme.text }]}>{food.name}</Text>
-        <Text style={[styles.servingSize, { color: theme.textSecondary }]}>{food.servingSize}</Text>
+        <Text style={[styles.servingInfo, { color: theme.textSecondary }]}>{getServingInfo()}</Text>
       </View>
       
       <View style={styles.nutritionContainer}>
@@ -78,10 +95,11 @@ const styles = StyleSheet.create({
   foodName: {
     fontSize: 16,
     fontWeight: '600',
+    marginBottom: 2,
   },
-  servingSize: {
+  servingInfo: {
     fontSize: 12,
-    marginTop: 2,
+    color: '#666',
   },
   nutritionContainer: {
     alignItems: 'flex-end',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from '../context/ThemeContext';
+import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 const DailyProgressCard = ({ calorieGoal, consumedCalories }) => {
   const { theme } = useTheme();
@@ -24,25 +25,48 @@ const DailyProgressCard = ({ calorieGoal, consumedCalories }) => {
       <Text style={[styles.title, { color: theme.text }]}>Daily Calorie Goal</Text>
       
       <View style={styles.progressContainer}>
-        <View style={styles.progressTextContainer}>
-          <Text style={[styles.consumedText, { color: theme.primary }]}>{consumedCalories}</Text>
-          <Text style={[styles.goalText, { color: theme.textSecondary }]}>/ {calorieGoal}</Text>
+        <View style={styles.circularProgressContainer}>
+          <AnimatedCircularProgress
+            size={140}
+            width={10}
+            fill={progressPercentage}
+            duration={1000}
+            tintColor={progressColor}
+            backgroundColor={theme.border}
+            backgroundWidth={10}
+            lineCap="round"
+          >
+            {(fill) => (
+              <View style={styles.progressTextContainer}>
+                <Text style={[styles.progressValue, { color: theme.text }]}>
+                  {Math.round(fill)}%
+                </Text>
+                <Text style={[styles.progressTitle, { color: theme.textSecondary }]}>
+                  calories
+                </Text>
+              </View>
+            )}
+          </AnimatedCircularProgress>
         </View>
         
-        <View style={[styles.progressBarBackground, { backgroundColor: theme.border }]}>
-          <View 
-            style={[styles.progressBar, { width: `${progressPercentage}%`, backgroundColor: progressColor }]}
-          />
+        <View style={styles.statsContainer}>
+          <View style={styles.statItem}>
+            <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Consumed</Text>
+            <Text style={[styles.statValue, { color: theme.primary }]}>{consumedCalories}</Text>
+          </View>
+          
+          <View style={styles.statItem}>
+            <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Goal</Text>
+            <Text style={[styles.statValue, { color: theme.text }]}>{calorieGoal}</Text>
+          </View>
+          
+          <View style={styles.statItem}>
+            <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Remaining</Text>
+            <Text style={[styles.statValue, { color: remainingCalories < 0 ? theme.danger : theme.success }]}>
+              {remainingCalories}
+            </Text>
+          </View>
         </View>
-        
-        <Text style={[styles.percentageText, { color: theme.textSecondary }]}>{progressPercentage}%</Text>
-      </View>
-      
-      <View style={[styles.remainingContainer, { borderTopColor: theme.border }]}>
-        <Text style={[styles.remainingLabel, { color: theme.textSecondary }]}>Remaining</Text>
-        <Text style={[styles.remainingValue, { color: remainingCalories < 0 ? theme.danger : theme.success }]}>
-          {remainingCalories}
-        </Text>
       </View>
     </View>
   );
@@ -67,46 +91,37 @@ const styles = StyleSheet.create({
   progressContainer: {
     marginBottom: 15,
   },
-  progressTextContainer: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    marginBottom: 8,
+  circularProgressContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
   },
-  consumedText: {
+  progressTextContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  progressValue: {
     fontSize: 24,
     fontWeight: 'bold',
   },
-  goalText: {
-    fontSize: 16,
-    marginLeft: 5,
+  progressTitle: {
+    fontSize: 14,
+    fontWeight: '400',
   },
-  progressBarBackground: {
-    height: 10,
-    borderRadius: 5,
-    overflow: 'hidden',
-  },
-  progressBar: {
-    height: '100%',
-    borderRadius: 5,
-  },
-  percentageText: {
-    alignSelf: 'flex-end',
-    marginTop: 5,
-    fontSize: 12,
-  },
-  remainingContainer: {
+  statsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
+    marginTop: 10,
+  },
+  statItem: {
     alignItems: 'center',
-    paddingTop: 10,
-    borderTopWidth: 1,
-    borderTopColor: '#eee',
   },
-  remainingLabel: {
-    fontSize: 16,
+  statLabel: {
+    fontSize: 14,
+    marginBottom: 5,
   },
-  remainingValue: {
-    fontSize: 20,
+  statValue: {
+    fontSize: 18,
     fontWeight: 'bold',
   },
 });

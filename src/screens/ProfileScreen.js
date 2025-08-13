@@ -285,42 +285,6 @@ const ProfileScreen = ({ navigation }) => {
             <Text style={styles.saveButtonText}>Save Profile</Text>
           </TouchableOpacity>
           
-          <Text style={[styles.sectionTitle, { color: theme.text }]}>Features</Text>
-          
-          <View style={styles.featuresContainer}>
-            <TouchableOpacity 
-              style={[styles.featureButton, { backgroundColor: theme.card, borderColor: theme.border }]}
-              onPress={() => navigation.navigate('MealPlanner')}
-            >
-              <Ionicons name="restaurant" size={24} color={theme.primary} />
-              <Text style={[styles.featureButtonText, { color: theme.text }]}>Meal Planner</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.featureButton, { backgroundColor: theme.card, borderColor: theme.border }]}
-              onPress={() => navigation.navigate('ExerciseLog')}
-            >
-              <Ionicons name="fitness" size={24} color={theme.primary} />
-              <Text style={[styles.featureButtonText, { color: theme.text }]}>Exercise Log</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.featureButton, { backgroundColor: theme.card, borderColor: theme.border }]}
-              onPress={() => navigation.navigate('BarcodeScanner')}
-            >
-              <Ionicons name="barcode" size={24} color={theme.primary} />
-              <Text style={[styles.featureButtonText, { color: theme.text }]}>Barcode Scanner</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.featureButton, { backgroundColor: theme.card, borderColor: theme.border }]}
-              onPress={() => navigation.navigate('Notifications')}
-            >
-              <Ionicons name="notifications" size={24} color={theme.primary} />
-              <Text style={[styles.featureButtonText, { color: theme.text }]}>Notifications</Text>
-            </TouchableOpacity>
-          </View>
-          
           <View style={styles.themeToggleContainer}>
             <ThemeToggleButton />
           </View>
@@ -433,21 +397,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
-  },
-  featuresContainer: {
-    marginVertical: 10,
-  },
-  featureButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 8,
-    padding: 15,
-    marginBottom: 10,
-    borderWidth: 1,
-  },
-  featureButtonText: {
-    fontSize: 16,
-    marginLeft: 10,
   },
 });
 

@@ -7,7 +7,7 @@ import DiaryEntryItem from '../components/DiaryEntryItem';
 import { formatDate } from '../utils/dateUtils';
 import { useTheme } from '../context/ThemeContext';
 
-const DiaryScreen = ({ navigation }) => {
+const IntakeTrackerScreen = ({ navigation }) => {
   const { theme } = useTheme();
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [entries, setEntries] = useState([]);
@@ -20,6 +20,10 @@ const DiaryScreen = ({ navigation }) => {
   
   // Load food entries for the selected date
   useEffect(() => {
+    navigation.setOptions({
+      title: 'Intake Tracker',
+    });
+    
     const loadFoodEntries = async () => {
       try {
         const dateString = selectedDate.toISOString().split('T')[0];
@@ -288,4 +292,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DiaryScreen;
+export default IntakeTrackerScreen;
