@@ -120,46 +120,22 @@ function MainNavigator() {
         <Stack.Screen 
           name="MealPlanner" 
           component={MealPlannerScreen} 
-          options={{ 
-            title: 'Meal Planner',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
-          }} 
+          options={{ headerShown: false }} 
         />
         <Stack.Screen 
           name="ExerciseLog" 
           component={ExerciseLogScreen} 
-          options={{ 
-            title: 'Exercise Log',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
-          }} 
+          options={{ headerShown: false }} 
         />
         <Stack.Screen 
           name="BarcodeScanner" 
           component={BarcodeScannerScreen} 
-          options={{ 
-            title: 'Scan Barcode',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
-          }} 
+          options={{ headerShown: false }} 
         />
         <Stack.Screen 
           name="Notifications" 
           component={NotificationsScreen} 
-          options={{ 
-            title: 'Notifications',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
-          }} 
+          options={{ headerShown: false }} 
         />
       </Stack.Navigator>
     </NavigationContainer>

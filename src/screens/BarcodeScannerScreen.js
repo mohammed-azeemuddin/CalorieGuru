@@ -201,7 +201,16 @@ const BarcodeScannerScreen = ({ navigation }) => {
   if (hasPermission === null) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
-        <Text style={[styles.text, { color: theme.text }]}>Requesting camera permission...</Text>
+        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', padding: 15}}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{paddingRight:8}}>
+            <Ionicons name="arrow-back" size={24} color={theme.text} />
+          </TouchableOpacity>
+          <Text style={{fontSize:18, fontWeight:'bold', color: theme.text}}>Scan Barcode</Text>
+          <View style={{width:24}} />
+        </View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={[styles.text, { color: theme.text }]}>Requesting camera permission...</Text>
+        </View>
       </SafeAreaView>
     );
   }
@@ -209,13 +218,22 @@ const BarcodeScannerScreen = ({ navigation }) => {
   if (hasPermission === false) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
-        <Text style={[styles.text, { color: theme.text }]}>No access to camera</Text>
-        <TouchableOpacity 
-          style={[styles.button, { backgroundColor: theme.primary }]}
-          onPress={() => navigation.goBack()}
-        >
-          <Text style={styles.buttonText}>Go Back</Text>
-        </TouchableOpacity>
+        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', padding: 15}}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{paddingRight:8}}>
+            <Ionicons name="arrow-back" size={24} color={theme.text} />
+          </TouchableOpacity>
+          <Text style={{fontSize:18, fontWeight:'bold', color: theme.text}}>Scan Barcode</Text>
+          <View style={{width:24}} />
+        </View>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={[styles.text, { color: theme.text, marginBottom: 20 }]}>No access to camera</Text>
+          <TouchableOpacity 
+            style={[styles.button, { backgroundColor: theme.primary }]}
+            onPress={() => navigation.goBack()}
+          >
+            <Text style={styles.buttonText}>Go Back</Text>
+          </TouchableOpacity>
+        </View>
       </SafeAreaView>
     );
   }

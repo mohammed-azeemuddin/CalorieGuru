@@ -18,7 +18,7 @@ import {
   getActiveNotifications,
 } from '../utils/NotificationsManager';
 
-const NotificationsScreen = () => {
+const NotificationsScreen = ({ navigation }) => {
   const { theme } = useTheme();
   const [hasPermission, setHasPermission] = useState(false);
   const [notificationSettings, setNotificationSettings] = useState({
@@ -303,6 +303,13 @@ const NotificationsScreen = () => {
   if (!hasPermission) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
+        <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', padding: 15}}>
+          <TouchableOpacity onPress={() => navigation.goBack()} style={{paddingRight:8}}>
+            <Ionicons name="arrow-back" size={24} color={theme.text} />
+          </TouchableOpacity>
+          <Text style={{fontSize:18, fontWeight:'bold', color: theme.text}}>Notifications</Text>
+          <View style={{width:24}} />
+        </View>
         <View style={[styles.permissionContainer, { backgroundColor: theme.card }]}>
           <Ionicons name="notifications-off" size={48} color={theme.textSecondary} />
           <Text style={[styles.permissionTitle, { color: theme.text }]}>
@@ -327,6 +334,13 @@ const NotificationsScreen = () => {
   
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
+      <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', padding: 15}}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={{paddingRight:8}}>
+          <Ionicons name="arrow-back" size={24} color={theme.text} />
+        </TouchableOpacity>
+        <Text style={{fontSize:18, fontWeight:'bold', color: theme.text}}>Notifications</Text>
+        <View style={{width:24}} />
+      </View>
       <ScrollView>
         {/* Meal Reminders Section */}
         <View style={[styles.section, { backgroundColor: theme.card }]}>

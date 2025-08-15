@@ -184,22 +184,26 @@ const ExerciseLogScreen = ({ navigation }) => {
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
       {/* Date Selector */}
       <View style={styles.dateSelector}>
-        <TouchableOpacity onPress={goToPreviousDay} style={styles.dateNavButton}>
-          <Ionicons name="chevron-back" size={24} color={theme.text} />
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <Ionicons name="arrow-back" size={24} color={theme.text} />
         </TouchableOpacity>
-        
-        <TouchableOpacity onPress={goToToday} style={styles.dateContainer}>
-          <Text style={[styles.dateText, { color: theme.text }]}>
-            {formatDate(selectedDate)}
-          </Text>
-          {isToday(selectedDate) && (
-            <Text style={[styles.todayText, { color: theme.primary }]}>Today</Text>
-          )}
-        </TouchableOpacity>
-        
-        <TouchableOpacity onPress={goToNextDay} style={styles.dateNavButton}>
-          <Ionicons name="chevron-forward" size={24} color={theme.text} />
-        </TouchableOpacity>
+        <View style={styles.dateSelectorCenter}>
+          <TouchableOpacity onPress={goToPreviousDay} style={styles.dateNavButton}>
+            <Ionicons name="chevron-back" size={24} color={theme.text} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={goToToday} style={styles.dateContainer}>
+            <Text style={[styles.dateText, { color: theme.text }]}>
+              {formatDate(selectedDate)}
+            </Text>
+            {isToday(selectedDate) && (
+              <Text style={[styles.todayText, { color: theme.primary }]}>Today</Text>
+            )}
+          </TouchableOpacity>
+          <TouchableOpacity onPress={goToNextDay} style={styles.dateNavButton}>
+            <Ionicons name="chevron-forward" size={24} color={theme.text} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.spacer} />
       </View>
       
       {/* Summary Card */}
@@ -344,6 +348,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
     paddingVertical: 10,
+  },
+  dateSelectorCenter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  backButton: {
+    padding: 5,
+  },
+  spacer: {
+    width: 24, // Same width as the back button icon
   },
   dateNavButton: {
     padding: 5,

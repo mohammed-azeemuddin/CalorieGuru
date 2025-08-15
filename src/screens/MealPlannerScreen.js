@@ -344,20 +344,26 @@ const MealPlannerScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
       <View style={[styles.dateSelector, { backgroundColor: theme.card, borderBottomColor: theme.border }]}>
-        <TouchableOpacity onPress={goToPreviousDay}>
-          <Ionicons name="chevron-back" size={24} color={theme.primary} />
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <Ionicons name="arrow-back" size={24} color={theme.text} />
         </TouchableOpacity>
-        
-        <TouchableOpacity onPress={goToToday} style={styles.dateContainer}>
-          <Text style={[styles.dateText, { color: theme.text }]}>{formatDate(selectedDate)}</Text>
-          {!isSameDay(selectedDate, new Date()) && (
-            <Text style={[styles.todayText, { color: theme.primary }]}>Today</Text>
-          )}
-        </TouchableOpacity>
-        
-        <TouchableOpacity onPress={goToNextDay}>
-          <Ionicons name="chevron-forward" size={24} color={theme.primary} />
-        </TouchableOpacity>
+        <View style={styles.dateSelectorCenter}>
+          <TouchableOpacity onPress={goToPreviousDay} style={styles.dateNavButton}>
+            <Ionicons name="chevron-back" size={24} color={theme.primary} />
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={goToToday} style={styles.dateContainer}>
+            <Text style={[styles.dateText, { color: theme.text }]}>{formatDate(selectedDate)}</Text>
+            {!isSameDay(selectedDate, new Date()) && (
+              <Text style={[styles.todayText, { color: theme.primary }]}>Today</Text>
+            )}
+          </TouchableOpacity>
+          
+          <TouchableOpacity onPress={goToNextDay} style={styles.dateNavButton}>
+            <Ionicons name="chevron-forward" size={24} color={theme.primary} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.spacer} />
       </View>
       
       <View style={[styles.nutritionSummary, { backgroundColor: theme.card }]}>
@@ -427,6 +433,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 15,
     borderBottomWidth: 1,
+  },
+  dateSelectorCenter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  backButton: {
+    padding: 5,
+  },
+  dateNavButton: {
+    padding: 5,
+  },
+  spacer: {
+    width: 24, // Same width as the back button icon
   },
   dateContainer: {
     alignItems: 'center',
