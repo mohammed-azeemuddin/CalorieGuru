@@ -10,6 +10,7 @@ import { useTheme } from '../context/ThemeContext';
 
 const HomeScreen = ({ navigation }) => {
   const { theme } = useTheme();
+  // Default calorie goal is set to 2000. This can be updated via user settings
   const [calorieGoal, setCalorieGoal] = useState(2000);
   const [consumedCalories, setConsumedCalories] = useState(0);
   const [recentFoods, setRecentFoods] = useState([]);

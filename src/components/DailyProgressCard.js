@@ -52,18 +52,18 @@ const DailyProgressCard = ({ calorieGoal, consumedCalories }) => {
         <View style={styles.statsContainer}>
           <View style={styles.statItem}>
             <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Consumed</Text>
-            <Text style={[styles.statValue, { color: theme.primary }]}>{consumedCalories}</Text>
+            <Text style={[styles.statValue, { color: theme.primary }]}>{Math.round(consumedCalories)}</Text>
           </View>
           
           <View style={styles.statItem}>
             <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Goal</Text>
-            <Text style={[styles.statValue, { color: theme.text }]}>{calorieGoal}</Text>
+            <Text style={[styles.statValue, { color: theme.text }]}>{Math.round(calorieGoal)}</Text>
           </View>
           
           <View style={styles.statItem}>
             <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Remaining</Text>
             <Text style={[styles.statValue, { color: remainingCalories < 0 ? theme.danger : theme.success }]}>
-              {remainingCalories}
+              {Math.round(remainingCalories)}
             </Text>
           </View>
         </View>
