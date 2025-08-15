@@ -7,6 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as XLSX from 'xlsx';
 import { Asset } from 'expo-asset';
+import * as FileSystem from 'expo-file-system';
 
 const FoodVaultScreen = ({ navigation }) => {
   const { theme } = useTheme();
@@ -51,7 +52,7 @@ const FoodVaultScreen = ({ navigation }) => {
       const jsonData = XLSX.utils.sheet_to_json(worksheet, {
         header: 1, // Get as array of arrays first
         raw: false,
-        defval: '' // Default value for empty cells
+        defval: '-' // Default value for empty cells as '-' to handle missing serving sizes
       });
       
       console.log('Raw JSON data length:', jsonData.length);
@@ -144,13 +145,13 @@ const FoodVaultScreen = ({ navigation }) => {
             id: index + 1,
             name: (row[columnIndices.name] || '').toString().trim(),
             category: normalizeCategory(row[columnIndices.category] || 'Other'),
-            serving: (row[columnIndices.serving] || 'N/A').toString().trim(),
-            quantity: (row[columnIndices.quantity] || 'N/A').toString().trim(),
-            calories: parseFloat(row[columnIndices.calories]) || 0,
-            carbohydrates: parseFloat(row[columnIndices.carbohydrates]) || 0,
-            protein: parseFloat(row[columnIndices.protein]) || 0,
-            fats: parseFloat(row[columnIndices.fats]) || 0,
-            hasOriginalServingSize: true // Mark as having original serving data
+            serving: (row[columnIndices.serving] || '-').toString().trim(),
+            quantity: (row[columnIndices.quantity] || '-').toString().trim(),
+            calories: parseFloat(String(row[columnIndices.calories]).replace(/[^0-9.]/g, '')) || 0,
+            carbs: parseFloat(String(row[columnIndices.carbohydrates]).replace(/[^0-9.]/g, '')) || 0,
+            protein: parseFloat(String(row[columnIndices.protein]).replace(/[^0-9.]/g, '')) || 0,
+            fat: parseFloat(String(row[columnIndices.fats]).replace(/[^0-9.]/g, '')) || 0,
+            hasOriginalServingSize: (row[columnIndices.serving] || '-') !== '-' // Mark as having original serving data
           };
           
           // Create description
@@ -242,27 +243,25 @@ const FoodVaultScreen = ({ navigation }) => {
             csvContent = getSampleCSVContent();
           }
         } else {
-          // For native platforms
+          // For native platforms (iOS and Android)
           try {
             console.log('Attempting to load CSV from bundled assets');
             const asset = Asset.fromModule(require('../../assets/FoodSheet.csv'));
-            await asset.downloadAsync();
             
             console.log('Asset info:', {
-              localUri: asset.localUri,
               uri: asset.uri,
-              downloaded: asset.downloaded
+              hash: asset.hash
             });
             
-            const response = await fetch(asset.localUri || asset.uri);
+            const response = await fetch(asset.uri);
             if (response.ok) {
               csvContent = await response.text();
-              console.log(`Successfully loaded CSV from bundled assets (length: ${csvContent.length})`);
+              console.log(`Successfully loaded CSV using fetch (length: ${csvContent.length})`);
             } else {
-              throw new Error(`Failed to fetch asset: ${response.status}`);
+              throw new Error(`Fetch failed with status ${response.status}`);
             }
           } catch (error) {
-            console.log('Could not load CSV from bundled assets:', error.message);
+            console.error('Error loading bundled asset:', error);
             console.log('Falling back to sample data');
             csvContent = getSampleCSVContent();
           }
@@ -275,15 +274,18 @@ const FoodVaultScreen = ({ navigation }) => {
         }
       }
       
-      // If we still don't have content, use sample data
-      if (!csvContent) {
-        console.log('No CSV content available, using sample data');
-        csvContent = getSampleCSVContent();
-      }
-      
       // Parse the CSV content
       console.log('=== Starting CSV Parsing ===');
       const transformedData = parseCSVContent(csvContent);
+      
+      // If we got no data but had CSV content, something went wrong with parsing
+      if (transformedData.length === 0 && csvContent) {
+        console.error('CSV parsing returned no data despite having content');
+        console.log('CSV content first 100 chars:', csvContent.substring(0, 100));
+        await AsyncStorage.removeItem('cached_csv_content');
+        console.log('Cleared cached CSV due to parsing error');
+        throw new Error('CSV parsing failed to produce data');
+      }
       
       console.log('=== CSV Load Complete ===');
       console.log(`Final result: ${transformedData.length} food items loaded`);
@@ -301,9 +303,19 @@ const FoodVaultScreen = ({ navigation }) => {
     }
   };
 
-  // Helper function to check if the food name contains a serving size in it
-  const hasServingSizeInName = (name) => {
-    return /\b\d+\s*(pc|pcs|piece|pieces|g|ml|liter|litre|l)\b|~\s*\d+\s*(g|ml|liter|litre|l)\b/.test(name.toLowerCase());
+  // Helper function to check if a food item has a serving size
+  const hasServingSize = (food) => {
+    return food.hasOriginalServingSize || (food.serving && food.serving !== '-');
+  };
+
+  // Helper function to sort foods by serving availability first, then by name
+  const sortByServingAndName = (a, b) => {
+    const aHasServing = hasServingSize(a);
+    const bHasServing = hasServingSize(b);
+    
+    if (aHasServing && !bHasServing) return -1;
+    if (!aHasServing && bHasServing) return 1;
+    return a.name.localeCompare(b.name);
   };
 
   // Function to filter and sort foods
@@ -312,14 +324,7 @@ const FoodVaultScreen = ({ navigation }) => {
       .filter((item) =>
         item.name.toLowerCase().includes(searchText.toLowerCase())
       )
-      .sort((a, b) => {
-        const aHasOriginalServing = a.hasOriginalServingSize || hasServingSizeInName(a.name);
-        const bHasOriginalServing = b.hasOriginalServingSize || hasServingSizeInName(b.name);
-
-        if (aHasOriginalServing && !bHasOriginalServing) return -1;
-        if (!aHasOriginalServing && bHasOriginalServing) return 1;
-        return a.name.localeCompare(b.name);
-      });
+      .sort(sortByServingAndName);
   };
 
   // Sample CSV content for fallback (with exact headers you mentioned)
@@ -352,9 +357,9 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
           serving: 'Bowl', 
           quantity: '1 cup', 
           calories: 200, 
-          carbohydrates: 45, 
+          carbs: 45, 
           protein: 4, 
-          fats: 0.5, 
+          fat: 0.5, 
           description: 'Rice - Grains (1 cup)',
           hasOriginalServingSize: true
         }
@@ -392,6 +397,9 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
     
     if (text) {
       filtered = filterAndSortFoods(filtered, text);
+    } else {
+      // Sort by serving availability even when no search query
+      filtered = filtered.sort(sortByServingAndName);
     }
     
     setFilteredFoods(filtered);
@@ -409,6 +417,9 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
     
     if (searchQuery) {
       filtered = filterAndSortFoods(filtered, searchQuery);
+    } else {
+      // Sort by serving availability even when no search query
+      filtered = filtered.sort(sortByServingAndName);
     }
     
     setFilteredFoods(filtered);
@@ -440,7 +451,8 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
       
       // Combine and sort foods
       const combinedFoods = [...customFoods, ...csvFoods];
-      const sortedFoods = [...combinedFoods].sort((a, b) => a.name.localeCompare(b.name));
+      // Sort foods by serving availability first, then by name
+      const sortedFoods = [...combinedFoods].sort(sortByServingAndName);
       
       console.log(`Total foods: ${sortedFoods.length}`);
       setAllFoods(sortedFoods);
@@ -530,6 +542,19 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
     }
   };
   
+  // Function to clear cache and reload data
+  const clearCacheAndReload = async () => {
+    try {
+      console.log('Clearing CSV cache and reloading data');
+      await AsyncStorage.removeItem('cached_csv_content');
+      await loadAllFoods();
+      Alert.alert('Success', 'Food data reloaded successfully');
+    } catch (error) {
+      console.error('Error reloading data:', error);
+      Alert.alert('Error', 'Failed to reload data: ' + error.message);
+    }
+  };
+
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
       <View style={[styles.searchContainer, { backgroundColor: theme.card }]}>
@@ -541,6 +566,9 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
           value={searchQuery}
           onChangeText={handleSearch}
         />
+        <TouchableOpacity onPress={clearCacheAndReload} style={styles.refreshButton}>
+           <Ionicons name="refresh" size={20} color={theme.textSecondary} />
+         </TouchableOpacity>
       </View>
       
       <View style={styles.categoriesContainer}>
@@ -624,6 +652,10 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     height: 45,
+  },
+  refreshButton: {
+    padding: 8,
+    marginLeft: 5,
   },
   categoriesContainer: {
     marginBottom: 10,

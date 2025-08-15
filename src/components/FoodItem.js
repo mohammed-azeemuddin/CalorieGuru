@@ -27,19 +27,28 @@ const FoodItem = ({ food, onPress }) => {
 
   // Format serving and quantity information
   const getServingInfo = () => {
-    if (food.servingSize && food.quantity) {
-      if (food.servingSize !== '-' && food.servingSize !== food.quantity) {
-        return `${food.servingSize} • ${food.quantity}`;
-      } else {
-        return food.quantity;
-      }
-    } else if (food.servingSize) {
-      return food.servingSize;
-    } else if (food.quantity) {
-      return food.quantity;
-    } else {
-      return '100g'; // Default
+    let servingInfo = '';
+    
+    // Add serving information if available
+    if (food.serving && food.serving !== '-') {
+      servingInfo = food.serving;
     }
+    
+    // Add quantity information if available and different from serving
+    if (food.quantity && food.quantity !== '-' && food.quantity !== food.serving) {
+      if (servingInfo) {
+        servingInfo += ` • ${food.quantity}`;
+      } else {
+        servingInfo = food.quantity;
+      }
+    }
+    
+    // Default value if no serving or quantity information is available
+    if (!servingInfo) {
+      servingInfo = '100g';
+    }
+    
+    return servingInfo;
   };
 
   return (
