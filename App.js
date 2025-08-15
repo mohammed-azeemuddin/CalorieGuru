@@ -51,7 +51,7 @@ function HomeTabs() {
         },
         tabBarActiveTintColor: theme.tabBarActive,
         tabBarInactiveTintColor: theme.tabBarInactive,
-        headerShown: true,
+        headerShown: false,
         headerStyle: {
           backgroundColor: theme.card,
         },
