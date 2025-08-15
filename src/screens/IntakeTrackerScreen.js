@@ -130,6 +130,14 @@ const IntakeTrackerScreen = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       
+      <View style={styles.helpTextContainer}>
+        <Text style={[styles.helpText, { color: theme.textSecondary }]}>
+          Track your daily food intake here. Navigate between dates using the arrows above.
+          View your nutrition summary for each day and add foods from the Food Vault or create custom foods.
+          Tap on any food entry to view details or click on the Bin icon to delete.
+        </Text>
+      </View>
+      
       <View style={[styles.summaryContainer, { backgroundColor: theme.card }]}>
         <View style={styles.calorieContainer}>
           <Text style={[styles.calorieValue, { color: theme.primary }]}>{nutritionSummary.calories}</Text>
@@ -167,23 +175,39 @@ const IntakeTrackerScreen = ({ navigation }) => {
         ListEmptyComponent={
           <View style={styles.emptyContainer}>
             <Text style={[styles.emptyText, { color: theme.textSecondary }]}>No food entries for this day</Text>
-            <TouchableOpacity 
-              style={[styles.addFoodButton, { backgroundColor: theme.primary }]}
-              onPress={() => navigation.navigate('Food Database')}
-            >
-              <Text style={styles.addFoodButtonText}>Add Food</Text>
-            </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity 
+                style={[styles.addFoodButton, { backgroundColor: theme.primary, marginRight: 10 }]}
+                onPress={() => navigation.navigate('Food Vault')}
+              >
+                <Text style={styles.addFoodButtonText}>Add Food from Food Vault</Text>
+              </TouchableOpacity>
+              <TouchableOpacity 
+                style={[styles.addFoodButton, { backgroundColor: theme.secondary }]}
+                onPress={() => navigation.navigate('AddFood')}
+              >
+                <Text style={styles.addFoodButtonText}>Add Custom Food</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         }
       />
       
       {entries.length > 0 && (
-        <TouchableOpacity 
-          style={[styles.addButton, { backgroundColor: theme.primary }]}
-          onPress={() => navigation.navigate('Food Database')}
-        >
-          <Ionicons name="add" size={24} color="white" />
-        </TouchableOpacity>
+        <View style={styles.floatingButtonContainer}>
+          <TouchableOpacity 
+            style={[styles.addButton, { backgroundColor: theme.primary, bottom: 70 }]}
+            onPress={() => navigation.navigate('Food Vault')}
+          >
+            <Text style={styles.floatingButtonText}>Food Vault</Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={[styles.addButton, { backgroundColor: theme.secondary }]}
+            onPress={() => navigation.navigate('AddFood')}
+          >
+            <Text style={styles.floatingButtonText}>Custom Food</Text>
+          </TouchableOpacity>
+        </View>
       )}
     </SafeAreaView>
   );
@@ -219,6 +243,15 @@ const styles = StyleSheet.create({
   todayText: {
     fontSize: 12,
     marginTop: 4,
+  },
+  helpTextContainer: {
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
+  helpText: {
+    fontSize: 12,
+    lineHeight: 18,
+    textAlign: 'center',
   },
   summaryContainer: {
     padding: 15,
@@ -266,6 +299,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 20,
   },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   addFoodButton: {
     paddingVertical: 12,
     paddingHorizontal: 20,
@@ -275,20 +313,32 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
-  addButton: {
+  floatingButtonContainer: {
     position: 'absolute',
     bottom: 20,
     right: 20,
-    width: 56,
+  },
+  addButton: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    minWidth: 120,
     height: 56,
     borderRadius: 28,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 15,
     elevation: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
+  },
+  floatingButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 14,
+    textAlign: 'center',
   },
 });
 

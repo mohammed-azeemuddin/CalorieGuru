@@ -7,7 +7,6 @@ import { useTheme } from '../context/ThemeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as XLSX from 'xlsx';
 import { Asset } from 'expo-asset';
-import * as FileSystem from 'expo-file-system';
 
 const FoodVaultScreen = ({ navigation }) => {
   const { theme } = useTheme();
