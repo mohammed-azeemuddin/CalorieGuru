@@ -45,14 +45,6 @@ const FeaturesScreen = ({ navigation }) => {
               <Ionicons name="notifications" size={24} color={theme.primary} />
               <Text style={[styles.featureButtonText, { color: theme.text }]}>Notifications</Text>
             </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={[styles.featureButton, { backgroundColor: theme.card, borderColor: theme.border }]}
-              onPress={() => navigation.navigate('ImportFoodData')}
-            >
-              <Ionicons name="cloud-upload-outline" size={24} color={theme.primary} />
-              <Text style={[styles.featureButtonText, { color: theme.text }]}>Import Food Data</Text>
-            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

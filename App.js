@@ -18,7 +18,6 @@ import ExerciseLogScreen from './src/screens/ExerciseLogScreen';
 import BarcodeScannerScreen from './src/screens/BarcodeScannerScreen';
 import NotificationsScreen from './src/screens/NotificationsScreen';
 import FeaturesScreen from './src/screens/FeaturesScreen';
-import ImportFoodDataScreen from './src/screens/ImportFoodDataScreen';
 
 // Import theme context
 import { ThemeProvider, useTheme } from './src/context/ThemeContext';
@@ -156,17 +155,6 @@ function MainNavigator() {
           component={NotificationsScreen} 
           options={{ 
             title: 'Notifications',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
-          }} 
-        />
-        <Stack.Screen 
-          name="ImportFoodData" 
-          component={ImportFoodDataScreen} 
-          options={{ 
-            title: 'Import Food Data',
             headerStyle: {
               backgroundColor: theme.card,
             },
