@@ -12,12 +12,16 @@ const DailyProgressCard = ({ calorieGoal, consumedCalories }) => {
   const progressPercentage = Math.min(Math.round((consumedCalories / calorieGoal) * 100), 100);
   
   // Determine progress bar color based on percentage
-  let progressColor = theme.success; // Green by default
+  let progressColor;
   
   if (progressPercentage > 100) {
     progressColor = theme.danger; // Red if exceeded
-  } else if (progressPercentage > 85) {
-    progressColor = theme.warning; // Yellow if close to goal
+  } else if (progressPercentage > 90) {
+    progressColor = theme.success; // Green if above 90%
+  } else if (progressPercentage >= 55) {
+    progressColor = theme.warning; // Yellow if between 55% and 90%
+  } else {
+    progressColor = theme.primary; // Blue if below 50%
   }
 
   return (
@@ -63,7 +67,9 @@ const DailyProgressCard = ({ calorieGoal, consumedCalories }) => {
           <View style={styles.statItem}>
             <Text style={[styles.statLabel, { color: theme.textSecondary }]}>Remaining</Text>
             <Text style={[styles.statValue, { color: remainingCalories < 0 ? theme.danger : theme.success }]}>
-              {Math.round(remainingCalories)}
+              {remainingCalories < 0 
+                ? `+${Math.abs(Math.round(remainingCalories))} cals consumed` 
+                : Math.round(remainingCalories)}
             </Text>
           </View>
         </View>
