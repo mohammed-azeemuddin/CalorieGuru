@@ -100,10 +100,7 @@ function MainNavigator() {
           component={FoodDetailScreen} 
           options={{ 
             title: 'Food Details',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
+            headerShown: false,
           }} 
         />
         <Stack.Screen 
@@ -111,10 +108,7 @@ function MainNavigator() {
           component={AddFoodScreen} 
           options={{ 
             title: 'Add Food',
-            headerStyle: {
-              backgroundColor: theme.card,
-            },
-            headerTintColor: theme.text,
+            headerShown: false,
           }} 
         />
         <Stack.Screen 

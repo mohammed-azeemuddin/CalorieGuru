@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useTheme } from '../context/ThemeContext';
+import { Ionicons } from '@expo/vector-icons';
 
 const AddFoodScreen = ({ navigation }) => {
   const { theme } = useTheme();
@@ -100,7 +101,12 @@ const AddFoodScreen = ({ navigation }) => {
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
       <ScrollView>
         <View style={[styles.header, { backgroundColor: theme.primary }]}>
-          <Text style={styles.headerTitle}>Add New Food</Text>
+          <View style={styles.headerContent}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+              <Ionicons name="arrow-back" size={24} color="white" />
+            </TouchableOpacity>
+            <Text style={styles.headerTitle}>Add New Food</Text>
+          </View>
         </View>
         
         <View style={styles.formContainer}>
@@ -238,7 +244,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    padding: 20,
+    padding: 10,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  backButton: {
+    marginRight: 10,
   },
   headerTitle: {
     fontSize: 24,

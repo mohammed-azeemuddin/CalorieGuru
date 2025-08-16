@@ -119,6 +119,14 @@ const FoodDetailScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]}>
+      <View style={styles.headerNav}>
+        <TouchableOpacity 
+          style={styles.backButton} 
+          onPress={() => navigation.goBack()}
+        >
+          <Ionicons name="arrow-back" size={24} color={theme.text} />
+        </TouchableOpacity>
+      </View>
       <ScrollView>
         <View style={[styles.header, { backgroundColor: theme.primary }]}>
           <Text style={styles.foodName}>{food.name}</Text>
@@ -209,6 +217,15 @@ const FoodDetailScreen = ({ route, navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  headerNav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
+  backButton: {
+    padding: 5,
+  },
   container: {
     flex: 1,
   },
