@@ -7,6 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as XLSX from 'xlsx';
 import { Asset } from 'expo-asset';
+import { useFocusEffect } from '@react-navigation/native';
 
 const FoodVaultScreen = ({ navigation }) => {
   const { theme } = useTheme();
@@ -15,6 +16,7 @@ const FoodVaultScreen = ({ navigation }) => {
   const [filteredFoods, setFilteredFoods] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [categories, setCategories] = useState(['All']);
+  const [customFoods, setCustomFoods] = useState([]);
 
   // Enhanced CSV parsing function with better error handling
   const parseCSVContent = (csvContent) => {
@@ -431,17 +433,151 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
     loadAllFoods();
   }, []);
 
-  const loadAllFoods = async () => {
+  // Load custom foods from AsyncStorage
+  const loadCustomFoods = async () => {
+    try {
+      const customFoodsString = await AsyncStorage.getItem('customFoods');
+      if (customFoodsString) {
+        return JSON.parse(customFoodsString);
+      }
+      return [];
+    } catch (error) {
+      console.error('Error loading custom foods:', error);
+      return [];
+    }
+  };
+
+  // Delete a custom food
+  const deleteCustomFood = async (foodId, foodName, deleteFromIntake = false) => {
+    try {
+      // Get current custom foods
+      const customFoodsString = await AsyncStorage.getItem('customFoods');
+      if (!customFoodsString) return;
+      
+      const currentCustomFoods = JSON.parse(customFoodsString);
+      
+      // Filter out the food to delete
+      const updatedCustomFoods = currentCustomFoods.filter(food => food.id !== foodId);
+      
+      // Save updated custom foods
+      await AsyncStorage.setItem('customFoods', JSON.stringify(updatedCustomFoods));
+      
+      // Update state
+      setCustomFoods(updatedCustomFoods);
+      
+      // Update all foods and filtered foods
+      const updatedAllFoods = allFoods.filter(food => food.id !== foodId);
+      setAllFoods(updatedAllFoods);
+      
+      if (selectedCategory === 'All' || selectedCategory === 'Custom') {
+        setFilteredFoods(filteredFoods.filter(food => food.id !== foodId));
+      }
+      
+      // If deleteFromIntake is true, also delete from today's intake
+      if (deleteFromIntake) {
+        const today = new Date().toISOString().split('T')[0];
+        const foodEntryKey = `foodEntries_${today}`;
+        
+        // Get existing entries for today
+        const existingEntriesString = await AsyncStorage.getItem(foodEntryKey);
+        
+        if (existingEntriesString) {
+          const entries = JSON.parse(existingEntriesString);
+          
+          // Remove all entries with the same food name
+          const updatedEntries = entries.filter(entry => entry.name !== foodName);
+          
+          // Save updated entries
+          await AsyncStorage.setItem(foodEntryKey, JSON.stringify(updatedEntries));
+        }
+      }
+      
+      Alert.alert('Success', 'Food deleted successfully');
+    } catch (error) {
+      console.error('Error deleting custom food:', error);
+      Alert.alert('Error', 'Failed to delete food');
+    }
+  };
+
+  // Check if a food is in today's intake
+  const checkFoodInTodaysIntake = async (foodName) => {
+    try {
+      const today = new Date().toISOString().split('T')[0];
+      const foodEntryKey = `foodEntries_${today}`;
+      
+      // Get existing entries for today
+      const existingEntriesString = await AsyncStorage.getItem(foodEntryKey);
+      
+      if (existingEntriesString) {
+        const entries = JSON.parse(existingEntriesString);
+        // Check if any entry has the same food name
+        return entries.some(entry => entry.name === foodName);
+      }
+      
+      return false;
+    } catch (error) {
+      console.error('Error checking food in today\'s intake:', error);
+      return false;
+    }
+  };
+
+  // Confirm deletion of a custom food
+  const confirmDeleteFood = async (food) => {
+    // Check if the food is in today's intake
+    const isInTodaysIntake = await checkFoodInTodaysIntake(food.name);
+    
+    if (isInTodaysIntake) {
+      // If the food is in today's intake, ask if the user wants to delete it from there too
+      Alert.alert(
+        'Delete Food',
+        `${food.name} is in today's intake. Do you want to delete it from both the Food Vault and today's intake?`,
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Food Vault Only', onPress: () => deleteCustomFood(food.id, food.name, false) },
+          { text: 'Both', style: 'destructive', onPress: () => deleteCustomFood(food.id, food.name, true) }
+        ]
+      );
+    } else {
+      // If the food is not in today's intake, just confirm deletion from Food Vault
+      Alert.alert(
+        'Delete Food',
+        `Are you sure you want to delete ${food.name}?`,
+        [
+          { text: 'Cancel', style: 'cancel' },
+          { text: 'Delete', style: 'destructive', onPress: () => deleteCustomFood(food.id, food.name, false) }
+        ]
+      );
+    }
+  };
+
+  // Use useFocusEffect to reload custom foods when the screen is focused
+  useFocusEffect(
+    React.useCallback(() => {
+      const loadFoods = async () => {
+        const customFoodsData = await loadCustomFoods();
+        setCustomFoods(customFoodsData);
+        loadAllFoods(customFoodsData);
+      };
+      
+      loadFoods();
+    }, [])
+  );
+
+  const loadAllFoods = async (customFoodsData = null) => {
     try {
       console.log('=== Starting loadAllFoods ===');
       
-      // Get custom foods from AsyncStorage
-      const customFoodsString = await AsyncStorage.getItem('customFoods');
+      // Get custom foods from AsyncStorage or use provided data
       let customFoods = [];
-      
-      if (customFoodsString) {
-        customFoods = JSON.parse(customFoodsString);
-        console.log(`Loaded ${customFoods.length} custom foods from AsyncStorage`);
+      if (customFoodsData) {
+        customFoods = customFoodsData;
+        console.log(`Using provided ${customFoods.length} custom foods`);
+      } else {
+        const customFoodsString = await AsyncStorage.getItem('customFoods');
+        if (customFoodsString) {
+          customFoods = JSON.parse(customFoodsString);
+          console.log(`Loaded ${customFoods.length} custom foods from AsyncStorage`);
+        }
       }
       
       // Load food data from CSV
@@ -496,7 +632,8 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
       // Normalize categories for all foods (both CSV and custom)
       const allFoodsWithNormalizedCategories = sortedFoods.map(food => ({
         ...food,
-        category: normalizeCategory(food.category || 'Other')
+        category: normalizeCategory(food.category || 'Other'),
+        isCustom: customFoods.some(customFood => customFood.id === food.id)
       }));
       
       // Update the sorted foods with normalized categories
@@ -510,11 +647,26 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
       });
       
       const categoryArray = Array.from(csvCategories).sort();
+      
+      // Make sure 'Custom' and 'Other' are at the end
+      const customIndex = categoryArray.indexOf('Custom');
+      if (customIndex > -1) {
+        categoryArray.splice(customIndex, 1);
+      }
+      
       const otherIndex = categoryArray.indexOf('Other');
       if (otherIndex > -1) {
         categoryArray.splice(otherIndex, 1);
-        categoryArray.push('Other');
       }
+      
+      // Add 'Custom' before 'Other' if there are custom foods
+      if (customFoods.length > 0) {
+        categoryArray.push('Custom');
+      }
+      
+      // Add 'Other' at the end
+      categoryArray.push('Other');
+      
       const dynamicCategories = ['All', ...categoryArray];
       
       console.log('Categories:', dynamicCategories);
@@ -523,7 +675,11 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
       // Initialize filtered foods with normalized categories
       let filtered = allFoodsWithNormalizedCategories;
       if (selectedCategory !== 'All') {
-        filtered = filtered.filter(food => food.category === selectedCategory);
+        if (selectedCategory === 'Custom') {
+          filtered = filtered.filter(food => food.isCustom);
+        } else {
+          filtered = filtered.filter(food => food.category === selectedCategory);
+        }
       }
       if (searchQuery) {
         filtered = filterAndSortFoods(filtered, searchQuery);
@@ -594,6 +750,14 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
               </Text>
             </TouchableOpacity>
           )}
+          initialNumToRender={5}
+          maxToRenderPerBatch={5}
+          windowSize={3}
+          getItemLayout={(data, index) => ({
+            length: 100, // Approximate width of each category item
+            offset: 100 * index,
+            index,
+          })}
         />
       </View>
       
@@ -604,6 +768,7 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
           <FoodItem 
             food={item} 
             onPress={() => navigation.navigate('FoodDetail', { food: item })}
+            onDelete={item.category === 'Custom' ? confirmDeleteFood : null}
           />
         )}
         ListEmptyComponent={
@@ -611,12 +776,17 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
             <Text style={[styles.emptyText, { color: theme.textSecondary }]}>No foods found</Text>
           </View>
         }
-        onEndReached={() => console.log('Reached end of list')}
-        onEndReachedThreshold={0.1}
-        removeClippedSubviews={false}
-        maxToRenderPerBatch={50}
-        windowSize={10}
-        initialNumToRender={20}
+        onEndReachedThreshold={0.5}
+        removeClippedSubviews={true}
+        maxToRenderPerBatch={10}
+        windowSize={5}
+        initialNumToRender={10}
+        updateCellsBatchingPeriod={50}
+        getItemLayout={(data, index) => ({
+          length: 80, // Approximate height of each item
+          offset: 80 * index,
+          index,
+        })}
       />
       
       <TouchableOpacity 

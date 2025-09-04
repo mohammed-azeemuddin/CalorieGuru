@@ -314,15 +314,19 @@ const MealPlannerScreen = ({ navigation }) => {
                     {item.servingSize} • {item.calories} cal
                   </Text>
                 </View>
-                <TouchableOpacity
-                  onPress={() => removeFoodFromMeal(mealType, item.id)}
+                <TouchableOpacity 
                   style={styles.removeButton}
+                  onPress={() => removeFoodFromMeal(mealType, item.id)}
                 >
-                  <Ionicons name="close-circle" size={24} color={theme.danger} />
+                  <Ionicons name="close-circle" size={20} color={theme.error} />
                 </TouchableOpacity>
               </View>
             )}
-            scrollEnabled={false}
+            initialNumToRender={5}
+            maxToRenderPerBatch={5}
+            removeClippedSubviews={true}
+            windowSize={2}
+            updateCellsBatchingPeriod={50}
           />
         ) : (
           <Text style={[styles.emptyMealText, { color: theme.textSecondary }]}>No foods added</Text>

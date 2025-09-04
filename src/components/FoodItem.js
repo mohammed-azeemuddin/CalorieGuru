@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 
-const FoodItem = ({ food, onPress }) => {
+const FoodItem = memo(({ food, onPress, onDelete }) => {
   const { theme } = useTheme();
   // Get appropriate icon based on food category
   const getCategoryIcon = (category) => {
@@ -71,10 +71,28 @@ const FoodItem = ({ food, onPress }) => {
         </View>
       </View>
       
-      <Ionicons name="chevron-forward" size={20} color={theme.textSecondary} />
+      {food.category === 'Custom' && onDelete ? (
+        <TouchableOpacity 
+          style={styles.deleteButton}
+          onPress={(e) => {
+            e.stopPropagation();
+            onDelete(food);
+          }}
+        >
+          <Ionicons name="trash-outline" size={20} color={theme.error || '#FF3B30'} />
+        </TouchableOpacity>
+      ) : (
+        <Ionicons name="chevron-forward" size={20} color={theme.textSecondary} />
+      )}
     </TouchableOpacity>
   );
-};
+}, (prevProps, nextProps) => {
+  // Custom equality check to prevent unnecessary re-renders
+  return (
+    prevProps.food.id === nextProps.food.id &&
+    prevProps.food.calories === nextProps.food.calories
+  );
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -89,6 +107,9 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 1,
+  },
+  deleteButton: {
+    padding: 8,
   },
   iconContainer: {
     width: 40,

@@ -42,6 +42,10 @@ const RecentFoodsCard = ({ foods, onFoodPress }) => {
           </TouchableOpacity>
         )}
         scrollEnabled={false}
+        initialNumToRender={5}
+        maxToRenderPerBatch={5}
+        removeClippedSubviews={true}
+        windowSize={2}
       />
     </View>
   );

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 
-const DiaryEntryItem = ({ entry, onPress, onDelete }) => {
+const DiaryEntryItem = memo(({ entry, onPress, onDelete }) => {
   const { theme } = useTheme();
   // Format timestamp to display time
   const formatTime = (timestamp) => {
@@ -47,7 +47,14 @@ const DiaryEntryItem = ({ entry, onPress, onDelete }) => {
       </TouchableOpacity>
     </TouchableOpacity>
   );
-};
+}, (prevProps, nextProps) => {
+  // Custom equality check to prevent unnecessary re-renders
+  return (
+    prevProps.entry.id === nextProps.entry.id &&
+    prevProps.entry.calories === nextProps.entry.calories &&
+    prevProps.entry.quantity === nextProps.entry.quantity
+  );
+});
 
 const styles = StyleSheet.create({
   container: {

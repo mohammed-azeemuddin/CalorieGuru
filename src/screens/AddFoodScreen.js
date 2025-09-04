@@ -10,7 +10,7 @@ const AddFoodScreen = ({ navigation }) => {
   const { theme } = useTheme();
   const [foodData, setFoodData] = useState({
     name: '',
-    category: 'Breakfast',
+    category: 'Custom',
     calories: '',
     protein: '',
     carbs: '',
@@ -21,14 +21,7 @@ const AddFoodScreen = ({ navigation }) => {
     description: '',
   });
   
-  const categories = [
-    'Breakfast',
-    'Lunch',
-    'Dinner',
-    'Snacks',
-    'Sweets',
-    'Beverages'
-  ];
+  // Custom foods are automatically categorized as 'Custom'
   
   const handleInputChange = (field, value) => {
     setFoodData({
@@ -54,6 +47,41 @@ const AddFoodScreen = ({ navigation }) => {
     }
     
     return true;
+  };
+  
+  const addFoodToDiary = async (food) => {
+    try {
+      const today = new Date().toISOString().split('T')[0];
+      const foodEntryKey = `foodEntries_${today}`;
+      
+      // Get existing entries for today
+      const existingEntriesString = await AsyncStorage.getItem(foodEntryKey);
+      let entries = [];
+      
+      if (existingEntriesString) {
+        entries = JSON.parse(existingEntriesString);
+      }
+      
+      // Create new entry
+      const newEntry = {
+        id: Date.now().toString(),
+        ...food,
+        quantity: 1,
+        timestamp: new Date().toISOString(),
+      };
+      
+      // Add new entry to the list
+      entries.push(newEntry);
+      
+      // Save updated entries
+      await AsyncStorage.setItem(foodEntryKey, JSON.stringify(entries));
+      
+      Alert.alert('Success', `${food.name} added to today's intake`);
+      navigation.goBack();
+    } catch (error) {
+      console.error('Error adding food to diary:', error);
+      Alert.alert('Error', 'Failed to add food to diary');
+    }
   };
   
   const saveFood = async () => {
@@ -86,10 +114,14 @@ const AddFoodScreen = ({ navigation }) => {
       // Save updated custom foods
       await AsyncStorage.setItem('customFoods', JSON.stringify(customFoods));
       
+      // Ask user if they want to add the food to today's intake
       Alert.alert(
-        'Success',
-        'Food added successfully',
-        [{ text: 'OK', onPress: () => navigation.goBack() }]
+        'Food Added Successfully',
+        'Would you like to add this food to today\'s intake?',
+        [
+          { text: 'No', onPress: () => navigation.goBack() },
+          { text: 'Yes', onPress: () => addFoodToDiary(newFood) }
+        ]
       );
     } catch (error) {
       console.error('Error saving custom food:', error);
@@ -120,20 +152,7 @@ const AddFoodScreen = ({ navigation }) => {
             />
           </View>
           
-          <View style={styles.inputContainer}>
-            <Text style={[styles.inputLabel, { color: theme.text }]}>Category</Text>
-            <View style={[styles.pickerContainer, { backgroundColor: theme.card, borderColor: theme.border }]}>
-              <Picker
-                selectedValue={foodData.category}
-                onValueChange={(value) => handleInputChange('category', value)}
-                style={styles.picker}
-              >
-                {categories.map((category) => (
-                  <Picker.Item key={category} label={category} value={category} />
-                ))}
-              </Picker>
-            </View>
-          </View>
+          {/* Category is automatically set to 'Custom' */}
           
           <View style={styles.inputContainer}>
             <Text style={[styles.inputLabel, { color: theme.text }]}>Serving Size*</Text>
