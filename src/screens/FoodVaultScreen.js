@@ -9,12 +9,14 @@ import * as XLSX from 'xlsx';
 import { Asset } from 'expo-asset';
 import { useFocusEffect } from '@react-navigation/native';
 
-const FoodVaultScreen = ({ navigation }) => {
+const FoodVaultScreen = ({ navigation, route }) => {
   const { theme } = useTheme();
   const [searchQuery, setSearchQuery] = useState('');
   const [allFoods, setAllFoods] = useState([]);
   const [filteredFoods, setFilteredFoods] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  // Use a ref to store the initial category to prevent it from changing on re-renders
+  const initialCategoryRef = React.useRef(route.params?.initialCategory || 'All');
+  const [selectedCategory, setSelectedCategory] = useState(initialCategoryRef.current);
   const [categories, setCategories] = useState(['All']);
   const [customFoods, setCustomFoods] = useState([]);
 
@@ -450,14 +452,18 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
   // Delete a custom food
   const deleteCustomFood = async (foodId, foodName, deleteFromIntake = false) => {
     try {
+      console.log('Deleting food with ID:', foodId, 'and name:', foodName);
+      
       // Get current custom foods
       const customFoodsString = await AsyncStorage.getItem('customFoods');
       if (!customFoodsString) return;
       
       const currentCustomFoods = JSON.parse(customFoodsString);
+      console.log('Current custom foods count:', currentCustomFoods.length);
       
-      // Filter out the food to delete
+      // Filter out the food to delete by ID
       const updatedCustomFoods = currentCustomFoods.filter(food => food.id !== foodId);
+      console.log('Updated custom foods count:', updatedCustomFoods.length);
       
       // Save updated custom foods
       await AsyncStorage.setItem('customFoods', JSON.stringify(updatedCustomFoods));
@@ -465,13 +471,18 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
       // Update state
       setCustomFoods(updatedCustomFoods);
       
-      // Update all foods and filtered foods
+      // Update all foods and filtered foods - make sure to filter by ID
+      // This ensures we only remove the exact food item that was deleted
       const updatedAllFoods = allFoods.filter(food => food.id !== foodId);
       setAllFoods(updatedAllFoods);
       
-      if (selectedCategory === 'All' || selectedCategory === 'Custom') {
-        setFilteredFoods(filteredFoods.filter(food => food.id !== foodId));
-      }
+      // Update filtered foods based on current category
+      setFilteredFoods(prev => prev.filter(food => food.id !== foodId));
+      
+      // Force a reload of all foods to ensure consistency
+      setTimeout(() => {
+        loadAllFoods(updatedCustomFoods);
+      }, 100);
       
       // If deleteFromIntake is true, also delete from today's intake
       if (deleteFromIntake) {
@@ -554,13 +565,26 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
   useFocusEffect(
     React.useCallback(() => {
       const loadFoods = async () => {
+        // Clear the existing foods first to prevent stale data
+        setAllFoods([]);
+        setFilteredFoods([]);
+        
         const customFoodsData = await loadCustomFoods();
         setCustomFoods(customFoodsData);
         loadAllFoods(customFoodsData);
       };
       
       loadFoods();
-    }, [])
+      
+      // Preserve the selected category from route params if it exists
+      if (route.params?.initialCategory) {
+        setSelectedCategory(route.params.initialCategory);
+        // Update the ref to maintain the value across re-renders
+        initialCategoryRef.current = route.params.initialCategory;
+        // Clear the parameter after using it to prevent reapplying on subsequent focus events
+        navigation.setParams({ initialCategory: undefined });
+      }
+    }, [navigation, route.params?.initialCategory])
   );
 
   const loadAllFoods = async (customFoodsData = null) => {
@@ -579,6 +603,12 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
           console.log(`Loaded ${customFoods.length} custom foods from AsyncStorage`);
         }
       }
+      
+      // Ensure each custom food has a unique ID
+      customFoods = customFoods.map((food, index) => ({
+        ...food,
+        id: food.id || `custom_${index}_${Date.now()}` // Ensure unique IDs
+      }));
       
       // Load food data from CSV
       const csvFoods = await loadFoodData();
@@ -659,15 +689,11 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
         categoryArray.splice(otherIndex, 1);
       }
       
-      // Add 'Custom' before 'Other' if there are custom foods
-      if (customFoods.length > 0) {
-        categoryArray.push('Custom');
-      }
-      
       // Add 'Other' at the end
       categoryArray.push('Other');
       
-      const dynamicCategories = ['All', ...categoryArray];
+      // Create dynamic categories with 'All' first, then 'Custom', then the rest
+      const dynamicCategories = ['All', 'Custom', ...categoryArray];
       
       console.log('Categories:', dynamicCategories);
       setCategories(dynamicCategories);
@@ -716,7 +742,7 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
         <Ionicons name="search" size={20} color={theme.textSecondary} style={styles.searchIcon} />
         <TextInput
           style={[styles.searchInput, { color: theme.text }]}
-          placeholder="Search Indian foods..."
+          placeholder="Search foods..."
           placeholderTextColor={theme.textSecondary}
           value={searchQuery}
           onChangeText={handleSearch}
@@ -761,6 +787,15 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
         />
       </View>
       
+      {selectedCategory === 'Custom' && customFoods.length > 0 && (
+        <TouchableOpacity 
+          style={[styles.addCustomButtonHeader, { backgroundColor: theme.primary }]}
+          onPress={() => navigation.navigate('AddFood')}
+        >
+          <Text style={styles.addCustomButtonText}>Add Custom Food</Text>
+        </TouchableOpacity>
+      )}
+      
       <FlatList
         data={filteredFoods}
         keyExtractor={(item) => item.id.toString()}
@@ -773,7 +808,19 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
         )}
         ListEmptyComponent={
           <View style={styles.emptyContainer}>
-            <Text style={[styles.emptyText, { color: theme.textSecondary }]}>No foods found</Text>
+            {selectedCategory === 'Custom' ? (
+              <View style={styles.emptyCustomContainer}>
+                <Text style={[styles.emptyText, { color: theme.textSecondary }]}>No custom foods found</Text>
+                <TouchableOpacity 
+                  style={[styles.addCustomButton, { backgroundColor: theme.primary }]}
+                  onPress={() => navigation.navigate('AddFood')}
+                >
+                  <Text style={styles.addCustomButtonText}>Add Custom Food</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <Text style={[styles.emptyText, { color: theme.textSecondary }]}>No foods found</Text>
+            )}
           </View>
         }
         onEndReachedThreshold={0.5}
@@ -789,12 +836,14 @@ Masala Chai,Beverages,Cup,1 cup,50,8,2,2`;
         })}
       />
       
-      <TouchableOpacity 
-        style={[styles.floatingButton, { backgroundColor: theme.primary }]}
-        onPress={() => navigation.navigate('AddFood')}
-      >
-        <Ionicons name="add" size={24} color="white" />
-      </TouchableOpacity>
+      {selectedCategory !== 'Custom' && (
+        <TouchableOpacity 
+          style={[styles.floatingButton, { backgroundColor: theme.primary }]}
+          onPress={() => navigation.navigate('AddFood')}
+        >
+          <Ionicons name="add" size={24} color="white" />
+        </TouchableOpacity>
+      )}
     </SafeAreaView>
   );
 };
@@ -850,8 +899,34 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
+  emptyCustomContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   emptyText: {
     fontSize: 16,
+    marginBottom: 20,
+  },
+  addCustomButton: {
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  addCustomButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  addCustomButtonHeader: {
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 10,
+    marginHorizontal: 15,
+    marginBottom: 10,
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   floatingButton: {
     position: 'absolute',

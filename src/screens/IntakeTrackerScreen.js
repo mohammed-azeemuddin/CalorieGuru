@@ -220,7 +220,7 @@ const IntakeTrackerScreen = ({ navigation }) => {
               </TouchableOpacity>
               <TouchableOpacity 
                 style={[styles.addFoodButton, { backgroundColor: theme.secondary }]}
-                onPress={() => navigation.navigate('AddFood')}
+                onPress={() => navigation.navigate('Food Vault', { initialCategory: 'Custom' })}
               >
                 <Text style={styles.addFoodButtonText}>Add Custom Food</Text>
               </TouchableOpacity>
@@ -239,7 +239,7 @@ const IntakeTrackerScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity 
             style={[styles.addButton, { backgroundColor: theme.secondary }]}
-            onPress={() => navigation.navigate('AddFood')}
+            onPress={() => navigation.navigate('Food Vault', { initialCategory: 'Custom' })}
           >
             <Text style={styles.floatingButtonText}>Custom Food</Text>
           </TouchableOpacity>
