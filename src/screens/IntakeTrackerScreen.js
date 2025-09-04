@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -33,10 +33,28 @@ const IntakeTrackerScreen = ({ navigation }) => {
         
         if (entriesString) {
           const foodEntries = JSON.parse(entriesString);
-          setEntries(foodEntries);
+          
+          // Ensure all entries have unique IDs
+          const uniqueEntries = [];
+          const seenIds = new Set();
+          
+          foodEntries.forEach(entry => {
+            // If entry has no ID, generate one
+            if (!entry.id) {
+              entry.id = Date.now().toString() + Math.random().toString(36).substr(2, 9);
+            }
+            
+            // Only add entries with unique IDs
+            if (!seenIds.has(entry.id)) {
+              seenIds.add(entry.id);
+              uniqueEntries.push(entry);
+            }
+          });
+          
+          setEntries(uniqueEntries);
           
           // Calculate nutrition summary
-          const summary = foodEntries.reduce((acc, entry) => {
+          const summary = uniqueEntries.reduce((acc, entry) => {
             return {
               calories: acc.calories + entry.calories,
               protein: acc.protein + entry.protein,
@@ -86,29 +104,42 @@ const IntakeTrackerScreen = ({ navigation }) => {
       const dateString = selectedDate.toISOString().split('T')[0];
       const foodEntriesKey = `foodEntries_${dateString}`;
       
-      // Filter out the entry to delete
-      const updatedEntries = entries.filter(entry => entry.id !== entryId);
+      // Get the current entries from AsyncStorage to ensure we have the latest data
+      const entriesString = await AsyncStorage.getItem(foodEntriesKey);
+      let currentEntries = [];
       
-      // Save updated entries
+      if (entriesString) {
+        currentEntries = JSON.parse(entriesString);
+      }
+      
+      // Filter out the entry with the specific ID
+      const updatedEntries = currentEntries.filter(entry => entry.id !== entryId);
+      
+      // Save updated entries to AsyncStorage
       await AsyncStorage.setItem(foodEntriesKey, JSON.stringify(updatedEntries));
       
       // Update state
       setEntries(updatedEntries);
       
       // Recalculate nutrition summary
-      const summary = updatedEntries.reduce((acc, entry) => {
-        return {
-          calories: acc.calories + entry.calories,
-          protein: acc.protein + entry.protein,
-          carbs: acc.carbs + entry.carbs,
-          fat: acc.fat + entry.fat
-        };
-      }, { calories: 0, protein: 0, carbs: 0, fat: 0 });
-      
-      setNutritionSummary(summary);
+      updateNutritionSummary(updatedEntries);
     } catch (error) {
       console.error('Error deleting entry:', error);
     }
+  };
+  
+  // Helper function to update nutrition summary
+  const updateNutritionSummary = (foodEntries) => {
+    const summary = foodEntries.reduce((acc, entry) => {
+      return {
+        calories: acc.calories + entry.calories,
+        protein: acc.protein + entry.protein,
+        carbs: acc.carbs + entry.carbs,
+        fat: acc.fat + entry.fat
+      };
+    }, { calories: 0, protein: 0, carbs: 0, fat: 0 });
+    
+    setNutritionSummary(summary);
   };
 
   return (

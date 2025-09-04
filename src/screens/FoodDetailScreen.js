@@ -95,7 +95,7 @@ const FoodDetailScreen = ({ route, navigation }) => {
       // Show success message
       Alert.alert(
         'Success',
-        `${food.name} (${quantity} serving${quantity > 1 ? 's' : ''}) added to your food diary`,
+        `${food.name} (${quantity} serving${quantity > 1 ? 's' : ''}) added to today's intake`,
         [{ text: 'OK', onPress: () => navigation.goBack() }]
       );
     } catch (error) {
